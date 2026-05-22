@@ -182,7 +182,7 @@
 <span class="text-lg font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Inter']">LAUTARO COLMAN</span>
 </div>
 <nav class="hidden md:flex items-center gap-8 font-['Inter'] text-sm tracking-wide">
-  <button id="lang-toggle" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" aria-label="Toggle language">EN</button>
+  <button id="lang-toggle" class="lang-toggle-btn text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" aria-label="Toggle language">EN</button>
   <a id="nav-home" class="text-zinc-900 dark:text-white font-medium border-b border-zinc-900 dark:border-zinc-50" href="#hero" data-es="Inicio" data-en="Home">Inicio</a>
   <a id="nav-archive" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="#proyectos" data-es="Archivo" data-en="Archive">Archivo</a>
   <a id="nav-contact" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
@@ -191,9 +191,10 @@
 </div>
 <nav class="md:hidden border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 px-4 sm:px-6 py-4" id="mobile-menu">
 <div class="flex flex-col gap-4 font-['Inter'] text-sm tracking-wide">
-<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#hero">Home</a>
-<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#proyectos">Archive</a>
-<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#contacto">Contact</a>
+<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#hero" data-es="Inicio" data-en="Home">Inicio</a>
+<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#proyectos" data-es="Archivo" data-en="Archive">Archivo</a>
+<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+<button class="lang-toggle-btn text-left text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" aria-label="Toggle language">EN</button>
 </div>
 </nav>
 </header>
@@ -202,22 +203,22 @@
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-32 lg:mb-48" id="hero">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 <div class="lg:col-span-7">
-<span class="hero-in hero-delay-1 inline-block mb-6 px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant text-[0.75rem] font-bold tracking-[0.05em] uppercase">Available for projects</span>
+<span class="hero-in hero-delay-1 inline-block mb-6 px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant text-[0.75rem] font-bold tracking-[0.05em] uppercase" data-es="Disponible para proyectos" data-en="Available for projects">Disponible para proyectos</span>
 <h1 class="hero-in hero-delay-2 text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold leading-[1.05] tracking-tighter mb-6 sm:mb-8 text-editorial">
                         Colman Lautaro
                     </h1>
 <h2 class="hero-in hero-delay-3 text-xl sm:text-2xl md:text-3xl text-on-surface-variant font-medium mb-6 sm:mb-8 leading-relaxed">
-                        Web Developer / Programmer
+                        <span data-es="Desarrollador Web / Programador" data-en="Web Developer / Programmer">Desarrollador Web / Programador</span>
                     </h2>
-<p class="hero-in hero-delay-4 text-base sm:text-lg md:text-2xl text-on-surface-variant opacity-70 max-w-xl mb-8 sm:mb-12 leading-relaxed">
-                        I build functional web solutions focused on user experience, performance, and scalability.
+<p class="hero-in hero-delay-4 text-base sm:text-lg md:text-2xl text-on-surface-variant opacity-70 max-w-xl mb-8 sm:mb-12 leading-relaxed" data-es="Creo soluciones web funcionales enfocadas en la experiencia de usuario, rendimiento y escalabilidad." data-en="I build functional web solutions focused on user experience, performance, and scalability.">
+                        Creo soluciones web funcionales enfocadas en la experiencia de usuario, rendimiento y escalabilidad.
                     </p>
 <div class="hero-in hero-delay-5 flex flex-wrap gap-3 sm:gap-4">
-<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center transition-transform duration-300 active:scale-95 hover:-translate-y-0.5 bg-gradient-to-br from-primary to-primary-container" href="#contacto">
-                            Contact Me
+<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center transition-transform duration-300 active:scale-95 hover:-translate-y-0.5 bg-gradient-to-br from-primary to-primary-container" href="#contacto" data-es="Contáctame" data-en="Contact Me">
+                            Contáctame
                         </a>
-<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-surface-container-highest text-on-surface rounded-xl font-semibold flex items-center justify-center hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-0.5" href="#proyectos">
-                            View Projects
+<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-surface-container-highest text-on-surface rounded-xl font-semibold flex items-center justify-center hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-0.5" href="#proyectos" data-es="Ver Proyectos" data-en="View Projects">
+                            Ver Proyectos
                         </a>
 </div>
 </div>
@@ -236,34 +237,34 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
 <div class="reveal-on-scroll lg:col-span-4">
-<h2 class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4">About Me</h2>
-<h3 class="text-3xl sm:text-4xl font-bold text-editorial leading-tight">Building reliable products through clean, practical engineering.</h3>
+<h2 class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
+<h3 class="text-3xl sm:text-4xl font-bold text-editorial leading-tight" data-es="Creando productos confiables a través de una ingeniería limpia y práctica." data-en="Building reliable products through clean, practical engineering.">Creando productos confiables a través de una ingeniería limpia y práctica.</h3>
 </div>
 <div class="lg:col-span-8">
-<p class="reveal-on-scroll reveal-delay-1 text-base sm:text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 sm:mb-12 max-w-2xl">
-                            Programming Technician graduate from the National Technological University (UTN) La Plata. I build production-ready web applications using HTML, CSS, JavaScript, Python, and Django, with a strong focus on maintainability, performance, and business value.
+<p class="reveal-on-scroll reveal-delay-1 text-base sm:text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 sm:mb-12 max-w-2xl" data-es="Graduado como Técnico en Programación de la Universidad Tecnológica Nacional (UTN) La Plata. Creo aplicaciones web listas para producción utilizando HTML, CSS, JavaScript, Python y Django, con un fuerte enfoque en la mantenibilidad, el rendimiento y el valor de negocio." data-en="Programming Technician graduate from the National Technological University (UTN) La Plata. I build production-ready web applications using HTML, CSS, JavaScript, Python, and Django, with a strong focus on maintainability, performance, and business value.">
+                            Graduado como Técnico en Programación de la Universidad Tecnológica Nacional (UTN) La Plata. Creo aplicaciones web listas para producción utilizando HTML, CSS, JavaScript, Python y Django, con un fuerte enfoque en la mantenibilidad, el rendimiento y el valor de negocio.
                         </p>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
 <div class="reveal-on-scroll reveal-delay-1 p-6 sm:p-8 rounded-lg bg-surface-container-lowest border border-outline-variant/15 h-full flex flex-col transition-transform duration-300 hover:-translate-y-1">
 <div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center mb-4">
 <span class="material-symbols-outlined text-primary" data-icon="code">code</span>
 </div>
-<h4 class="font-bold text-lg mb-2">Frontend Engineering</h4>
-<p class="text-on-surface-variant text-sm">Responsive, accessible interfaces built with semantic HTML, modern CSS, and clean JavaScript.</p>
+<h4 class="font-bold text-lg mb-2" data-es="Ingeniería Frontend" data-en="Frontend Engineering">Ingeniería Frontend</h4>
+<p class="text-on-surface-variant text-sm" data-es="Interfaces accesibles y responsivas construidas con HTML semántico, CSS moderno y JavaScript limpio." data-en="Responsive, accessible interfaces built with semantic HTML, modern CSS, and clean JavaScript.">Interfaces accesibles y responsivas construidas con HTML semántico, CSS moderno y JavaScript limpio.</p>
 </div>
 <div class="reveal-on-scroll reveal-delay-2 p-6 sm:p-8 rounded-lg bg-surface-container-lowest border border-outline-variant/15 h-full flex flex-col transition-transform duration-300 hover:-translate-y-1">
 <div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center mb-4">
 <span class="material-symbols-outlined text-primary" data-icon="dns">dns</span>
 </div>
-<h4 class="font-bold text-lg mb-2">Backend Development</h4>
-<p class="text-on-surface-variant text-sm">Robust APIs and business logic with Django, authentication flows, and efficient data handling.</p>
+<h4 class="font-bold text-lg mb-2" data-es="Desarrollo Backend" data-en="Backend Development">Desarrollo Backend</h4>
+<p class="text-on-surface-variant text-sm" data-es="APIs robustas y lógica de negocio con Django, flujos de autenticación y manejo eficiente de datos." data-en="Robust APIs and business logic with Django, authentication flows, and efficient data handling.">APIs robustas y lógica de negocio con Django, flujos de autenticación y manejo eficiente de datos.</p>
 </div>
 <div class="reveal-on-scroll reveal-delay-3 p-6 sm:p-8 rounded-lg bg-surface-container-lowest border border-outline-variant/15 h-full flex flex-col transition-transform duration-300 hover:-translate-y-1">
 <div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center mb-4">
 <span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
 </div>
-<h4 class="font-bold text-lg mb-2">Problem Solving Mindset</h4>
-<p class="text-on-surface-variant text-sm">Focused on delivering practical solutions, improving code quality, and learning fast in real projects.</p>
+<h4 class="font-bold text-lg mb-2" data-es="Mentalidad de Resolución de Problemas" data-en="Problem Solving Mindset">Mentalidad de Resolución de Problemas</h4>
+<p class="text-on-surface-variant text-sm" data-es="Enfocado en ofrecer soluciones prácticas, mejorar la calidad del código y aprender rápido en proyectos reales." data-en="Focused on delivering practical solutions, improving code quality, and learning fast in real projects.">Enfocado en ofrecer soluciones prácticas, mejorar la calidad del código y aprender rápido en proyectos reales.</p>
 </div>
 </div>
 </div>
@@ -274,11 +275,11 @@
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-36 lg:mb-48" id="proyectos">
 <div class="reveal-on-scroll flex flex-col sm:flex-row justify-between sm:items-end gap-4 sm:gap-6 mb-10 sm:mb-16">
 <div>
-<h2 class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4">Selected Projects</h2>
-<h3 class="text-3xl sm:text-4xl font-bold text-editorial">Real-World Projects</h3>
+<h2 class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4" data-es="Proyectos Seleccionados" data-en="Selected Projects">Proyectos Seleccionados</h2>
+<h3 class="text-3xl sm:text-4xl font-bold text-editorial" data-es="Proyectos del Mundo Real" data-en="Real-World Projects">Proyectos del Mundo Real</h3>
 </div>
 <div class="hidden md:block">
-<a class="text-primary font-medium hover:underline decoration-1 underline-offset-8 transition-all" href="#proyectos">View full archive</a>
+<a class="text-primary font-medium hover:underline decoration-1 underline-offset-8 transition-all" href="#proyectos" data-es="Ver archivo completo" data-en="View full archive">Ver archivo completo</a>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 items-stretch">
@@ -294,9 +295,9 @@
     <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Netlify</span>
   </div>
   <h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Ramonapets</h4>
-  <p class="text-on-surface-variant leading-relaxed">Pet shop website with modern responsive design.</p>
+  <p class="text-on-surface-variant leading-relaxed" data-es="Sitio web de tienda de mascotas con diseño responsivo moderno." data-en="Pet shop website with modern responsive design.">Sitio web de tienda de mascotas con diseño responsivo moderno.</p>
   <a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://ramonapets.netlify.app" target="_blank" rel="noopener noreferrer">
-    View project <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+    <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
   </a>
 </div>
 <!-- Project 1 -->
@@ -314,12 +315,12 @@
 <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Python</span>
 </div>
 <h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Stock Management App - PC</h4>
-<p class="text-on-surface-variant leading-relaxed">Desktop application to manage sales with charts, history, and records.</p>
+<p class="text-on-surface-variant leading-relaxed" data-es="Aplicación de escritorio para gestionar ventas con gráficos, historial y registros." data-en="Desktop application to manage sales with charts, history, and records.">Aplicación de escritorio para gestionar ventas con gráficos, historial y registros.</p>
 <a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="pj.html" rel="noopener noreferrer" target="_blank">
-                            View project 
+                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
                             <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
 </a>
-<a class="mt-2 text-xs text-on-surface-variant hover:text-primary transition-colors w-fit" href="https://github.com/Lautarocoman12/stock-app-electron" rel="noopener noreferrer" target="_blank">View source code on GitHub</a>
+<a class="mt-2 text-xs text-on-surface-variant hover:text-primary transition-colors w-fit" href="https://github.com/Lautarocoman12/stock-app-electron" rel="noopener noreferrer" target="_blank" data-es="Ver código fuente en GitHub" data-en="View source code on GitHub">Ver código fuente en GitHub</a>
 </div>
 </div>
 <!-- Project 2 -->
@@ -336,9 +337,9 @@
 <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
 </div>
 <h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Car Ecommerce - Fire Car</h4>
-<p class="text-on-surface-variant leading-relaxed">Vehicle buying and selling platform with login and listings.</p>
+<p class="text-on-surface-variant leading-relaxed" data-es="Plataforma de compra y venta de vehículos con inicio de sesión y publicaciones." data-en="Vehicle buying and selling platform with login and listings.">Plataforma de compra y venta de vehículos con inicio de sesión y publicaciones.</p>
 <a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://fire-car-ecommerce.onrender.com/accounts/" rel="noopener noreferrer" target="_blank">
-                            View project 
+                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
                             <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
 </a>
 </div>
@@ -357,9 +358,9 @@
 <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
 </div>
 <h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Clothing Ecommerce - Shop Fast</h4>
-<p class="text-on-surface-variant leading-relaxed">Online platform for buying and selling clothing.</p>
+<p class="text-on-surface-variant leading-relaxed" data-es="Plataforma en línea para la compra y venta de ropa." data-en="Online platform for buying and selling clothing.">Plataforma en línea para la compra y venta de ropa.</p>
 <a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://mi-marketplace.onrender.com" rel="noopener noreferrer" target="_blank">
-                            View project 
+                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
                             <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
 </a>
 </div>
@@ -378,9 +379,9 @@
 <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
 </div>
 <h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Neumaticos El 32</h4>
-<p class="text-on-surface-variant leading-relaxed">Corporate website for the company.</p>
+<p class="text-on-surface-variant leading-relaxed" data-es="Sitio web corporativo para la empresa." data-en="Corporate website for the company.">Sitio web corporativo para la empresa.</p>
 <a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://neumaticosel32nuv.netlify.app" rel="noopener noreferrer" target="_blank">
-                            View project 
+                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
                             <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
 </a>
 </div>
@@ -399,9 +400,9 @@
 <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
 </div>
 <h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Repuestos El 32</h4>
-<p class="text-on-surface-variant leading-relaxed">Commercial spare parts website.</p>
+<p class="text-on-surface-variant leading-relaxed" data-es="Sitio web comercial de repuestos." data-en="Commercial spare parts website.">Sitio web comercial de repuestos.</p>
 <a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://repuestos32.netlify.app" rel="noopener noreferrer" target="_blank">
-                            View project 
+                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
                             <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
 </a>
 </div>
@@ -411,7 +412,7 @@
 <!-- Technologies Section -->
 <section class="bg-surface-container-low py-20 sm:py-24 lg:py-32 mb-24 sm:mb-32">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<h2 class="reveal-on-scroll text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-12">Skills</h2>
+<h2 class="reveal-on-scroll text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-12" data-es="Habilidades" data-en="Skills">Habilidades</h2>
 <div class="reveal-on-scroll reveal-delay-1 flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
 <div class="group flex flex-col items-center gap-4">
 <div class="w-16 h-16 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:bg-surface-bright transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
@@ -460,7 +461,7 @@
 </section>
 <!-- Contacto Section -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-36 lg:mb-48 text-center" id="contacto">
-<h2 class="reveal-on-scroll text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-8">Do you have a project in mind?</h2>
+<h2 class="reveal-on-scroll text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-8" data-es="¿Tienes un proyecto en mente?" data-en="Do you have a project in mind?">¿Tienes un proyecto en mente?</h2>
 <a class="reveal-on-scroll reveal-delay-1 text-2xl sm:text-4xl md:text-6xl font-extrabold text-editorial mb-10 sm:mb-12 block hover:opacity-70 transition-all duration-300 decoration-primary underline decoration-2 underline-offset-[8px] sm:underline-offset-[12px] break-all hover:-translate-y-0.5" href="mailto:colmanlautaro24@gmail.com">
                 colmanlautaro24@gmail.com
             </a>
@@ -481,12 +482,12 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start gap-6 sm:gap-8">
 <div class="flex flex-col gap-4">
 <span class="text-zinc-900 dark:text-zinc-100 font-['Inter'] text-sm tracking-wide uppercase font-medium">© 2026 - Lautaro Uriel Colman</span>
-<p class="text-zinc-400 text-xs">Professional web development and programming portfolio.</p>
+<p class="text-zinc-400 text-xs" data-es="Portafolio profesional de programación y desarrollo web." data-en="Professional web development and programming portfolio.">Portafolio profesional de programación y desarrollo web.</p>
 </div>
 <div class="flex flex-wrap gap-6 sm:gap-8">
 <a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="https://github.com/LautaroCLM" rel="noopener noreferrer" target="_blank">GitHub</a>
 <a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="https://www.linkedin.com/in/lautaro-colman-26a773375/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-<a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="#proyectos">Archive</a>
+<a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="#proyectos" data-es="Archivo" data-en="Archive">Archivo</a>
 </div>
 </div>
 </footer>
@@ -537,22 +538,129 @@
       revealElements.forEach((el) => el.classList.add("is-visible"));
     }
 
-    // Language toggle
-    const langToggle = document.getElementById("lang-toggle");
-    let currentLang = "es";
-    const updateLanguage = () => {
-      document.querySelectorAll("[data-es][data-en]").forEach(el => {
-        el.textContent = currentLang === "es" ? el.dataset.es : el.dataset.en;
-      });
-    };
-    langToggle.addEventListener("click", () => {
+  // Language toggle
+  const langToggles = document.querySelectorAll(".lang-toggle-btn");
+  let currentLang = "es";
+  const updateLanguage = () => {
+    document.querySelectorAll("[data-es][data-en]").forEach(el => {
+      el.textContent = currentLang === "es" ? el.dataset.es : el.dataset.en;
+    });
+    langToggles.forEach(btn => {
+      btn.textContent = currentLang === "es" ? "EN" : "ES";
+    });
+  };
+  langToggles.forEach(btn => {
+    btn.addEventListener("click", () => {
       currentLang = currentLang === "es" ? "en" : "es";
-      langToggle.textContent = currentLang === "es" ? "EN" : "ES";
       updateLanguage();
     });
-    // Initialize language on load
-    updateLanguage();
+  });
+  // Initialize language on load
+  updateLanguage();
   </script>
 
+  <!-- Dark Mode Overrides for Custom Colors -->
+  <style id="dark-mode-patch">
+    html.dark body,
+    html.dark .bg-surface { background-color: #141313; }
+    html.dark .text-on-surface { color: #e5e2e1; }
+    html.dark .bg-surface-container-high { background-color: #2b2a2a; }
+    html.dark .hover\:bg-surface-container-high:hover { background-color: #2b2a2a; }
+    html.dark .text-on-surface-variant { color: #c4c7c7; }
+    html.dark .bg-primary { background-color: #c9c6c5; }
+    html.dark .text-primary { color: #c9c6c5; }
+    html.dark .text-on-primary { color: #313030; }
+    html.dark .decoration-primary { text-decoration-color: #c9c6c5; }
+    html.dark .bg-surface-container-highest { background-color: #353434; }
+    html.dark .bg-surface-container-low { background-color: #1c1b1b; }
+    html.dark .bg-surface-container-lowest { background-color: #0e0e0e; }
+    html.dark .bg-surface-bright { background-color: #3a3939; }
+    html.dark .group:hover .group-hover\:bg-surface-bright { background-color: #3a3939; }
+    html.dark .text-editorial { color: #e5e2e1; }
+    html.dark .from-primary { 
+      --tw-gradient-from: #c9c6c5 var(--tw-gradient-from-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    }
+    html.dark .to-primary-container { 
+      --tw-gradient-to: #0a0a0a var(--tw-gradient-to-position); 
+    }
+    html.dark .bg-secondary-container\/50 { background-color: rgba(71, 71, 70, 0.5); }
+    html.dark .bg-secondary-container\/30 { background-color: rgba(71, 71, 70, 0.3); }
+    html.dark .border-outline-variant\/15 { border-color: rgba(68, 71, 72, 0.15); }
+    html.dark .border-outline-variant\/25 { border-color: rgba(68, 71, 72, 0.25); }
+    html.dark ::selection { background-color: #c9c6c5; color: #313030; }
+  </style>
+
+  <!-- Floating Dark Mode Toggle -->
+  <button id="theme-toggle" class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-lg flex items-center justify-center transition-transform hover:scale-110 active:scale-95" aria-label="Toggle Dark Mode">
+    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+  </button>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    
+    // Check local storage or system preference
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      htmlEl.classList.add('dark');
+      htmlEl.classList.remove('light');
+    } else {
+      htmlEl.classList.add('light');
+      htmlEl.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      if (htmlEl.classList.contains('dark')) {
+        htmlEl.classList.remove('dark');
+        htmlEl.classList.add('light');
+        localStorage.theme = 'light';
+      } else {
+        htmlEl.classList.add('dark');
+        htmlEl.classList.remove('light');
+        localStorage.theme = 'dark';
+      }
+    });
+
+    // Scroll Spy for Navigation Links
+    const sections = document.querySelectorAll('section[id]');
+    const desktopLinks = document.querySelectorAll('header nav.hidden a[href^="#"]');
+    const mobileNavLinks = document.querySelectorAll('#mobile-menu a[href^="#"]');
+
+    const updateActiveLink = () => {
+      let scrollY = window.scrollY;
+      let activeSection = null;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (scrollY >= sectionTop) {
+          activeSection = section.getAttribute('id');
+        }
+      });
+
+      if (!activeSection && sections.length > 0) {
+        activeSection = sections[0].getAttribute('id');
+      }
+
+      desktopLinks.forEach(link => {
+        if (link.getAttribute('href') === '#' + activeSection) {
+          link.className = "text-zinc-900 dark:text-white font-medium border-b border-zinc-900 dark:border-zinc-50 transition-colors";
+        } else {
+          link.className = "text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors";
+        }
+      });
+
+      mobileNavLinks.forEach(link => {
+        if (link.getAttribute('href') === '#' + activeSection) {
+          link.className = "text-zinc-950 dark:text-zinc-50 font-bold transition-colors";
+        } else {
+          link.className = "text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors";
+        }
+      });
+    };
+
+    window.addEventListener("scroll", updateActiveLink, { passive: true });
+    updateActiveLink(); // Initialize on load
+  </script>
 </body>
 </html>
