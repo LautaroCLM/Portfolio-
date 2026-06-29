@@ -1,6 +1,4 @@
-
-
-<html class="light" lang="es"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Portfolio | Lautaro Colman</title>
@@ -100,6 +98,9 @@
     html {
       scroll-behavior: smooth;
     }
+    #hero {
+      scroll-margin-top: 64px;
+    }
     #mobile-menu {
       display: none;
     }
@@ -157,6 +158,27 @@
       .reveal-delay-3 { transition-delay: 0.24s; }
       .reveal-delay-4 { transition-delay: 0.32s; }
       .reveal-delay-5 { transition-delay: 0.4s; }
+
+      /* Project card hover overlay */
+      .project-img-wrapper .project-hover-overlay {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .project-img-wrapper .project-hover-overlay .project-hover-logo {
+        transform: scale(0.9);
+        opacity: 0;
+        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+      }
+    }
+
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      .project-img-wrapper:hover .project-hover-overlay {
+        opacity: 1;
+      }
+      .project-img-wrapper:hover .project-hover-overlay .project-hover-logo {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -185,7 +207,7 @@
 <nav class="hidden md:flex items-center gap-8 font-['Inter'] text-sm tracking-wide">
   <button id="lang-toggle" class="lang-toggle-btn text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" aria-label="Toggle language">EN</button>
   <a id="nav-home" class="text-zinc-900 dark:text-white font-medium border-b border-zinc-900 dark:border-zinc-50" href="#hero" data-es="Inicio" data-en="Home">Inicio</a>
-  <a id="nav-archive" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="#proyectos" data-es="Archivo" data-en="Archive">Archivo</a>
+  <a id="nav-archive" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
   <a id="nav-contact" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
 </nav>
 <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden material-symbols-outlined" id="menu-toggle" type="button">menu</button>
@@ -193,13 +215,13 @@
 <nav class="md:hidden border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 px-4 sm:px-6 py-4" id="mobile-menu">
 <div class="flex flex-col gap-4 font-['Inter'] text-sm tracking-wide">
 <a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#hero" data-es="Inicio" data-en="Home">Inicio</a>
-<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#proyectos" data-es="Archivo" data-en="Archive">Archivo</a>
+<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
 <a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
 <button class="lang-toggle-btn text-left text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" aria-label="Toggle language">EN</button>
 </div>
 </nav>
 </header>
-<main class="pt-24 sm:pt-28">
+<main class="pt-16">
 <!-- Hero Section -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-32 lg:mb-48" id="hero">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -283,131 +305,8 @@
 <a class="text-primary font-medium hover:underline decoration-1 underline-offset-8 transition-all" href="#proyectos" data-es="Ver archivo completo" data-en="View full archive">Ver archivo completo</a>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 items-stretch">
-<!-- Project 0 -->
-<div class="reveal-on-scroll reveal-delay-1 group cursor-pointer rounded-lg border border-outline-variant/25 bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full flex flex-col">
-  <div class="aspect-[16/10] md:aspect-[4/5] rounded-lg bg-surface-container-low overflow-hidden mb-6 sm:mb-8 transition-all duration-500 group-hover:bg-surface-bright">
-    <img alt="Ramonapets" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="Responsive pet shop website" src="img/Ramonapets.jpeg"/>
-  </div>
-  <div class="flex flex-wrap gap-2">
-    <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">HTML</span>
-    <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">CSS</span>
-    <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
-    <span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Netlify</span>
-  </div>
-  <h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Ramonapets</h4>
-  <p class="text-on-surface-variant leading-relaxed" data-es="Sitio web de tienda de mascotas con diseño responsivo moderno." data-en="Pet shop website with modern responsive design.">Sitio web de tienda de mascotas con diseño responsivo moderno.</p>
-  <a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://ramonapets.netlify.app" target="_blank" rel="noopener noreferrer">
-    <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
-  </a>
-</div>
-<!-- Project 1 -->
-<div class="reveal-on-scroll reveal-delay-1 group cursor-pointer rounded-lg border border-outline-variant/25 bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full flex flex-col">
-<div class="aspect-[16/10] md:aspect-[4/5] rounded-lg bg-surface-container-low overflow-hidden mb-6 sm:mb-8 transition-all duration-500 group-hover:bg-surface-bright">
-<img alt="Stock Management App - PC" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="Stock management app with sales dashboard and records" src="img/imagen3.png"/>
-</div>
-<div class="flex flex-col gap-2 h-full">
-<div class="flex flex-wrap gap-2">
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Electron</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">HTML</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">CSS</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">MySQL</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Python</span>
-</div>
-<h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Stock Management App - PC</h4>
-<p class="text-on-surface-variant leading-relaxed" data-es="Aplicación de escritorio para gestionar ventas con gráficos, historial y registros." data-en="Desktop application to manage sales with charts, history, and records.">Aplicación de escritorio para gestionar ventas con gráficos, historial y registros.</p>
-<a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="pj.html" rel="noopener noreferrer" target="_blank">
-                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
-                            <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
-</a>
-<a class="mt-2 text-xs text-on-surface-variant hover:text-primary transition-colors w-fit" href="https://github.com/Lautarocoman12/stock-app-electron" rel="noopener noreferrer" target="_blank" data-es="Ver código fuente en GitHub" data-en="View source code on GitHub">Ver código fuente en GitHub</a>
-</div>
-</div>
-<!-- Project 2 -->
-<div class="reveal-on-scroll reveal-delay-2 group cursor-pointer rounded-lg border border-outline-variant/25 bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full flex flex-col">
-<div class="aspect-[16/10] md:aspect-[4/5] rounded-lg bg-surface-container-low overflow-hidden mb-6 sm:mb-8 transition-all duration-500 group-hover:bg-surface-bright">
-<img alt="Car Ecommerce - Fire Car" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="Car marketplace for buying and selling vehicles" src="img/imagen6.png"/>
-</div>
-<div class="flex flex-col gap-2 h-full">
-<div class="flex flex-wrap gap-2">
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Django</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Python</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">HTML</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">CSS</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
-</div>
-<h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Car Ecommerce - Fire Car</h4>
-<p class="text-on-surface-variant leading-relaxed" data-es="Plataforma de compra y venta de vehículos con inicio de sesión y publicaciones." data-en="Vehicle buying and selling platform with login and listings.">Plataforma de compra y venta de vehículos con inicio de sesión y publicaciones.</p>
-<a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://fire-car-ecommerce.onrender.com/accounts/" rel="noopener noreferrer" target="_blank">
-                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
-                            <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Project 3 -->
-<div class="reveal-on-scroll reveal-delay-3 group cursor-pointer rounded-lg border border-outline-variant/25 bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full flex flex-col">
-<div class="aspect-[16/10] md:aspect-[4/5] rounded-lg bg-surface-container-low overflow-hidden mb-6 sm:mb-8 transition-all duration-500 group-hover:bg-surface-bright">
-<img alt="Clothing Ecommerce - Shop Fast" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="Shop Fast clothing ecommerce platform" src="img/imagen7.png"/>
-</div>
-<div class="flex flex-col gap-2 h-full">
-<div class="flex flex-wrap gap-2">
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Django</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Python</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">HTML</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">CSS</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
-</div>
-<h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Clothing Ecommerce - Shop Fast</h4>
-<p class="text-on-surface-variant leading-relaxed" data-es="Plataforma en línea para la compra y venta de ropa." data-en="Online platform for buying and selling clothing.">Plataforma en línea para la compra y venta de ropa.</p>
-<a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://mi-marketplace.onrender.com" rel="noopener noreferrer" target="_blank">
-                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
-                            <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Project 4 -->
-<div class="reveal-on-scroll reveal-delay-4 group cursor-pointer rounded-lg border border-outline-variant/25 bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full flex flex-col">
-<div class="aspect-[16/10] md:aspect-[4/5] rounded-lg bg-surface-container-low overflow-hidden mb-6 sm:mb-8 transition-all duration-500 group-hover:bg-surface-bright">
-<img alt="Neumaticos El 32" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="Corporate website for Neumaticos El 32" src="img/imagen1.jpg"/>
-</div>
-<div class="flex flex-col gap-2 h-full">
-<div class="flex flex-wrap gap-2">
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Django</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Python</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">HTML</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">CSS</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
-</div>
-<h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Neumaticos El 32</h4>
-<p class="text-on-surface-variant leading-relaxed" data-es="Sitio web corporativo para la empresa." data-en="Corporate website for the company.">Sitio web corporativo para la empresa.</p>
-<a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://neumaticosel32nuv.netlify.app" rel="noopener noreferrer" target="_blank">
-                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
-                            <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Project 5 -->
-<div class="reveal-on-scroll reveal-delay-5 group cursor-pointer rounded-lg border border-outline-variant/25 bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full flex flex-col">
-<div class="aspect-[16/10] md:aspect-[4/5] rounded-lg bg-surface-container-low overflow-hidden mb-6 sm:mb-8 transition-all duration-500 group-hover:bg-surface-bright">
-<img alt="Repuestos El 32" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="Commercial website for Repuestos El 32" src="img/imagen8.png"/>
-</div>
-<div class="flex flex-col gap-2 h-full">
-<div class="flex flex-wrap gap-2">
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Django</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">Python</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">HTML</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">CSS</span>
-<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 rounded-sm">JavaScript</span>
-</div>
-<h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">Repuestos El 32</h4>
-<p class="text-on-surface-variant leading-relaxed" data-es="Sitio web comercial de repuestos." data-en="Commercial spare parts website.">Sitio web comercial de repuestos.</p>
-<a class="mt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit" href="https://repuestos32.netlify.app" rel="noopener noreferrer" target="_blank">
-                            <span data-es="Ver proyecto" data-en="View project">Ver proyecto</span> 
-                            <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</div>
-</div>
+<div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 items-stretch">
+  <!-- Dynamic projects will render here -->
 </div>
 </section>
 <!-- Technologies Section -->
@@ -488,11 +387,116 @@
 <div class="flex flex-wrap gap-6 sm:gap-8">
 <a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="https://github.com/LautaroCLM" rel="noopener noreferrer" target="_blank">GitHub</a>
 <a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="https://www.linkedin.com/in/lautaro-colman-26a773375/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-<a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="#proyectos" data-es="Archivo" data-en="Archive">Archivo</a>
+<a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
 </div>
 </div>
 </footer>
 <script>
+  let currentLang = "en";
+  const PROJECTS = [
+    {
+      name: "Stock Management App - PC",
+      descEs: "Aplicación de escritorio para gestionar ventas con gráficos, historial y registros.",
+      descEn: "Desktop application to manage sales with charts, history, and records.",
+      technologies: ["Electron", "HTML", "CSS", "JavaScript", "MySQL", "Python"],
+      images: ["img/imagen3.png", "img/imagen4.png", "img/imagen5.png"],
+      logo: "img/Stock Management App - PC.png",
+      projectUrl: "pj.html",
+      repoUrl: "https://github.com/Lautarocoman12/stock-app-electron",
+      delayClass: "reveal-delay-1"
+    },
+    {
+      name: "Ecommerce - Ramonapets",
+      descEs: "Sitio web de tienda de mascotas con diseño responsivo moderno.",
+      descEn: "Pet shop website with modern responsive design.",
+      technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
+      images: ["img/Ramonapets.jpeg", "img/imagen1.png", "img/imagen2.png"],
+      logo: "img/Ramonapets.png",
+      projectUrl: "https://ramonapets.netlify.app",
+      repoUrl: null,
+      delayClass: "reveal-delay-1"
+    },
+    {
+      name: "Car Ecommerce - Fire Car",
+      descEs: "Plataforma de compra y venta de vehículos con inicio de sesión y publicaciones.",
+      descEn: "Vehicle buying and selling platform with login and listings.",
+      technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
+      images: ["img/imagen6.png", "img/imagen1.jpg", "img/imagen2.png"],
+      logo: "img/Car Ecommerce - Fire Car.png",
+      projectUrl: "https://fire-car-ecommerce.onrender.com/accounts/",
+      repoUrl: null,
+      delayClass: "reveal-delay-2"
+    },
+    {
+      name: "Clothing Ecommerce - Shop Fast",
+      descEs: "Plataforma en línea para la compra y venta de ropa.",
+      descEn: "Online platform for buying and selling clothing.",
+      technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
+      images: ["img/imagen7.png", "img/imagen4.png", "img/imagen5.png"],
+      logo: "img/Clothing Ecommerce - Shop Fast.png",
+      projectUrl: "https://mi-marketplace.onrender.com",
+      repoUrl: null,
+      delayClass: "reveal-delay-3"
+    },
+    {
+      name: "Neumaticos El 32",
+      descEs: "Sitio web corporativo para la empresa.",
+      descEn: "Corporate website for the company.",
+      technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
+      images: ["img/imagen1.jpg", "img/imagen8.png", "img/imagen3.png"],
+      logo: "img/Neumaticos32.png",
+      projectUrl: "https://neumaticosel32nuv.netlify.app",
+      repoUrl: null,
+      delayClass: "reveal-delay-4"
+    },
+    {
+      name: "Repuestos El 32",
+      descEs: "Sitio web comercial de repuestos.",
+      descEn: "Commercial spare parts website.",
+      technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
+      images: ["img/imagen8.png", "img/imagen6.png", "img/imagen7.png"],
+      logo: "img/Neumaticos32.png",
+      projectUrl: "https://repuestos32.netlify.app",
+      repoUrl: null,
+      delayClass: "reveal-delay-5"
+    }
+  ];
+
+  const renderProjects = () => {
+    const grid = document.getElementById("projects-grid");
+    if (!grid) return;
+    console.log("renderProjects ejecutado");
+    grid.innerHTML = PROJECTS.map((project, index) => {
+      const techSpans = project.technologies.map(tech => 
+        `<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 dark:bg-zinc-800/80 text-on-surface rounded-sm">${tech}</span>`
+      ).join('\n            ');
+
+      return `
+      <div tabindex="0" role="button" class="relative reveal-on-scroll ${project.delayClass} group cursor-pointer rounded-lg border border-outline-variant/25 bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-primary" onclick="openProjectModal(${index})" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProjectModal(${index}); }">
+        <div class="project-img-wrapper aspect-[16/10] md:aspect-[4/5] rounded-lg bg-surface-container-low overflow-hidden mb-6 sm:mb-8 transition-all duration-500 group-hover:bg-surface-bright relative">
+          <img alt="${project.name}" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="${project.name}" src="${project.images[0]}"/>
+          <div class="project-hover-overlay absolute inset-0 bg-black/45 flex items-center justify-center rounded-lg pointer-events-none">
+            <img src="${project.logo}" alt="${project.name} logo" class="project-hover-logo w-[30%] max-w-[140px] h-auto object-contain drop-shadow-lg" />
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 h-full">
+          <div class="flex flex-wrap gap-2">
+            ${techSpans}
+          </div>
+          <h4 class="text-xl sm:text-2xl font-bold text-editorial mt-2">${project.name}</h4>
+          <p class="text-on-surface-variant leading-relaxed" data-es="${project.descEs}" data-en="${project.descEn}">${currentLang === 'es' ? project.descEs : project.descEn}</p>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-primary text-sm font-semibold group/btn w-fit">
+            <span data-es="Ver proyecto" data-en="View project">${currentLang === 'es' ? 'Ver proyecto' : 'View project'}</span> 
+            <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+      `;
+    }).join('\n');
+  };
+
+  renderProjects();
+
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
   const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
@@ -541,7 +545,7 @@
 
   // Language toggle
   const langToggles = document.querySelectorAll(".lang-toggle-btn");
-  let currentLang = "es";
+  currentLang = "en";
   const updateLanguage = () => {
     document.querySelectorAll("[data-es][data-en]").forEach(el => {
       el.textContent = currentLang === "es" ? el.dataset.es : el.dataset.en;
@@ -571,6 +575,7 @@
     html.dark .bg-primary { background-color: #c9c6c5; }
     html.dark .text-primary { color: #c9c6c5; }
     html.dark .text-on-primary { color: #313030; }
+    html.dark a[href="#contacto"].text-on-primary { color: #ffffff; }
     html.dark .decoration-primary { text-decoration-color: #c9c6c5; }
     html.dark .bg-surface-container-highest { background-color: #353434; }
     html.dark .bg-surface-container-low { background-color: #1c1b1b; }
@@ -602,8 +607,8 @@
     const themeToggle = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
     
-    // Check local storage or system preference
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Check local storage
+    if (localStorage.theme === 'dark') {
       htmlEl.classList.add('dark');
       htmlEl.classList.remove('light');
     } else {
@@ -662,6 +667,268 @@
 
     window.addEventListener("scroll", updateActiveLink, { passive: true });
     updateActiveLink(); // Initialize on load
+
+    // Modal & Carousel state
+    let activeProjectIndex = null;
+    let activeSlideIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    let modalEl = null;
+    let modalBoxEl = null;
+    let overlayEl = null;
+    let slidesContainer = null;
+    let dotsContainer = null;
+    let nameEl = null;
+    let techEl = null;
+    let descEl = null;
+    let btnPrimary = null;
+    let btnSecondary = null;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      modalEl = document.getElementById("project-modal");
+      modalBoxEl = document.getElementById("modal-box");
+      overlayEl = document.getElementById("modal-overlay");
+      slidesContainer = document.getElementById("carousel-slides");
+      dotsContainer = document.getElementById("carousel-dots");
+      nameEl = document.getElementById("modal-project-name");
+      techEl = document.getElementById("modal-project-tech");
+      descEl = document.getElementById("modal-project-desc");
+      btnPrimary = document.getElementById("modal-project-btn-primary");
+      btnSecondary = document.getElementById("modal-project-btn-secondary");
+
+      // Touch Swipe Support
+      if (slidesContainer) {
+        const carouselArea = slidesContainer.parentElement;
+        carouselArea.addEventListener("touchstart", (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carouselArea.addEventListener("touchend", (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+      }
+
+      // Close on click outside modal-box
+      if (overlayEl) {
+        overlayEl.addEventListener("click", () => {
+          closeProjectModal();
+        });
+      }
+    });
+
+    window.openProjectModal = function(index) {
+      console.log("click proyecto", index);
+      console.log("openProjectModal ejecutado");
+      console.log("modal encontrado", modalEl);
+      activeProjectIndex = index;
+      activeSlideIndex = 0;
+      const project = PROJECTS[index];
+
+      // Populate Text Elements
+      if (nameEl) nameEl.textContent = project.name;
+      
+      // We set textContent & data attributes for language toggling
+      if (descEl) {
+        descEl.textContent = currentLang === 'es' ? project.descEs : project.descEn;
+        descEl.setAttribute('data-es', project.descEs);
+        descEl.setAttribute('data-en', project.descEn);
+      }
+
+      // Populate Technologies
+      if (techEl) {
+        techEl.innerHTML = project.technologies.map(tech => 
+          `<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 dark:bg-zinc-800/80 text-on-surface dark:text-zinc-200 rounded-sm">${tech}</span>`
+        ).join('');
+      }
+
+      // Populate Action Links
+      if (btnPrimary) btnPrimary.href = project.projectUrl;
+      if (btnSecondary) {
+        if (project.repoUrl) {
+          btnSecondary.href = project.repoUrl;
+          btnSecondary.style.display = "flex";
+        } else {
+          btnSecondary.style.display = "none";
+        }
+      }
+
+      // Populate Carousel Images
+      if (slidesContainer) {
+        slidesContainer.innerHTML = project.images.map(img => 
+          `<img class="w-full h-full object-cover shrink-0 select-none" src="${img}" alt="${project.name}" />`
+        ).join('');
+      }
+
+      // Populate Carousel Dots
+      if (dotsContainer) {
+        dotsContainer.innerHTML = project.images.map((_, i) => 
+          `<button onclick="goToSlide(${i})" class="w-2.5 h-2.5 rounded-full transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-white" aria-label="Slide ${i + 1}"></button>`
+        ).join('');
+      }
+
+      updateCarousel();
+
+      // Show Modal (transition)
+      if (modalEl && modalBoxEl) {
+        modalEl.classList.remove("opacity-0", "pointer-events-none");
+        modalEl.classList.add("opacity-100", "pointer-events-auto");
+        modalBoxEl.classList.remove("scale-95", "opacity-0");
+        modalBoxEl.classList.add("scale-100", "opacity-100");
+      }
+
+      // Prevent background scrolling
+      document.body.style.overflow = "hidden";
+    };
+
+    window.closeProjectModal = function() {
+      // Hide Modal (transition)
+      if (modalEl && modalBoxEl) {
+        modalEl.classList.remove("opacity-100", "pointer-events-auto");
+        modalEl.classList.add("opacity-0", "pointer-events-none");
+        modalBoxEl.classList.remove("scale-100", "opacity-100");
+        modalBoxEl.classList.add("scale-95", "opacity-0");
+      }
+
+      // Restore background scrolling
+      document.body.style.overflow = "";
+
+      activeProjectIndex = null;
+    };
+
+    window.goToSlide = function(slideIndex) {
+      if (activeProjectIndex === null) return;
+      const project = PROJECTS[activeProjectIndex];
+      const maxSlides = project.images.length;
+      if (slideIndex < 0) {
+        activeSlideIndex = maxSlides - 1;
+      } else if (slideIndex >= maxSlides) {
+        activeSlideIndex = 0;
+      } else {
+        activeSlideIndex = slideIndex;
+      }
+      updateCarousel();
+    };
+
+    window.nextSlide = function() {
+      goToSlide(activeSlideIndex + 1);
+    };
+
+    window.prevSlide = function() {
+      goToSlide(activeSlideIndex - 1);
+    };
+
+    function updateCarousel() {
+      // Horizontal slide translate
+      if (slidesContainer) {
+        slidesContainer.style.transform = `translateX(-${activeSlideIndex * 100}%)`;
+      }
+
+      // Update dots active style
+      if (dotsContainer) {
+        const dots = dotsContainer.children;
+        for (let i = 0; i < dots.length; i++) {
+          if (i === activeSlideIndex) {
+            dots[i].className = "w-6 h-2.5 rounded-full bg-white transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-white";
+          } else {
+            dots[i].className = "w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-white";
+          }
+        }
+      }
+    }
+
+    function handleSwipe() {
+      const threshold = 50; // pixels
+      if (touchEndX < touchStartX - threshold) {
+        // Swiped left -> next image
+        nextSlide();
+      } else if (touchEndX > touchStartX + threshold) {
+        // Swiped right -> prev image
+        prevSlide();
+      }
+    }
+
+    // Keyboard controls
+    window.addEventListener("keydown", (e) => {
+      if (activeProjectIndex === null) return;
+
+      if (e.key === "Escape") {
+        closeProjectModal();
+      } else if (e.key === "ArrowRight") {
+        nextSlide();
+      } else if (e.key === "ArrowLeft") {
+        prevSlide();
+      }
+    });
   </script>
+  <!-- Project Modal -->
+  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto" role="dialog" aria-modal="true">
+    <!-- Backdrop blur overlay -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-md transition-opacity duration-300"></div>
+
+    <!-- Modal Box Container -->
+    <div id="modal-box" class="relative bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl w-full max-w-3xl overflow-hidden flex flex-col transition-all duration-300 transform scale-95 z-10 border border-outline-variant/15 dark:border-zinc-800">
+      
+      <!-- Close Button (Floating Top-Right) -->
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 dark:bg-white/10 dark:hover:bg-white/20 text-white flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Cerrar modal">
+        <span class="material-symbols-outlined text-xl">close</span>
+      </button>
+
+      <!-- Carousel Area -->
+      <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-container-low dark:bg-zinc-950 overflow-hidden group/carousel">
+        <!-- Slides wrapper -->
+        <div id="carousel-slides" class="flex w-full h-full transition-transform duration-500 ease-out">
+          <!-- Dynamically populated images -->
+        </div>
+
+        <!-- Left Chevron -->
+        <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/35 hover:bg-black/60 dark:bg-zinc-900/40 dark:hover:bg-zinc-900/70 text-white flex items-center justify-center opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-primary z-20" aria-label="Imagen anterior">
+          <span class="material-symbols-outlined text-2xl">chevron_left</span>
+        </button>
+
+        <!-- Right Chevron -->
+        <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/35 hover:bg-black/60 dark:bg-zinc-900/40 dark:hover:bg-zinc-900/70 text-white flex items-center justify-center opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-primary z-20" aria-label="Siguiente imagen">
+          <span class="material-symbols-outlined text-2xl">chevron_right</span>
+        </button>
+
+        <!-- Dots Indicators -->
+        <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          <!-- Dynamically populated dots -->
+        </div>
+      </div>
+
+      <!-- Info Area -->
+      <div class="p-6 sm:p-8 flex flex-col gap-6 overflow-y-auto max-h-[50vh]">
+        <div class="flex flex-col gap-2">
+          <!-- Project name -->
+          <h3 id="modal-project-name" class="text-2xl sm:text-3xl font-extrabold text-editorial dark:text-white leading-tight">Project Name</h3>
+          <!-- Technologies badges -->
+          <div id="modal-project-tech" class="flex flex-wrap gap-2 mt-2">
+            <!-- Badges dynamically added -->
+          </div>
+        </div>
+
+        <!-- Description -->
+        <p id="modal-project-desc" class="text-on-surface-variant dark:text-zinc-300 text-sm sm:text-base leading-relaxed">
+          Project description details.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
+          <!-- Primary action -->
+          <a id="modal-project-btn-primary" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center transition-transform duration-300 active:scale-95 hover:-translate-y-0.5 bg-gradient-to-br from-primary to-primary-container text-sm" data-es="Ver Proyecto" data-en="View Project">
+            Ver Proyecto
+          </a>
+          <!-- Secondary action (source code) -->
+          <a id="modal-project-btn-secondary" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-zinc-700 transition-all duration-300 hover:-translate-y-0.5 text-sm" data-es="Ver Código Fuente" data-en="View Source Code">
+            Ver Código Fuente
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
