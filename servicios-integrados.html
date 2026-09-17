@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Servicios Integrados Web — Case Study | Lautaro Colman</title>
+<meta name="description" content="Caso de estudio técnico sobre la plataforma web corporativa B2B de Servicios Integrados, desarrollada con React, Vite y Supabase CMS por Lautaro Colman."/>
+<meta name="robots" content="index, follow"/>
+
+<link rel="canonical" href="https://lautaroclm.github.io/Portfolio-/servicios-integrados.html"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://lautaroclm.github.io/Portfolio-/servicios-integrados.html"/>
+<meta property="og:title" content="Servicios Integrados Web — Case Study | Lautaro Colman"/>
+<meta property="og:description" content="Plataforma corporativa en producción (serviciosintegradosweb.com) con gestor de novedades CMS y backend Supabase."/>
+<meta property="og:image" content="img/Servicios Integrados 1.webp"/>
+<meta property="og:site_name" content="Lautaro Colman Portfolio"/>
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Servicios Integrados Web — Case Study"/>
+<meta name="twitter:description" content="Plataforma corporativa B2B en producción con React, Vite y Supabase CMS."/>
+<meta name="twitter:image" content="img/Servicios Integrados 1.webp"/>
+
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Servicios Integrados Web",
+  "author": {
+    "@type": "Person",
+    "name": "Lautaro Colman"
+  },
+  "description": "Plataforma web corporativa B2B desarrollada para Servicios Integrados con gestor dinámico de novedades en Supabase."
+}
+</script>
+
+<link rel="icon" type="image/png" href="img/logo.webp"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-background": "#1a1c1d",
+          "background": "#f9f9fb",
+          "surface-container-highest": "#e2e2e4",
+          "surface-container-low": "#f3f3f5",
+          "on-surface-variant": "#474747",
+          "primary-container": "#3b3b3d",
+          "secondary-container": "#d5d4d9",
+          "outline-variant": "#c6c6c6",
+          "surface": "#f9f9fb",
+          "surface-bright": "#f9f9fb",
+          "primary": "#000000",
+          "surface-container-lowest": "#ffffff",
+          "on-primary": "#e4e2e4",
+          "on-surface": "#1a1c1d"
+        },
+        "fontFamily": {
+          "headline": ["Inter"],
+          "body": ["Inter"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; min-height: 100vh; scroll-behavior: smooth; }
+  .text-editorial { color: #1a1c1d; letter-spacing: -0.02em; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-on-scroll { opacity: 0; transform: translateY(1.5rem); transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.05)]" id="site-header">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+<a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+  <span aria-hidden="true" class="material-symbols-outlined text-zinc-900 dark:text-zinc-100" data-icon="terminal">terminal</span>
+  <span class="text-lg font-extrabold tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Inter']">LAUTARO COLMAN</span>
+</a>
+<nav class="hidden md:flex items-center gap-8 font-['Inter'] text-sm tracking-wide">
+  <button id="lang-toggle" class="lang-toggle-btn text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors font-semibold" aria-label="Toggle language">EN</button>
+  <a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="index.html#hero" data-es="Inicio" data-en="Home">Inicio</a>
+  <a class="text-zinc-900 dark:text-white font-medium border-b border-zinc-900 dark:border-zinc-50 transition-colors" href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="index.html#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+</nav>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden material-symbols-outlined" id="menu-toggle" type="button">menu</button>
+</div>
+<nav class="md:hidden border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 px-4 sm:px-6 py-4" id="mobile-menu">
+<div class="flex flex-col gap-4 font-['Inter'] text-sm tracking-wide">
+  <a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="index.html#hero" data-es="Inicio" data-en="Home">Inicio</a>
+  <a class="text-zinc-950 dark:text-zinc-50 font-bold transition-colors" href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="index.html#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <button class="lang-toggle-btn text-left text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors font-semibold" aria-label="Toggle language">EN</button>
+</div>
+</nav>
+</header>
+
+<main class="pt-20">
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20" id="hero">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-7">
+        <div class="flex flex-wrap gap-2.5 mb-6">
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-container text-xs font-bold uppercase tracking-wider">
+            <span aria-hidden="true" class="material-symbols-outlined text-xs">analytics</span>
+            <span data-es="Case Study" data-en="Case Study">Case Study</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-bold uppercase tracking-wider" data-es="Cliente Real / En Producción" data-en="Real Client / In Production">
+            Cliente Real / En Producción
+          </span>
+        </div>
+        <h1 class="text-[2.5rem] sm:text-[3.5rem] md:text-[4.25rem] font-extrabold leading-[1.05] tracking-tighter mb-6 text-editorial">
+          Servicios Integrados Web
+        </h1>
+        <p class="text-lg sm:text-xl text-on-surface-variant opacity-80 max-w-2xl mb-8 leading-relaxed" data-es="Plataforma web corporativa de alto rendimiento desarrollada para Servicios Integrados, empresa con más de 30 años de trayectoria en ingeniería y mantenimiento industrial. Publicado en producción bajo su propio dominio." data-en="High-performance corporate web platform developed for Servicios Integrados, an industrial engineering and reliability partner with over 30 years of experience serving the food manufacturing sector. Deployed on custom domain in production.">
+          Plataforma web corporativa de alto rendimiento desarrollada para Servicios Integrados, empresa con más de 30 años de trayectoria en ingeniería y mantenimiento industrial. Publicado en producción bajo su propio dominio.
+        </p>
+        <div class="flex flex-wrap gap-3 sm:gap-4">
+          <a class="px-6 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm shadow-sm" href="https://serviciosintegradosweb.com" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true" class="material-symbols-outlined text-base">language</span>
+            <span data-es="Ver Sitio en Producción" data-en="View Production Site">Ver Sitio en Producción</span>
+          </a>
+          <a class="px-6 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm" href="https://github.com/LautaroCLM/servicios_integrados" target="_blank" rel="noopener noreferrer">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+            <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
+          </a>
+          <a class="px-6 h-[48px] border border-outline-variant/30 text-on-surface rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all text-sm" href="index.html#proyectos">
+            <span aria-hidden="true" class="material-symbols-outlined text-base">arrow_back</span>
+            <span data-es="Volver al Portafolio" data-en="Back to Portfolio">Volver al Portafolio</span>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 relative">
+        <div class="aspect-[16/10] rounded-2xl overflow-hidden shadow-xl border border-outline-variant/15 bg-surface-container-low">
+          <img alt="Servicios Integrados Web Corporate Site" fetchpriority="high" width="800" height="500" class="w-full h-full object-cover lightbox-trigger cursor-pointer hover:scale-105 transition-transform duration-500" src="img/Servicios Integrados 1.webp"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Context & Goal Section -->
+  <section class="bg-surface-container-low py-16 sm:py-20 border-y border-outline-variant/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Context -->
+        <div class="reveal-on-scroll p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/15">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
+            <span aria-hidden="true" class="material-symbols-outlined" data-icon="domain">domain</span>
+          </div>
+          <h2 class="text-2xl font-bold text-editorial mb-4" data-es="El Contexto" data-en="The Context">El Contexto</h2>
+          <p class="text-on-surface-variant leading-relaxed text-sm sm:text-base" data-es="Servicios Integrados es una firma especializada en soluciones de ingeniería mecánica, tornería de precisión, mantenimiento preventivo y confiabilidad industrial para plantas de la industria alimenticia. La empresa necesitaba consolidar su presencia digital B2B reflejando su trayectoria de más de 30 años." data-en="Servicios Integrados is an engineering and maintenance provider with over 30 years of industrial experience. The company needed to establish a high-trust digital presence that reflected their 30-year industry leadership and core service areas.">
+            Servicios Integrados es una firma especializada en soluciones de ingeniería mecánica, tornería de precisión, mantenimiento preventivo y confiabilidad industrial para plantas de la industria alimenticia. La empresa necesitaba consolidar su presencia digital B2B reflejando su trayectoria de más de 30 años.
+          </p>
+        </div>
+        <!-- Goal -->
+        <div class="reveal-on-scroll reveal-delay-1 p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/15">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
+            <span aria-hidden="true" class="material-symbols-outlined" data-icon="flag">flag</span>
+          </div>
+          <h2 class="text-2xl font-bold text-editorial mb-4" data-es="El Objetivo" data-en="The Goal">El Objetivo</h2>
+          <p class="text-on-surface-variant leading-relaxed text-sm sm:text-base" data-es="Diseñar e implementar una plataforma web corporativa moderna de alto rendimiento, publicada bajo dominio propio en producción (serviciosintegradosweb.com). Debía estructurar sus áreas de servicios e incorporar un panel CMS respaldado por Supabase para publicar novedades sin intervención de código." data-en="Design and deploy a modern corporate web platform under a custom production domain (serviciosintegradosweb.com). It required showcasing core B2B service areas and connecting a dynamic Supabase CMS for self-managed client news publishing.">
+            Diseñar e implementar una plataforma web corporativa moderna de alto rendimiento, publicada bajo dominio propio en producción (serviciosintegradosweb.com). Debía estructurar sus áreas de servicios e incorporar un panel CMS respaldado por Supabase para publicar novedades sin intervención de código.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features & Services Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="reveal-on-scroll mb-12 text-center">
+      <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Módulos &amp; Capacidades" data-en="Modules &amp; Features">Módulos &amp; Capacidades</h2>
+      <h3 class="text-3xl sm:text-4xl font-extrabold text-editorial" data-es="Características del Sitio Web" data-en="Website Features">Características del Sitio Web</h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="reveal-on-scroll reveal-delay-1 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col">
+        <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="newspaper">newspaper</span>
+        <h4 class="font-bold text-lg text-editorial mb-2" data-es="CMS Dinámico de Novedades" data-en="Dynamic News CMS">CMS Dinámico de Novedades</h4>
+        <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Sistema de gestión de contenidos conectado a Supabase que permite al cliente redactar, actualizar y publicar noticias o avisos institucionales directamente." data-en="Content management system integrated with Supabase allowing the client to draft and publish corporate news articles autonomously.">
+          Sistema de gestión de contenidos conectado a Supabase que permite al cliente redactar, actualizar y publicar noticias o avisos institucionales directamente.
+        </p>
+      </div>
+
+      <div class="reveal-on-scroll reveal-delay-2 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col">
+        <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="precision_manufacturing">precision_manufacturing</span>
+        <h4 class="font-bold text-lg text-editorial mb-2" data-es="Showcase de Servicios B2B" data-en="B2B Services Showcase">Showcase de Servicios B2B</h4>
+        <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Presentación estructurada de áreas técnicas: Ingeniería Mecánica, Diseño 3D, Fabricación Sanitaria, Mantenimiento Preventivo y Método Faro." data-en="Structured presentation of core engineering verticals: Mechanical Engineering, 3D Design, Sanitary Machining, and Predictive Maintenance.">
+          Presentación estructurada de áreas técnicas: Ingeniería Mecánica, Diseño 3D, Fabricación Sanitaria, Mantenimiento Preventivo y Método Faro.
+        </p>
+      </div>
+
+      <div class="reveal-on-scroll reveal-delay-3 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col">
+        <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="mail">mail</span>
+        <h4 class="font-bold text-lg text-editorial mb-2" data-es="Formularios de Contacto B2B" data-en="B2B Contact Forms">Formularios de Contacto B2B</h4>
+        <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Flujo de consultas comerciales optimizado para cotizaciones de ingeniería, auditorías técnicas y reuniones de trabajo con clientes industriales." data-en="Integrated business inquiry workflows for technical audits, meeting scheduling, and commercial project quoting.">
+          Flujo de consultas comerciales optimizado para cotizaciones de ingeniería, auditorías técnicas y reuniones de trabajo con clientes industriales.
+        </p>
+      </div>
+    </div>
+
+    <!-- Verified Stack -->
+    <div class="reveal-on-scroll reveal-delay-4 mt-12 text-center">
+      <h4 class="font-bold text-lg text-editorial mb-4" data-es="Tecnologías Verificadas" data-en="Verified Technologies">Tecnologías Verificadas</h4>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">React</span>
+        <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">TypeScript</span>
+        <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">Tailwind CSS</span>
+        <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">Supabase</span>
+        <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">Node.js</span>
+        <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">Vite</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Challenges Section -->
+  <section class="bg-surface-container-low py-16 sm:py-24 border-y border-outline-variant/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal-on-scroll mb-12 text-center">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Desafíos Técnicos" data-en="Technical Challenges">Desafíos Técnicos</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-editorial" data-es="Decisiones de Desarrollo" data-en="Development Decisions">Decisiones de Desarrollo</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="reveal-on-scroll reveal-delay-1 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary mb-2" data-es="Desafío 01" data-en="Challenge 01">Desafío 01</span>
+          <h4 class="font-bold text-lg text-editorial mb-3" data-es="Autonomía de Contenidos para el Cliente" data-en="Client Content Autonomy">Autonomía de Contenidos para el Cliente</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed mb-3"><strong class="text-editorial" data-es="Problema:" data-en="Problem:">Problema:</strong> <span data-es="El cliente necesitaba publicar noticias institucionales sin depender de un desarrollador para editar el código." data-en="The client required publishing company news updates without developer intervention in the source codebase.">El cliente necesitaba publicar noticias institucionales sin depender de un desarrollador para editar el código.</span></p>
+          <p class="text-xs text-on-surface-variant leading-relaxed mb-3"><strong class="text-editorial" data-es="Decisión:" data-en="Decision:">Decisión:</strong> <span data-es="Integrar una base de datos ligera en Supabase para almacenar las noticias de forma dinámica." data-en="Connect a Supabase backend to dynamically fetch and store news articles.">Integrar una base de datos ligera en Supabase para almacenar las noticias de forma dinámica.</span></p>
+          <p class="text-xs text-on-surface-variant leading-relaxed pt-3 border-t border-outline-variant/10"><strong class="text-editorial" data-es="Resultado:" data-en="Result:">Resultado:</strong> <span data-es="Carga y actualización de novedades autónoma en tiempo real." data-en="Self-managed article creation and real-time frontend rendering.">Carga y actualización de novedades autónoma en tiempo real.</span></p>
+        </div>
+
+        <div class="reveal-on-scroll reveal-delay-1 bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 flex flex-col gap-4">
+          <h3 class="text-xl font-bold text-editorial" data-es="1. CMS Autogestionable Liviano" data-en="1. Lightweight Self-Managed CMS">1. CMS Autogestionable Liviano</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed" data-es="Se evitó la sobrecarga de un CMS monolítico tradicional implementando una solución basada en tablas de Supabase con autenticación de usuarios administradores y consultas optimizadas desde React." data-en="Avoided traditional monolithic CMS bloat by building a streamlined solution on top of Supabase database tables with admin authentication and lightweight React fetching.">Se evitó la sobrecarga de un CMS monolítico tradicional implementando una solución basada en tablas de Supabase con autenticación de usuarios administradores y consultas optimizadas desde React.</p>
+        </div>
+
+        <div class="reveal-on-scroll reveal-delay-2 bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 flex flex-col gap-4">
+          <h3 class="text-xl font-bold text-editorial" data-es="2. Despliegue en Dominio de Producción" data-en="2. Custom Production Domain Deployment">2. Despliegue en Dominio de Producción</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed" data-es="Configuración de parámetros DNS, certificados SSL/TLS y políticas CORS en Supabase para operar de forma segura bajo el dominio propio del cliente `serviciosintegradosweb.com`." data-en="Configured DNS records, SSL/TLS certificates, and Supabase CORS policies to safely run under the client's custom domain `serviciosintegradosweb.com`.">Configuración de parámetros DNS, certificados SSL/TLS y políticas CORS en Supabase para operar de forma segura bajo el dominio propio del cliente `serviciosintegradosweb.com`.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Gallery Section -->
+  <section class="bg-surface-container-low py-16 sm:py-24 border-t border-outline-variant/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12 reveal-on-scroll">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Galería de Capturas" data-en="Screenshots Gallery">Galería de Capturas</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-editorial" data-es="Vistas de la Plataforma" data-en="Platform Screenshots">Vistas de la Plataforma</h3>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="reveal-on-scroll reveal-delay-1 flex flex-col group cursor-pointer lightbox-trigger">
+          <div class="aspect-[16/10] rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/15 relative">
+            <img src="img/Servicios Integrados 1.webp" alt="Servicios Integrados Web 1" loading="lazy" width="600" height="375" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <span class="font-bold text-sm text-editorial mt-3" data-es="Página Principal" data-en="Main Landing Page">Página Principal</span>
+        </div>
+        <div class="reveal-on-scroll reveal-delay-2 flex flex-col group cursor-pointer lightbox-trigger">
+          <div class="aspect-[16/10] rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/15 relative">
+            <img src="img/Servicios Integrados 2.webp" alt="Servicios Integrados Web 2" loading="lazy" width="600" height="375" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <span class="font-bold text-sm text-editorial mt-3" data-es="Sección de Servicios" data-en="Services Showcase">Sección de Servicios</span>
+        </div>
+        <div class="reveal-on-scroll reveal-delay-3 flex flex-col group cursor-pointer lightbox-trigger">
+          <div class="aspect-[16/10] rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/15 relative">
+            <img src="img/Servicios Integrados 3.webp" alt="Servicios Integrados Web 3" loading="lazy" width="600" height="375" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <span class="font-bold text-sm text-editorial mt-3" data-es="Publicaciones &amp; Novedades" data-en="News &amp; Articles">Publicaciones &amp; Novedades</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result & CTA Section -->
+  <section class="max-w-4xl mx-auto px-4 py-16 sm:py-24 text-center">
+    <h3 class="text-3xl font-extrabold text-editorial mb-4" data-es="Resultado del Proyecto" data-en="Project Deliverable">Resultado del Proyecto</h3>
+    <p class="text-on-surface-variant text-base max-w-xl mx-auto mb-8" data-es="Sitio web corporativo en producción accesible bajo su propio dominio comercial." data-en="Corporate website live in production under custom commercial domain name.">
+      Sitio web corporativo en producción accesible bajo su propio dominio comercial.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a class="px-8 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm shadow-md" href="https://serviciosintegradosweb.com" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true" class="material-symbols-outlined text-base">language</span>
+        <span data-es="Ver Sitio en Producción" data-en="View Production Site">Ver Sitio en Producción</span>
+      </a>
+      <a class="px-8 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm" href="https://github.com/LautaroCLM/servicios_integrados" target="_blank" rel="noopener noreferrer">
+        <span data-es="Ver Repositorio GitHub" data-en="View GitHub Repository">Ver Repositorio GitHub</span>
+      </a>
+      <a class="px-8 h-[48px] border border-outline-variant/30 text-on-surface rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all text-sm" href="stockapp.html">
+        <span data-es="Volver a Stock Management" data-en="Back to Stock Management">Volver a Stock Management</span>
+        <span aria-hidden="true" class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant/15 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+  <span class="text-sm font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Inter']">© 2026 - LAUTARO COLMAN</span>
+  <div class="flex gap-6">
+    <a class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-sm uppercase font-medium" href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  </div>
+</div>
+</footer>
+
+<!-- Lightbox Modal container -->
+<div id="lightbox-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
+  <button id="lightbox-close" class="absolute top-4 right-4 z-[110] w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Cerrar modal">
+    <span aria-hidden="true" class="material-symbols-outlined text-2xl">close</span>
+  </button>
+  <img id="lightbox-img" src="" alt="Captura ampliada" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transition-transform duration-300 scale-95" />
+</div>
+
+<!-- Floating Dark Mode Toggle -->
+<button id="theme-toggle" class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-lg flex items-center justify-center transition-transform hover:scale-110 active:scale-95" aria-label="Toggle Dark Mode">
+  <span aria-hidden="true" class="material-symbols-outlined dark:hidden">dark_mode</span>
+  <span aria-hidden="true" class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+
+<script>
+  // Language translation logic
+  const langToggles = document.querySelectorAll(".lang-toggle-btn");
+  let currentLang = "es";
+  
+  const updateLanguage = () => {
+    document.querySelectorAll("[data-es][data-en]").forEach(el => {
+      el.textContent = currentLang === "es" ? el.dataset.es : el.dataset.en;
+    });
+    langToggles.forEach(btn => {
+      btn.textContent = currentLang === "es" ? "EN" : "ES";
+    });
+  };
+  langToggles.forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      updateLanguage();
+    });
+  });
+
+  // Dark Mode toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlEl = document.documentElement;
+  
+  if (localStorage.theme === 'dark') {
+    htmlEl.classList.add('dark');
+    htmlEl.classList.remove('light');
+  } else {
+    htmlEl.classList.add('light');
+    htmlEl.classList.remove('dark');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    if (htmlEl.classList.contains('dark')) {
+      htmlEl.classList.remove('dark');
+      htmlEl.classList.add('light');
+      localStorage.theme = 'light';
+    } else {
+      htmlEl.classList.add('dark');
+      htmlEl.classList.remove('light');
+      localStorage.theme = 'dark';
+    }
+  });
+
+  // Lightbox Modal
+  const lightboxModal = document.getElementById("lightbox-modal");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+  const triggers = document.querySelectorAll(".lightbox-trigger");
+
+  triggers.forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightboxModal.classList.remove("opacity-0", "pointer-events-none");
+      lightboxImg.classList.remove("scale-95");
+      lightboxImg.classList.add("scale-100");
+    });
+  });
+
+  const closeLightbox = () => {
+    lightboxModal.classList.add("opacity-0", "pointer-events-none");
+    lightboxImg.classList.remove("scale-100");
+    lightboxImg.classList.add("scale-95");
+  };
+
+  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  if (lightboxModal) lightboxModal.addEventListener("click", (e) => { if (e.target === lightboxModal) closeLightbox(); });
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+
+  // Scroll animations
+  const revealElements = document.querySelectorAll(".reveal-on-scroll");
+  if (revealElements.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    revealElements.forEach((el) => io.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add("is-visible"));
+  }
+
+  // Header scroll
+  const header = document.getElementById("site-header");
+  if (header) {
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("header-scrolled", window.scrollY > 24);
+    }, { passive: true });
+  }
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "close" : "menu";
+    });
+  }
+
+  updateLanguage();
+</script>
+</body>
+</html>

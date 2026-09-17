@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TPM Elevadores — Case Study | Lautaro Colman</title>
+<meta name="description" content="Caso de estudio técnico de TPM Elevadores, un sistema industrial de inspecciones y mantenimiento preventivo con escaneo QR y Supabase por Lautaro Colman."/>
+<meta name="robots" content="index, follow"/>
+
+<link rel="canonical" href="https://lautaroclm.github.io/Portfolio-/tpm.html"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://lautaroclm.github.io/Portfolio-/tpm.html"/>
+<meta property="og:title" content="TPM Elevadores — Case Study | Lautaro Colman"/>
+<meta property="og:description" content="Sistema industrial para digitalización de checklist de autoelevadores con escaneo QR, Supabase Storage y RLS."/>
+<meta property="og:image" content="img/TPM Elevadores.webp"/>
+<meta property="og:site_name" content="Lautaro Colman Portfolio"/>
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="TPM Elevadores — Case Study"/>
+<meta name="twitter:description" content="Sistema industrial con escaneo QR, Next.js, TypeScript y Supabase."/>
+<meta name="twitter:image" content="img/TPM Elevadores.webp"/>
+
+<!-- Structured Data (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TPM Elevadores",
+  "applicationCategory": "IndustrialApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "author": {
+    "@type": "Person",
+    "name": "Lautaro Colman"
+  },
+  "description": "Sistema web y móvil industrial para la digitalización de inspecciones operativas y mantenimiento preventivo de autoelevadores."
+}
+</script>
+
+<link rel="icon" type="image/png" href="img/logo.webp"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-background": "#1a1c1d",
+          "background": "#f9f9fb",
+          "surface-container-highest": "#e2e2e4",
+          "surface-container-low": "#f3f3f5",
+          "on-surface-variant": "#474747",
+          "primary-container": "#3b3b3d",
+          "secondary-container": "#d5d4d9",
+          "outline-variant": "#c6c6c6",
+          "surface": "#f9f9fb",
+          "surface-bright": "#f9f9fb",
+          "primary": "#000000",
+          "surface-container-lowest": "#ffffff",
+          "on-primary": "#e4e2e4",
+          "on-surface": "#1a1c1d"
+        },
+        "fontFamily": {
+          "headline": ["Inter"],
+          "body": ["Inter"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; min-height: 100vh; scroll-behavior: smooth; }
+  .text-editorial { color: #1a1c1d; letter-spacing: -0.02em; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-on-scroll { opacity: 0; transform: translateY(1.5rem); transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+  }
+</style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.05)]" id="site-header">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+<a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+  <span aria-hidden="true" class="material-symbols-outlined text-zinc-900 dark:text-zinc-100" data-icon="terminal">terminal</span>
+  <span class="text-lg font-extrabold tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Inter']">LAUTARO COLMAN</span>
+</a>
+<nav class="hidden md:flex items-center gap-8 font-['Inter'] text-sm tracking-wide">
+  <button id="lang-toggle" class="lang-toggle-btn text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors font-semibold" aria-label="Toggle language">EN</button>
+  <a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="index.html#hero" data-es="Inicio" data-en="Home">Inicio</a>
+  <a class="text-zinc-900 dark:text-white font-medium border-b border-zinc-900 dark:border-zinc-50 transition-colors" href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="index.html#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+</nav>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden material-symbols-outlined" id="menu-toggle" type="button">menu</button>
+</div>
+<nav class="md:hidden border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 px-4 sm:px-6 py-4" id="mobile-menu">
+<div class="flex flex-col gap-4 font-['Inter'] text-sm tracking-wide">
+  <a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="index.html#hero" data-es="Inicio" data-en="Home">Inicio</a>
+  <a class="text-zinc-950 dark:text-zinc-50 font-bold transition-colors" href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="index.html#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+  <button class="lang-toggle-btn text-left text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors font-semibold" aria-label="Toggle language">EN</button>
+</div>
+</nav>
+</header>
+
+<main class="pt-20">
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20" id="hero">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-7">
+        <div class="flex flex-wrap gap-2.5 mb-6">
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-container text-xs font-bold uppercase tracking-wider">
+            <span aria-hidden="true" class="material-symbols-outlined text-xs">analytics</span>
+            <span data-es="Case Study" data-en="Case Study">Case Study</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-xs font-bold uppercase tracking-wider" data-es="Sistema Industrial" data-en="Industrial System">
+            Sistema Industrial
+          </span>
+        </div>
+        <h1 class="text-[2.5rem] sm:text-[3.5rem] md:text-[4.25rem] font-extrabold leading-[1.05] tracking-tighter mb-6 text-editorial">
+          TPM Elevadores
+        </h1>
+        <p class="text-lg sm:text-xl text-on-surface-variant opacity-80 max-w-2xl mb-8 leading-relaxed" data-es="Sistema web y móvil diseñado para la digitalización de inspecciones operativas (TPM Nivel 1) y mantenimiento preventivo de flotas de autoelevadores industriales en planta mediante códigos QR." data-en="Web and mobile system engineered to digitize Level 1 Autonomous Maintenance (TPM) and daily operational inspections for industrial forklift fleets using QR codes.">
+          Sistema web y móvil diseñado para la digitalización de inspecciones operativas (TPM Nivel 1) y mantenimiento preventivo de flotas de autoelevadores industriales en planta mediante códigos QR.
+        </p>
+        <div class="flex flex-wrap gap-3 sm:gap-4">
+          <a class="px-6 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm shadow-sm" href="https://tpm-autoelevadores.vercel.app" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true" class="material-symbols-outlined text-base">language</span>
+            <span data-es="Ver Demo Web" data-en="View Web Demo">Ver Demo Web</span>
+          </a>
+          <a class="px-6 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm" href="https://github.com/LautaroCLM/tpm-autoelevadores" target="_blank" rel="noopener noreferrer">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+            <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
+          </a>
+          <a class="px-6 h-[48px] border border-outline-variant/30 text-on-surface rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all text-sm" href="index.html#proyectos">
+            <span aria-hidden="true" class="material-symbols-outlined text-base">arrow_back</span>
+            <span data-es="Volver al Portafolio" data-en="Back to Portfolio">Volver al Portafolio</span>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 relative">
+        <div class="aspect-[16/10] rounded-2xl overflow-hidden shadow-xl border border-outline-variant/15 bg-surface-container-low">
+          <img alt="TPM Elevadores Main Interface" fetchpriority="high" width="800" height="500" class="w-full h-full object-cover lightbox-trigger cursor-pointer hover:scale-105 transition-transform duration-500" src="img/TPM Elevadores.webp"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview & Problem Section -->
+  <section class="bg-surface-container-low py-16 sm:py-20 border-y border-outline-variant/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Problem -->
+        <div class="reveal-on-scroll p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/15">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
+            <span aria-hidden="true" class="material-symbols-outlined" data-icon="warning">warning</span>
+          </div>
+          <h2 class="text-2xl font-bold text-editorial mb-4" data-es="El Problema" data-en="The Problem">El Problema</h2>
+          <p class="text-on-surface-variant leading-relaxed text-sm sm:text-base" data-es="En plantas industriales, la verificación pre-turno de autoelevadores se realizaba tradicionalmente en planillas de papel. Esto provocaba pérdida de planillas, imprecisión en las horas de uso, fallas no notificados a tiempo y falta de evidencias fotográficas ante roturas o anomalías de seguridad." data-en="In industrial manufacturing plants, pre-shift forklift checks were traditionally done using paper forms. This led to lost records, inaccurate hour-meter tracking, delayed malfunction alerts, and lack of photographic evidence for safety faults.">
+            En plantas industriales, la verificación pre-turno de autoelevadores se realizaba tradicionalmente en planillas de papel. Esto provocaba pérdida de planillas, imprecisión en las horas de uso, fallas no notificados a tiempo y falta de evidencias fotográficas ante roturas o anomalías de seguridad.
+          </p>
+        </div>
+        <!-- Solution -->
+        <div class="reveal-on-scroll reveal-delay-1 p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/15">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-6">
+            <span aria-hidden="true" class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+          </div>
+          <h2 class="text-2xl font-bold text-editorial mb-4" data-es="La Solución" data-en="The Solution">La Solución</h2>
+          <p class="text-on-surface-variant leading-relaxed text-sm sm:text-base" data-es="Desarrollé un sistema web responsivo que permite a los operarios escanear desde su smartphone el código QR único del vehículo, desplegando el checklist digital de inspección previa al turno. Permite adjuntar fotografías de evidencias ante anomalías y notificar inmediatamente a los supervisores de mantenimiento." data-en="I built a mobile-first web app that lets operators scan a unique QR code attached to each machine chassis to open a digital pre-shift inspection checklist on their mobile browser. Operators can attach photo evidence of faults and instantly alert maintenance supervisors.">
+            Desarrollé un sistema web responsivo que permite a los operarios escanear desde su smartphone el código QR único del vehículo, desplegando el checklist digital de inspección previa al turno. Permite adjuntar fotografías de evidencias ante anomalías y notificar inmediatamente a los supervisores de mantenimiento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Workflow Flowchart Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="reveal-on-scroll mb-12 text-center">
+      <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Flujo de Trabajo" data-en="System Workflow">Flujo de Trabajo</h2>
+      <h3 class="text-3xl sm:text-4xl font-extrabold text-editorial" data-es="Pasos de Inspección Operativa" data-en="Operational Inspection Steps">Pasos de Inspección Operativa</h3>
+    </div>
+
+    <!-- Step-by-step Flowchart Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 text-center">
+      <div class="reveal-on-scroll reveal-delay-1 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">1</div>
+        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Escaneo QR" data-en="QR Scan">Escaneo QR</h4>
+        <p class="text-xs text-on-surface-variant" data-es="Lectura del código único en el chasis." data-en="Scanning unique machine QR code.">Lectura del código único en el chasis.</p>
+      </div>
+
+      <div class="reveal-on-scroll reveal-delay-2 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">2</div>
+        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Identificación" data-en="Identification">Identificación</h4>
+        <p class="text-xs text-on-surface-variant" data-es="Autenticación del operario por legajo." data-en="Operator login via employee ID.">Autenticación del operario por legajo.</p>
+      </div>
+
+      <div class="reveal-on-scroll reveal-delay-3 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">3</div>
+        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Checklist" data-en="Checklist">Checklist</h4>
+        <p class="text-xs text-on-surface-variant" data-es="Revisión de fluidos, frenos y luces." data-en="Safety fluids, brakes, and lights check.">Revisión de fluidos, frenos y luces.</p>
+      </div>
+
+      <div class="reveal-on-scroll reveal-delay-4 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">4</div>
+        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Reporte + Foto" data-en="Fault + Photo">Reporte + Foto</h4>
+        <p class="text-xs text-on-surface-variant" data-es="Adjunto de evidencia ante averías." data-en="Photo upload for detected faults.">Adjunto de evidencia ante averías.</p>
+      </div>
+
+      <div class="reveal-on-scroll reveal-delay-5 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">5</div>
+        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Dashboard" data-en="Dashboard">Dashboard</h4>
+        <p class="text-xs text-on-surface-variant" data-es="Notificación a mantenimiento." data-en="Alert sent to maintenance leads.">Notificación a mantenimiento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Architecture Section -->
+  <section class="bg-surface-container-low py-16 sm:py-24 border-y border-outline-variant/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal-on-scroll mb-12 text-center">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Seguridad &amp; Datos" data-en="Security &amp; Data">Seguridad &amp; Datos</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-editorial" data-es="Arquitectura &amp; Políticas RLS" data-en="Architecture &amp; RLS Policies">Arquitectura &amp; Políticas RLS</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="reveal-on-scroll reveal-delay-1 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col">
+          <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="shield">shield</span>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Row Level Security (RLS)" data-en="Row Level Security (RLS)">Row Level Security (RLS)</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Políticas de seguridad a nivel de fila en PostgreSQL / Supabase, asegurando que cada operario edite únicamente sus inspecciones y los supervisores accedan al estado global." data-en="Row level security policies configured in PostgreSQL / Supabase, enforcing data isolation between plant operators and supervisory staff.">
+            Políticas de seguridad a nivel de fila en PostgreSQL / Supabase, asegurando que cada operario edite únicamente sus inspecciones y los supervisores accedan al estado global.
+          </p>
+        </div>
+
+        <div class="reveal-on-scroll reveal-delay-2 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col">
+          <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="cloud_upload">cloud_upload</span>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Supabase Storage" data-en="Supabase Storage">Supabase Storage</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Almacenamiento seguro de evidencias fotográficas vinculadas de forma inmutable al legajo del operario y al identificador de la inspección." data-en="Secure storage buckets holding photo evidence linked directly to operator employee IDs and inspection records.">
+            Almacenamiento seguro de evidencias fotográficas vinculadas de forma inmutable al legajo del operario y al identificador de la inspección.
+          </p>
+        </div>
+
+        <div class="reveal-on-scroll reveal-delay-3 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col">
+          <span aria-hidden="true" class="material-symbols-outlined text-primary text-3xl mb-3" data-icon="admin_panel_settings">admin_panel_settings</span>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Roles &amp; Permisos" data-en="Roles &amp; Permissions">Roles &amp; Permisos</h4>
+          <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Control de acceso basado en roles (RBAC) que separa la interfaz de inspección ligera para operarios del dashboard avanzado para supervisores y técnicos." data-en="Role-Based Access Control (RBAC) separating the lightweight operator inspection UI from the supervisory maintenance metrics portal.">
+            Control de acceso basado en roles (RBAC) que separa la interfaz de inspección ligera para operarios del dashboard avanzado para supervisores y técnicos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Verified Tech Pills -->
+      <div class="reveal-on-scroll reveal-delay-4 mt-12 text-center">
+        <h4 class="font-bold text-lg text-editorial mb-4" data-es="Tecnologías Verificadas" data-en="Verified Technologies">Tecnologías Verificadas</h4>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">Next.js</span>
+          <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">React</span>
+          <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">TypeScript</span>
+          <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">Supabase</span>
+          <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">PostgreSQL</span>
+          <span class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/20 text-sm font-semibold text-editorial shadow-sm">Tailwind CSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Challenges Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="reveal-on-scroll mb-12 text-center">
+      <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Desafíos de Desarrollo" data-en="Development Challenges">Desafíos de Desarrollo</h2>
+      <h3 class="text-3xl sm:text-4xl font-extrabold text-editorial" data-es="Decisiones de Ingeniería" data-en="Engineering Decisions">Decisiones de Ingeniería</h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="reveal-on-scroll reveal-delay-1 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm">
+        <span class="text-xs font-bold uppercase tracking-wider text-primary mb-2" data-es="Desafío 01" data-en="Challenge 01">Desafío 01</span>
+        <h4 class="font-bold text-lg text-editorial mb-3" data-es="Acceso Ultra Rápido en Planta" data-en="Ultra Fast In-Plant Access">Acceso Ultra Rápido en Planta</h4>
+        <p class="text-xs text-on-surface-variant leading-relaxed mb-3"><strong class="text-editorial" data-es="Problema:" data-en="Problem:">Problema:</strong> <span data-es="Los operarios necesitan abrir el checklist al inicio del turno sin instalar aplicaciones desde app stores ni requerir procesos largos de inicio de sesión." data-en="Operators need to open the checklist at shift start without installing native store apps or lengthy onboarding logins.">Los operarios necesitan abrir el checklist al inicio del turno sin instalar aplicaciones desde app stores ni requerir procesos largos de inicio de sesión.</span></p>
+        <p class="text-xs text-on-surface-variant leading-relaxed mb-3"><strong class="text-editorial" data-es="Decisión:" data-en="Decision:">Decisión:</strong> <span data-es="Desarrollar una Web App responsiva/PWA ligera con lectura de códigos QR directos y acceso optimizado." data-en="Build a lightweight, mobile-responsive PWA with QR code routing and optimized asset loading.">Desarrollar una Web App responsiva/PWA ligera con lectura de códigos QR directos y acceso optimizado.</span></p>
+        <p class="text-xs text-on-surface-variant leading-relaxed pt-3 border-t border-outline-variant/10"><strong class="text-editorial" data-es="Resultado:" data-en="Result:">Resultado:</strong> <span data-es="Acceso inmediato en menos de 2 segundos desde cualquier dispositivo móvil." data-en="Instant load time under 2 seconds from any mobile web browser.">Acceso inmediato en menos de 2 segundos desde cualquier dispositivo móvil.</span></p>
+      </div>
+
+      <div class="reveal-on-scroll reveal-delay-2 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm">
+        <span class="text-xs font-bold uppercase tracking-wider text-primary mb-2" data-es="Desafío 02" data-en="Challenge 02">Desafío 02</span>
+        <h4 class="font-bold text-lg text-editorial mb-3" data-es="Trazabilidad e Integridad" data-en="Traceability &amp; Integrity">Trazabilidad e Integridad</h4>
+        <p class="text-xs text-on-surface-variant leading-relaxed mb-3"><strong class="text-editorial" data-es="Problema:" data-en="Problem:">Problema:</strong> <span data-es="Asegurar que los reportes de falla contengan evidencias verificables e inalterables." data-en="Ensure malfunction reports contain verifiable, tamper-evident records.">Asegurar que los reportes de falla contengan evidencias verificables e inalterables.</span></p>
+        <p class="text-xs text-on-surface-variant leading-relaxed mb-3"><strong class="text-editorial" data-es="Decisión:" data-en="Decision:">Decisión:</strong> <span data-es="Asociar cada informe a una captura fotográfica requerida con marca temporal del servidor." data-en="Enforce mandatory photo uploads stored on Supabase linked to server timestamps.">Asociar cada informe a una captura fotográfica requerida con marca temporal del servidor.</span></p>
+        <p class="text-xs text-on-surface-variant leading-relaxed pt-3 border-t border-outline-variant/10"><strong class="text-editorial" data-es="Resultado:" data-en="Result:">Resultado:</strong> <span data-es="Trazabilidad completa de fallas para auditorías y decisiones de mantenimiento." data-en="Complete audit trail of equipment status for maintenance planning.">Trazabilidad completa de fallas para auditorías y decisiones de mantenimiento.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result & CTA Section -->
+  <section class="max-w-4xl mx-auto px-4 py-16 sm:py-24 text-center">
+    <h3 class="text-3xl font-extrabold text-editorial mb-4" data-es="Resultado del Proyecto" data-en="Project Deliverable">Resultado del Proyecto</h3>
+    <p class="text-on-surface-variant text-base max-w-xl mx-auto mb-8" data-es="Aplicación web desplegada en producción y lista para su uso operativo en flotas de autoelevadores industriales." data-en="Web application deployed in production, ready for operational use across industrial forklift fleets.">
+      Aplicación web desplegada en producción y lista para su uso operativo en flotas de autoelevadores industriales.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a class="px-8 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm shadow-md" href="https://tpm-autoelevadores.vercel.app" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true" class="material-symbols-outlined text-base">language</span>
+        <span data-es="Ver Demo Web" data-en="View Web Demo">Ver Demo Web</span>
+      </a>
+      <a class="px-8 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm" href="https://github.com/LautaroCLM/tpm-autoelevadores" target="_blank" rel="noopener noreferrer">
+        <span data-es="Ver Repositorio GitHub" data-en="View GitHub Repository">Ver Repositorio GitHub</span>
+      </a>
+      <a class="px-8 h-[48px] border border-outline-variant/30 text-on-surface rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all text-sm" href="servicios-integrados.html">
+        <span data-es="Siguiente Case Study: Servicios Integrados" data-en="Next Case Study: Servicios Integrados">Siguiente Case Study: Servicios Integrados</span>
+        <span aria-hidden="true" class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant/15 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+  <span class="text-sm font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Inter']">© 2026 - LAUTARO COLMAN</span>
+  <div class="flex gap-6">
+    <a class="text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors text-sm uppercase font-medium" href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  </div>
+</div>
+</footer>
+
+<!-- Lightbox Modal container -->
+<div id="lightbox-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
+  <button id="lightbox-close" class="absolute top-4 right-4 z-[110] w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors" aria-label="Cerrar modal">
+    <span aria-hidden="true" class="material-symbols-outlined text-2xl">close</span>
+  </button>
+  <img id="lightbox-img" src="" alt="Captura ampliada" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl transition-transform duration-300 scale-95" />
+</div>
+
+<!-- Floating Dark Mode Toggle -->
+<button id="theme-toggle" class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-lg flex items-center justify-center transition-transform hover:scale-110 active:scale-95" aria-label="Toggle Dark Mode">
+  <span aria-hidden="true" class="material-symbols-outlined dark:hidden">dark_mode</span>
+  <span aria-hidden="true" class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+
+<script>
+  // Language translation logic
+  const langToggles = document.querySelectorAll(".lang-toggle-btn");
+  let currentLang = "es";
+  
+  const updateLanguage = () => {
+    document.querySelectorAll("[data-es][data-en]").forEach(el => {
+      el.textContent = currentLang === "es" ? el.dataset.es : el.dataset.en;
+    });
+    langToggles.forEach(btn => {
+      btn.textContent = currentLang === "es" ? "EN" : "ES";
+    });
+  };
+  langToggles.forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      updateLanguage();
+    });
+  });
+
+  // Dark Mode toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlEl = document.documentElement;
+  
+  if (localStorage.theme === 'dark') {
+    htmlEl.classList.add('dark');
+    htmlEl.classList.remove('light');
+  } else {
+    htmlEl.classList.add('light');
+    htmlEl.classList.remove('dark');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    if (htmlEl.classList.contains('dark')) {
+      htmlEl.classList.remove('dark');
+      htmlEl.classList.add('light');
+      localStorage.theme = 'light';
+    } else {
+      htmlEl.classList.add('dark');
+      htmlEl.classList.remove('light');
+      localStorage.theme = 'dark';
+    }
+  });
+
+  // Lightbox Modal
+  const lightboxModal = document.getElementById("lightbox-modal");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+  const triggers = document.querySelectorAll(".lightbox-trigger");
+
+  triggers.forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightboxModal.classList.remove("opacity-0", "pointer-events-none");
+      lightboxImg.classList.remove("scale-95");
+      lightboxImg.classList.add("scale-100");
+    });
+  });
+
+  const closeLightbox = () => {
+    lightboxModal.classList.add("opacity-0", "pointer-events-none");
+    lightboxImg.classList.remove("scale-100");
+    lightboxImg.classList.add("scale-95");
+  };
+
+  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  if (lightboxModal) lightboxModal.addEventListener("click", (e) => { if (e.target === lightboxModal) closeLightbox(); });
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+
+  // Scroll animations
+  const revealElements = document.querySelectorAll(".reveal-on-scroll");
+  if (revealElements.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    revealElements.forEach((el) => io.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add("is-visible"));
+  }
+
+  // Header scroll
+  const header = document.getElementById("site-header");
+  if (header) {
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("header-scrolled", window.scrollY > 24);
+    }, { passive: true });
+  }
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "close" : "menu";
+    });
+  }
+
+  updateLanguage();
+</script>
+</body>
+</html>
