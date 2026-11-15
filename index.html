@@ -240,6 +240,37 @@
         transition: none;
       }
     }
+
+    /* Language transition styles */
+    .lang-trans-out {
+      opacity: 0 !important;
+      transform: translateY(-2px) !important;
+      transition: opacity 100ms cubic-bezier(0.4, 0, 0.2, 1), transform 100ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    .lang-trans-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      transition: opacity 120ms cubic-bezier(0.4, 0, 0.2, 1), transform 120ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    .lang-toggle-btn {
+      transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    .lang-btn-pulse {
+      opacity: 0.5;
+      transform: scale(0.92);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .lang-trans-out,
+      .lang-trans-in {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+      .lang-btn-pulse {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
   </style>
   </head>
 <body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
@@ -272,37 +303,41 @@
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-32 lg:mb-48" id="hero">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 <div class="lg:col-span-7">
-<span class="hero-in hero-delay-1 inline-block mb-6 px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant text-[0.75rem] font-bold tracking-[0.05em] uppercase" data-es="Disponible para proyectos" data-en="Available for projects">Disponible para proyectos</span>
+<span class="hero-in hero-delay-1 inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-surface-container-highest dark:bg-zinc-800/90 text-on-surface dark:text-zinc-200 border border-outline-variant/20 dark:border-zinc-700/60 text-[0.75rem] font-bold tracking-[0.05em] uppercase">
+  <span class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></span>
+  <span data-es="Disponible para proyectos" data-en="Available for projects">Disponible para proyectos</span>
+</span>
 <h1 class="hero-in hero-delay-2 text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold leading-[1.05] tracking-tighter mb-6 sm:mb-8 text-editorial">
                         Lautaro Colman
                     </h1>
 <h2 class="hero-in hero-delay-3 text-xl sm:text-2xl md:text-3xl text-on-surface-variant font-medium mb-6 sm:mb-8 leading-relaxed">
                         <span data-es="Desarrollador Web &amp; Software" data-en="Web &amp; Software Developer">Desarrollador Web &amp; Software</span>
                     </h2>
-<p class="hero-in hero-delay-4 text-base sm:text-lg md:text-2xl text-on-surface-variant opacity-70 max-w-xl mb-8 sm:mb-12 leading-relaxed" data-es="Desarrollo aplicaciones web, sistemas de gestión y soluciones de software enfocadas en optimizar procesos, integrar tecnologías y resolver problemas reales de negocio." data-en="I build web applications, management systems, and software solutions focused on optimizing processes, integrating technologies, and solving real business problems.">
+<p class="hero-in hero-delay-4 text-base sm:text-lg md:text-xl text-on-surface-variant opacity-80 max-w-xl mb-8 sm:mb-12 leading-relaxed" data-es="Desarrollo aplicaciones web, sistemas de gestión y soluciones de software enfocadas en optimizar procesos, integrar tecnologías y resolver problemas reales de negocio." data-en="I build web applications, management systems, and software solutions focused on optimizing processes, integrating technologies, and solving real business problems.">
                         Desarrollo aplicaciones web, sistemas de gestión y soluciones de software enfocadas en optimizar procesos, integrar tecnologías y resolver problemas reales de negocio.
                     </p>
 <div class="hero-in hero-delay-5 flex flex-wrap gap-3 sm:gap-4">
-<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center transition-transform duration-300 active:scale-95 hover:-translate-y-0.5 bg-gradient-to-br from-primary to-primary-container" href="#contacto" data-es="Contáctame" data-en="Contact Me">
+<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center transition-transform duration-300 active:scale-95 hover:-translate-y-0.5 bg-gradient-to-br from-primary to-primary-container shadow-md" href="#contacto" data-es="Contáctame" data-en="Contact Me">
                             Contáctame
                         </a>
-<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-surface-container-highest text-on-surface rounded-xl font-semibold flex items-center justify-center hover:bg-surface-container-high transition-all duration-300 hover:-translate-y-0.5" href="#proyectos" data-es="Ver Proyectos" data-en="View Projects">
+<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-zinc-700 transition-all duration-300 hover:-translate-y-0.5" href="#proyectos" data-es="Ver Proyectos" data-en="View Projects">
                             Ver Proyectos
                         </a>
 </div>
 </div>
 <div class="hero-in-right hero-delay-4 lg:col-span-5 relative">
-<div class="aspect-square rounded-lg overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.05)] bg-surface-container-low">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.06)] bg-surface-container-low border border-outline-variant/15">
 <img alt="Lautaro Colman" fetchpriority="high" width="600" height="600" class="w-full h-full object-cover transition-all duration-700" data-alt="Retrato profesional de Lautaro Colman en estilo editorial minimalista" src="img/WhatsApp Image 2026-01-05 at 7.38.39 PM.webp"/>
 </div>
-<div class="hidden sm:flex absolute -bottom-6 -right-6 w-32 h-32 bg-surface-container-lowest rounded-lg p-4 shadow-[0_0_40px_rgba(0,0,0,0.05)] items-center justify-center">
-<span aria-hidden="true" class="material-symbols-outlined text-4xl text-primary" data-icon="code">code</span>
+<div class="hidden sm:flex absolute -bottom-5 -right-5 w-28 h-28 sm:w-32 sm:h-32 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-outline-variant/20 dark:border-zinc-800 flex-col items-center justify-center gap-1 transition-transform hover:scale-105">
+<span aria-hidden="true" class="material-symbols-outlined text-3xl sm:text-4xl text-zinc-800 dark:text-zinc-200" data-icon="terminal">terminal</span>
+<span class="text-[0.65rem] font-bold tracking-wider uppercase text-on-surface-variant dark:text-zinc-400">UTN Tech</span>
 </div>
 </div>
 </div>
 </section>
 <!-- About Me Section -->
-<section class="bg-surface-container-low py-20 sm:py-24 lg:py-32 mb-24 sm:mb-32">
+<section class="bg-surface-container-low py-20 sm:py-24 lg:py-32 mb-24 sm:mb-32 border-y border-outline-variant/15">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
 <div class="reveal-on-scroll lg:col-span-4">
@@ -314,35 +349,38 @@
                             Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (UTN). Desarrollo aplicaciones web, sistemas de gestión y herramientas de software enfocadas en la mantenibilidad, el rendimiento y la resolución práctica de problemas de negocio.
                         </p>
 <div class="reveal-on-scroll reveal-delay-2 inline-flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/20 mb-10 shadow-sm">
-<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="school">school</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high dark:bg-zinc-800 text-on-surface dark:text-zinc-200 flex items-center justify-center shrink-0">
+<span aria-hidden="true" class="material-symbols-outlined text-xl" data-icon="school">school</span>
 </div>
 <div>
-<span class="block text-xs font-bold tracking-wider uppercase text-on-surface-variant" data-es="Formación Académica" data-en="Academic Background">Formación Académica</span>
+<span class="block text-xs font-bold tracking-wider uppercase text-on-surface-variant dark:text-zinc-400" data-es="Formación Académica" data-en="Academic Background">Formación Académica</span>
 <span class="font-bold text-sm sm:text-base text-editorial" data-es="Técnico Universitario en Programación — UTN" data-en="University Programming Technician — UTN">Técnico Universitario en Programación — UTN</span>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-<div class="reveal-on-scroll reveal-delay-1 p-6 sm:p-8 rounded-lg bg-surface-container-lowest border border-outline-variant/15 h-full flex flex-col transition-transform duration-300 hover:-translate-y-1">
-<div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center mb-4">
-<span aria-hidden="true" class="material-symbols-outlined text-primary" data-icon="code">code</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 border-t border-outline-variant/20 pt-10">
+<div class="reveal-on-scroll reveal-delay-1 flex flex-col">
+<div class="flex items-center gap-2 mb-3 text-zinc-700 dark:text-zinc-300">
+<span aria-hidden="true" class="material-symbols-outlined text-lg" data-icon="code">code</span>
+<span class="text-[0.7rem] font-bold tracking-widest uppercase text-on-surface-variant dark:text-zinc-400">01 — Frontend</span>
 </div>
-<h4 class="font-bold text-lg mb-2" data-es="Ingeniería Frontend" data-en="Frontend Engineering">Ingeniería Frontend</h4>
-<p class="text-on-surface-variant text-sm" data-es="Interfaces accesibles y responsivas construidas con HTML semántico, CSS moderno, JavaScript y frameworks como React y Next.js." data-en="Responsive, accessible interfaces built with semantic HTML, modern CSS, JavaScript, and frameworks like React and Next.js.">Interfaces accesibles y responsivas construidas con HTML semántico, CSS moderno, JavaScript y frameworks como React y Next.js.</p>
+<h4 class="font-bold text-lg text-editorial mb-2" data-es="Ingeniería Frontend" data-en="Frontend Engineering">Ingeniería Frontend</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed" data-es="Interfaces accesibles y responsivas construidas con HTML semántico, CSS moderno, JavaScript y frameworks como React y Next.js." data-en="Responsive, accessible interfaces built with semantic HTML, modern CSS, JavaScript, and frameworks like React and Next.js.">Interfaces accesibles y responsivas construidas con HTML semántico, CSS moderno, JavaScript y frameworks como React y Next.js.</p>
 </div>
-<div class="reveal-on-scroll reveal-delay-2 p-6 sm:p-8 rounded-lg bg-surface-container-lowest border border-outline-variant/15 h-full flex flex-col transition-transform duration-300 hover:-translate-y-1">
-<div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center mb-4">
-<span aria-hidden="true" class="material-symbols-outlined text-primary" data-icon="dns">dns</span>
+<div class="reveal-on-scroll reveal-delay-2 flex flex-col">
+<div class="flex items-center gap-2 mb-3 text-zinc-700 dark:text-zinc-300">
+<span aria-hidden="true" class="material-symbols-outlined text-lg" data-icon="dns">dns</span>
+<span class="text-[0.7rem] font-bold tracking-widest uppercase text-on-surface-variant dark:text-zinc-400">02 — Backend</span>
 </div>
-<h4 class="font-bold text-lg mb-2" data-es="Backend &amp; Datos" data-en="Backend &amp; Data">Backend &amp; Datos</h4>
-<p class="text-on-surface-variant text-sm" data-es="APIs robustas y lógica de negocio con Python y Django, autenticación y manejo de bases de datos SQL (PostgreSQL, Supabase)." data-en="Robust APIs and business logic with Python and Django, authentication flows, and SQL databases (PostgreSQL, Supabase).">APIs robustas y lógica de negocio con Python y Django, autenticación y manejo de bases de datos SQL (PostgreSQL, Supabase).</p>
+<h4 class="font-bold text-lg text-editorial mb-2" data-es="Backend &amp; Datos" data-en="Backend &amp; Data">Backend &amp; Datos</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed" data-es="APIs robustas y lógica de negocio con Python y Django, autenticación y manejo de bases de datos SQL (PostgreSQL, Supabase)." data-en="Robust APIs and business logic with Python and Django, authentication flows, and SQL databases (PostgreSQL, Supabase).">APIs robustas y lógica de negocio con Python y Django, autenticación y manejo de bases de datos SQL (PostgreSQL, Supabase).</p>
 </div>
-<div class="reveal-on-scroll reveal-delay-3 p-6 sm:p-8 rounded-lg bg-surface-container-lowest border border-outline-variant/15 h-full flex flex-col transition-transform duration-300 hover:-translate-y-1">
-<div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center mb-4">
-<span aria-hidden="true" class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<div class="reveal-on-scroll reveal-delay-3 flex flex-col">
+<div class="flex items-center gap-2 mb-3 text-zinc-700 dark:text-zinc-300">
+<span aria-hidden="true" class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span>
+<span class="text-[0.7rem] font-bold tracking-widest uppercase text-on-surface-variant dark:text-zinc-400">03 — Desktop</span>
 </div>
-<h4 class="font-bold text-lg mb-2" data-es="Escritorio &amp; Herramientas" data-en="Desktop &amp; Tools">Escritorio &amp; Herramientas</h4>
-<p class="text-on-surface-variant text-sm" data-es="Aplicaciones de escritorio multiplataforma con Electron, control de versiones con Git/GitHub e integración de servicios." data-en="Multiplatform desktop applications with Electron, version control with Git/GitHub, and service integration.">Aplicaciones de escritorio multiplataforma con Electron, control de versiones con Git/GitHub e integración de servicios.</p>
+<h4 class="font-bold text-lg text-editorial mb-2" data-es="Escritorio &amp; Herramientas" data-en="Desktop &amp; Tools">Escritorio &amp; Herramientas</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed" data-es="Aplicaciones de escritorio multiplataforma con Electron, control de versiones con Git/GitHub e integración de servicios." data-en="Multiplatform desktop applications with Electron, version control with Git/GitHub, and service integration.">Aplicaciones de escritorio multiplataforma con Electron, control de versiones con Git/GitHub e integración de servicios.</p>
 </div>
 </div>
 </div>
@@ -372,56 +410,50 @@
 </div>
 </section>
 <!-- Technologies Section -->
-<section class="bg-surface-container-low py-20 sm:py-24 lg:py-32 mb-24 sm:mb-32">
+<section class="bg-surface-container-low py-20 sm:py-24 lg:py-32 mb-24 sm:mb-32 border-y border-outline-variant/15">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-12 sm:mb-16">
 <h2 class="reveal-on-scroll text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4" data-es="Habilidades" data-en="Skills">Habilidades</h2>
 <h3 class="reveal-on-scroll reveal-delay-1 text-3xl sm:text-4xl font-bold text-editorial" data-es="Tecnologías &amp; Herramientas" data-en="Technologies &amp; Tools">Tecnologías &amp; Herramientas</h3>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
-<div class="reveal-on-scroll reveal-delay-1 p-6 sm:p-8 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col h-full shadow-sm">
-<div class="flex items-center gap-3 mb-6 pb-4 border-b border-outline-variant/15">
-<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="code">code</span>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 border-t border-outline-variant/20 pt-10">
+<div class="reveal-on-scroll reveal-delay-1 flex flex-col">
+<div class="flex items-center gap-3 mb-6 pb-3 border-b border-outline-variant/15">
+<span aria-hidden="true" class="material-symbols-outlined text-zinc-700 dark:text-zinc-300 text-2xl" data-icon="code">code</span>
 <h4 class="font-bold text-xl text-editorial" data-es="Frontend" data-en="Frontend">Frontend</h4>
 </div>
 <div class="flex flex-wrap gap-2.5">
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">HTML</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">CSS</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">JavaScript</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">TypeScript</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">React</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">Next.js</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">Tailwind CSS</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">HTML</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">CSS</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">JavaScript</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">TypeScript</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">React</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Next.js</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Tailwind CSS</span>
 </div>
 </div>
-<div class="reveal-on-scroll reveal-delay-2 p-6 sm:p-8 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col h-full shadow-sm">
-<div class="flex items-center gap-3 mb-6 pb-4 border-b border-outline-variant/15">
-<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="dns">dns</span>
-</div>
+<div class="reveal-on-scroll reveal-delay-2 flex flex-col">
+<div class="flex items-center gap-3 mb-6 pb-3 border-b border-outline-variant/15">
+<span aria-hidden="true" class="material-symbols-outlined text-zinc-700 dark:text-zinc-300 text-2xl" data-icon="dns">dns</span>
 <h4 class="font-bold text-xl text-editorial" data-es="Backend &amp; Datos" data-en="Backend &amp; Data">Backend &amp; Datos</h4>
 </div>
 <div class="flex flex-wrap gap-2.5">
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">Python</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">Django</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">SQL</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">PostgreSQL</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">Supabase</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Python</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Django</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">SQL</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">PostgreSQL</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Supabase</span>
 </div>
 </div>
-<div class="reveal-on-scroll reveal-delay-3 p-6 sm:p-8 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col h-full shadow-sm">
-<div class="flex items-center gap-3 mb-6 pb-4 border-b border-outline-variant/15">
-<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="terminal">terminal</span>
-</div>
+<div class="reveal-on-scroll reveal-delay-3 flex flex-col">
+<div class="flex items-center gap-3 mb-6 pb-3 border-b border-outline-variant/15">
+<span aria-hidden="true" class="material-symbols-outlined text-zinc-700 dark:text-zinc-300 text-2xl" data-icon="terminal">terminal</span>
 <h4 class="font-bold text-xl text-editorial" data-es="Escritorio &amp; Herramientas" data-en="Desktop &amp; Tools">Escritorio &amp; Herramientas</h4>
 </div>
 <div class="flex flex-wrap gap-2.5">
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">Electron</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">Git</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-sm font-semibold border border-outline-variant/10">GitHub</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Electron</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Git</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">GitHub</span>
 </div>
 </div>
 </div>
@@ -430,14 +462,20 @@
 <!-- Contacto Section -->
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-36 lg:mb-48 text-center" id="contacto">
 <h2 class="reveal-on-scroll text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-8" data-es="¿Tienes un proyecto en mente?" data-en="Do you have a project in mind?">¿Tienes un proyecto en mente?</h2>
-<div class="reveal-on-scroll reveal-delay-1 flex flex-col items-center gap-4 mb-10 sm:mb-12">
-  <a class="text-2xl sm:text-4xl md:text-6xl font-extrabold text-editorial hover:opacity-70 transition-all duration-300 decoration-primary underline decoration-2 underline-offset-[8px] sm:underline-offset-[12px] break-all hover:-translate-y-0.5" href="mailto:colmanlautaro24@gmail.com">
+<div class="reveal-on-scroll reveal-delay-1 flex flex-col items-center gap-6 mb-10 sm:mb-12">
+  <a class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-editorial hover:opacity-70 transition-all duration-300 decoration-primary underline decoration-2 underline-offset-[8px] sm:underline-offset-[12px] break-all hover:-translate-y-0.5" href="javascript:void(0)" onclick="openContactModal()">
     colmanlautaro24@gmail.com
   </a>
-  <button id="copy-email-btn" onclick="copyEmailToClipboard()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-surface-container-high dark:bg-zinc-800 text-on-surface dark:text-zinc-200 hover:bg-surface-container-highest dark:hover:bg-zinc-700 transition-all duration-300 border border-outline-variant/20 shadow-sm active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" aria-label="Copiar correo electrónico al portapapeles">
-    <span aria-hidden="true" class="material-symbols-outlined text-base">content_copy</span>
-    <span id="copy-email-text" data-es="Copiar email" data-en="Copy email">Copiar email</span>
-  </button>
+  <div class="flex flex-wrap items-center justify-center gap-3.5">
+    <button id="send-email-btn" onclick="openContactModal()" class="px-6 py-3 rounded-full text-sm font-bold bg-primary text-on-primary hover:-translate-y-0.5 transition-all shadow-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer inline-flex items-center gap-2" aria-label="Enviar correo electrónico">
+      <span aria-hidden="true" class="material-symbols-outlined text-base">mail</span>
+      <span data-es="Enviar email" data-en="Send email">Enviar email</span>
+    </button>
+    <button id="copy-email-btn" onclick="copyEmailToClipboard()" class="px-5 py-3 rounded-full text-sm font-semibold bg-surface-container-high dark:bg-zinc-800 text-on-surface dark:text-zinc-200 hover:bg-surface-container-highest dark:hover:bg-zinc-700 transition-all border border-outline-variant/20 shadow-sm active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer inline-flex items-center gap-2" aria-label="Copiar correo electrónico al portapapeles">
+      <span aria-hidden="true" class="material-symbols-outlined text-base">content_copy</span>
+      <span id="copy-email-text" data-es="Copiar email" data-en="Copy email">Copiar email</span>
+    </button>
+  </div>
 </div>
 <div class="reveal-on-scroll reveal-delay-2 flex flex-wrap justify-center gap-6 sm:gap-12 mt-10 sm:mt-16">
 <a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-medium" href="https://github.com/LautaroCLM" rel="noopener noreferrer" target="_blank">
@@ -491,16 +529,15 @@ Enables real-time collaboration across multiple users with strict data consisten
       badgeEs: "Sistema Industrial",
       badgeEn: "Industrial System",
       caseStudyUrl: "tpm.html",
-      descEs: `Sistema web y móvil diseñado para la digitalización de inspecciones operativas y mantenimiento preventivo de flotas de autoelevadores en plantas industriales.
+      descEs: `Sistema web y móvil exclusivo de uso interno corporativo para la digitalización de inspecciones operativas (TPM Nivel 1) y mantenimiento preventivo en plantas industriales.
 
-A través de un código QR único adherido a cada equipo, los operarios escanean el vehículo desde su dispositivo móvil para acceder al checklist de inspección previa al turno, registrar fallas con fotos y notificar anomalías a supervisores en tiempo real.`,
-      descEn: `Web and mobile system engineered to digitize operational inspections and preventive maintenance for industrial forklift fleets.
+Permite iniciar sesión por legajo o acceso rápido (restringido para supervisores), escanear el QR del autoelevador, completar el checklist de seguridad y reportar fallas con fotografía para notificar a mantenimiento en tiempo real.`,
+      descEn: `Enterprise web and mobile system for internal plant use, designed for digitizing level 1 autonomous maintenance inspections and preventive maintenance for forklift fleets.
 
-Scanning a unique QR code attached to each machine allows operators to instantly open a pre-shift digital inspection checklist, report faults with photo evidence, and alert supervisors in real-time.`,
+Operators log in via employee ID or quick access (restricted for supervisors), scan the machine's QR code, complete the safety checklist, and report issues with photo evidence to alert supervisors instantly.`,
       technologies: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
-      images: ["img/TPM Elevadores.webp"],
+      images: ["img/tpm1.jpeg", "img/tpm2.jpeg", "img/tpm3.jpeg", "img/tpm4.jpeg"],
       logo: "img/TPM Elevadores.webp",
-      projectUrl: "https://tpm-autoelevadores.vercel.app",
       repoUrl: "https://github.com/LautaroCLM/tpm-autoelevadores",
       delayClass: "reveal-delay-2"
     },
@@ -516,7 +553,7 @@ Publicado bajo su propio dominio en producción (serviciosintegradosweb.com), el
 
 Deployed on a custom production domain (serviciosintegradosweb.com), the site combines a modern B2B interface with a dynamic news CMS backed by Supabase for publishing content and handling business inquiries.`,
       technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Node.js", "Vite"],
-      images: ["img/Servicios Integrados 1.webp", "img/Servicios Integrados 2.webp", "img/Servicios Integrados 3.webp"],
+      images: ["img/servicios-web-1.webp", "img/servicios-web-2.webp", "img/servicios-web-3.webp"],
       logo: "img/Servicios Integrados.webp",
       projectUrl: "https://serviciosintegradosweb.com",
       repoUrl: "https://github.com/LautaroCLM/servicios_integrados",
@@ -579,7 +616,7 @@ Designed with a focus on efficient information organization, performance, and us
       technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
       images: ["img/imagen7.webp", "img/Clothing Ecommerce - Shop Fast2.webp", "img/Clothing Ecommerce - Shop Fast3.webp"],
       logo: "img/Clothing Ecommerce - Shop Fast.webp",
-      projectUrl: "https://mi-marketplace.onrender.com",
+      projectUrl: null, // demo en Render dada de baja (404); queda el repositorio
       repoUrl: "https://github.com/Chavo-st4r/Mi-Marketplace",
       delayClass: "reveal-delay-2"
     },
@@ -588,7 +625,7 @@ Designed with a focus on efficient information organization, performance, and us
       descEs: "Sitio web corporativo y comercial desarrollado para empresa del rubro automotor y neumáticos.",
       descEn: "Corporate and commercial website developed for an automotive and tire company.",
       technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
-      images: ["img/imagen1.webp", "img/imagen8.webp", "img/imagen3.webp"],
+      images: ["img/neumaticos32-1.webp", "img/neumaticos32-2.webp"],
       logo: "img/Neumaticos32.webp",
       projectUrl: "https://neumaticosel32nuv.netlify.app",
       repoUrl: null,
@@ -599,7 +636,7 @@ Designed with a focus on efficient information organization, performance, and us
       descEs: "Plataforma web comercial para catálogo y consulta de repuestos automotrices.",
       descEn: "Commercial web showcase for automotive spare parts catalog and customer inquiries.",
       technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
-      images: ["img/imagen8.webp", "img/imagen6.webp", "img/imagen7.webp"],
+      images: ["img/repuestos32-1.webp", "img/imagen8.webp", "img/repuestos32-2.webp"],
       logo: "img/Neumaticos32.webp",
       projectUrl: "https://repuestos32.netlify.app",
       repoUrl: null,
@@ -616,9 +653,12 @@ Designed with a focus on efficient information organization, performance, and us
     const otherProjects = PROJECTS.slice(4);
 
     featuredGrid.innerHTML = featuredProjects.map((project, index) => {
-      const techSpans = project.technologies.map(tech => 
-        `<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/40 dark:bg-zinc-800/90 text-on-surface dark:text-zinc-200 rounded-sm">${tech}</span>`
-      ).join('\n            ');
+      const techSpans = project.technologies.map((tech, techIdx) => {
+        if (techIdx === 0) {
+          return `<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-zinc-900 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 rounded-md">${tech}</span>`;
+        }
+        return `<span class="text-[0.65rem] font-semibold tracking-widest uppercase py-1 px-3 bg-secondary-container/40 dark:bg-zinc-800/90 text-on-surface-variant dark:text-zinc-300 rounded-md">${tech}</span>`;
+      }).join('\n            ');
 
       const badgeHtml = (project.badgeEs && project.badgeEn) ? `
         <div class="absolute top-4 left-4 z-10">
@@ -741,23 +781,59 @@ Designed with a focus on efficient information organization, performance, and us
     revealElements.forEach((el) => el.classList.add("is-visible"));
   }
 
-  // Language toggle
+  // Language toggle with smooth transition
   const langToggles = document.querySelectorAll(".lang-toggle-btn");
   currentLang = "es";
+  let isTranslating = false;
+
   const updateLanguage = () => {
     document.querySelectorAll("[data-es][data-en]").forEach(el => {
       el.textContent = currentLang === "es" ? el.dataset.es : el.dataset.en;
+    });
+    document.querySelectorAll("[data-es-placeholder][data-en-placeholder]").forEach(el => {
+      el.placeholder = currentLang === "es" ? el.dataset.esPlaceholder : el.dataset.enPlaceholder;
     });
     langToggles.forEach(btn => {
       btn.textContent = currentLang === "es" ? "EN" : "ES";
     });
   };
+
   langToggles.forEach(btn => {
     btn.addEventListener("click", () => {
-      currentLang = currentLang === "es" ? "en" : "es";
-      updateLanguage();
+      if (isTranslating) return;
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        currentLang = currentLang === "es" ? "en" : "es";
+        updateLanguage();
+        return;
+      }
+
+      isTranslating = true;
+      langToggles.forEach(b => b.classList.add("lang-btn-pulse"));
+
+      const transElements = document.querySelectorAll("[data-es][data-en], [data-es-placeholder][data-en-placeholder]");
+      transElements.forEach(el => el.classList.add("lang-trans-out"));
+
+      setTimeout(() => {
+        currentLang = currentLang === "es" ? "en" : "es";
+        updateLanguage();
+
+        transElements.forEach(el => {
+          el.classList.remove("lang-trans-out");
+          el.classList.add("lang-trans-in");
+        });
+
+        langToggles.forEach(b => b.classList.remove("lang-btn-pulse"));
+
+        setTimeout(() => {
+          transElements.forEach(el => el.classList.remove("lang-trans-in"));
+          isTranslating = false;
+        }, 120);
+      }, 100);
     });
   });
+
   // Initialize language on load
   updateLanguage();
 </script>
@@ -848,7 +924,7 @@ Designed with a focus on efficient information organization, performance, and us
 
       desktopLinks.forEach(link => {
         if (link.getAttribute('href') === '#' + activeSection) {
-          link.className = "text-zinc-900 dark:text-white font-medium border-b border-zinc-900 dark:border-zinc-50 transition-colors";
+          link.className = "text-zinc-900 dark:text-white font-semibold border-b-2 border-blue-600 dark:border-blue-400 transition-colors";
         } else {
           link.className = "text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors";
         }
@@ -916,12 +992,50 @@ Designed with a focus on efficient information organization, performance, and us
           closeProjectModal();
         });
       }
+      const contactOverlayEl = document.getElementById("contact-modal-overlay");
+      if (contactOverlayEl) {
+        contactOverlayEl.addEventListener("click", () => {
+          closeContactModal();
+        });
+      }
+      const contactModal = document.getElementById("contact-modal");
+      if (contactModal) {
+        contactModal.addEventListener("click", (e) => {
+          if (e.target === contactModal) closeContactModal();
+        });
+      }
     });
 
+    // Focus trap and focus restoration helper
+    let lastFocusedElement = null;
+
+    function trapFocus(containerEl, e) {
+      if (e.key !== "Tab") return;
+      const focusables = Array.from(
+        containerEl.querySelectorAll(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(el => el.offsetWidth > 0 || el.offsetHeight > 0 || el.getClientRects().length > 0);
+
+      if (focusables.length === 0) {
+        e.preventDefault();
+        return;
+      }
+
+      const firstEl = focusables[0];
+      const lastEl = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === firstEl) {
+        e.preventDefault();
+        lastEl.focus();
+      } else if (!e.shiftKey && document.activeElement === lastEl) {
+        e.preventDefault();
+        firstEl.focus();
+      }
+    }
+
     window.openProjectModal = function(index) {
-      console.log("click proyecto", index);
-      console.log("openProjectModal ejecutado");
-      console.log("modal encontrado", modalEl);
+      lastFocusedElement = document.activeElement;
       activeProjectIndex = index;
       activeSlideIndex = 0;
       const project = PROJECTS[index];
@@ -1020,6 +1134,11 @@ Designed with a focus on efficient information organization, performance, and us
 
       // Prevent background scrolling
       document.body.style.overflow = "hidden";
+
+      setTimeout(() => {
+        const closeBtn = document.getElementById("modal-close-btn");
+        if (closeBtn) closeBtn.focus();
+      }, 100);
     };
 
     window.closeProjectModal = function() {
@@ -1035,6 +1154,11 @@ Designed with a focus on efficient information organization, performance, and us
       document.body.style.overflow = "";
 
       activeProjectIndex = null;
+
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
     };
 
     window.goToSlide = function(slideIndex) {
@@ -1091,16 +1215,113 @@ Designed with a focus on efficient information organization, performance, and us
 
     // Keyboard controls
     window.addEventListener("keydown", (e) => {
-      if (activeProjectIndex === null) return;
-
       if (e.key === "Escape") {
         closeProjectModal();
-      } else if (e.key === "ArrowRight") {
+        closeContactModal();
+      }
+
+      const cModal = document.getElementById("contact-modal");
+      if (cModal && !cModal.classList.contains("opacity-0")) {
+        trapFocus(cModal, e);
+      }
+
+      const pModal = document.getElementById("project-modal");
+      if (pModal && !pModal.classList.contains("opacity-0")) {
+        trapFocus(pModal, e);
+      }
+
+      if (activeProjectIndex === null) return;
+
+      if (e.key === "ArrowRight") {
         nextSlide();
       } else if (e.key === "ArrowLeft") {
         prevSlide();
       }
     });
+
+    // Contact Modal State & Handlers
+    let contactModalEl = null;
+    let contactModalBoxEl = null;
+    let contactModalOverlayEl = null;
+
+    window.openContactModal = function() {
+      lastFocusedElement = document.activeElement;
+      contactModalEl = document.getElementById("contact-modal");
+      contactModalBoxEl = document.getElementById("contact-modal-box");
+      contactModalOverlayEl = document.getElementById("contact-modal-overlay");
+
+      if (!contactModalEl || !contactModalBoxEl) return;
+
+      const nameInput = document.getElementById("contact-name");
+      const subjectInput = document.getElementById("contact-subject");
+      const messageInput = document.getElementById("contact-message");
+      if (nameInput) nameInput.value = "";
+      if (subjectInput) subjectInput.value = "";
+      if (messageInput) messageInput.value = "";
+
+      contactModalEl.classList.remove("opacity-0", "pointer-events-none");
+      contactModalEl.classList.add("opacity-100", "pointer-events-auto");
+      contactModalBoxEl.classList.remove("scale-95", "opacity-0");
+      contactModalBoxEl.classList.add("scale-100", "opacity-100");
+
+      document.body.style.overflow = "hidden";
+
+      setTimeout(() => {
+        if (nameInput) nameInput.focus();
+      }, 100);
+    };
+
+    window.closeContactModal = function() {
+      if (!contactModalEl || !contactModalBoxEl) return;
+      contactModalEl.classList.remove("opacity-100", "pointer-events-auto");
+      contactModalEl.classList.add("opacity-0", "pointer-events-none");
+      contactModalBoxEl.classList.remove("scale-100", "opacity-100");
+      contactModalBoxEl.classList.add("scale-95", "opacity-0");
+
+      if (typeof activeProjectIndex !== 'undefined' && activeProjectIndex === null) {
+        document.body.style.overflow = "";
+      }
+
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
+    };
+
+    window.handleSendEmailSubmit = function(e) {
+      if (e) e.preventDefault();
+
+      const nameInput = document.getElementById("contact-name");
+      const subjectInput = document.getElementById("contact-subject");
+      const messageInput = document.getElementById("contact-message");
+
+      const rawName = nameInput ? nameInput.value.trim() : "";
+      const rawSubject = subjectInput ? subjectInput.value.trim() : "";
+      const rawMessage = messageInput ? messageInput.value.trim() : "";
+
+      const isEs = currentLang === 'es';
+
+      const subjectText = rawSubject || (isEs ? "Consulta desde tu portfolio" : "Inquiry from your portfolio");
+
+      let bodyText = "";
+      if (rawName) {
+        bodyText += (isEs ? `Nombre: ${rawName}\n\n` : `Name: ${rawName}\n\n`);
+      }
+
+      if (rawMessage) {
+        bodyText += rawMessage;
+      } else {
+        bodyText += (isEs 
+          ? "Hola Lautaro, vi tu portfolio y quería ponerme en contacto con vos." 
+          : "Hi Lautaro, I saw your portfolio and wanted to get in touch with you.");
+      }
+
+      const emailRecipient = "colmanlautaro24@gmail.com";
+      const mailtoUrl = `mailto:${emailRecipient}?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
+
+      closeContactModal();
+      window.location.href = mailtoUrl;
+    };
 
     // Copy Email to Clipboard with fallback & auto-reset feedback
     window.copyEmailToClipboard = function() {
@@ -1238,6 +1459,99 @@ Designed with a focus on efficient information organization, performance, and us
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 ease-out" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <!-- Backdrop blur overlay -->
+    <div id="contact-modal-overlay" class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-md transition-opacity duration-300"></div>
+
+    <!-- Modal Box Container -->
+    <div id="contact-modal-box" class="relative bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl w-[95%] sm:w-full max-w-[540px] max-h-[90vh] overflow-hidden flex flex-col transition-all duration-300 ease-out transform scale-95 opacity-0 z-10 border border-outline-variant/15 dark:border-zinc-800">
+      
+      <!-- Header with Title & Close Button -->
+      <div class="px-6 py-5 border-b border-outline-variant/15 dark:border-zinc-800 flex items-center justify-between">
+        <h3 id="contact-modal-title" class="text-xl sm:text-2xl font-extrabold text-editorial dark:text-white" data-es="Contactar a Lautaro" data-en="Contact Lautaro">
+          Contactar a Lautaro
+        </h3>
+        <button onclick="closeContactModal()" class="w-9 h-9 rounded-full bg-surface-container-low dark:bg-zinc-800 text-on-surface dark:text-zinc-300 hover:bg-surface-container-high dark:hover:bg-zinc-700 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" aria-label="Cerrar modal">
+          <span aria-hidden="true" class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+
+      <!-- Body / Form Fields -->
+      <form id="contact-form" onsubmit="handleSendEmailSubmit(event)" class="p-6 flex flex-col gap-4 overflow-y-auto flex-1">
+        
+        <!-- Nombre -->
+        <div class="flex flex-col gap-1.5 text-left">
+          <label for="contact-name" class="text-xs font-bold uppercase tracking-wider text-on-surface-variant dark:text-zinc-400" data-es="Nombre" data-en="Name">
+            Nombre
+          </label>
+          <input 
+            type="text" 
+            id="contact-name" 
+            name="name" 
+            class="w-full px-4 py-3 rounded-xl bg-surface-container-low dark:bg-zinc-800/80 border border-outline-variant/20 dark:border-zinc-700/80 text-on-surface dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm"
+            data-es-placeholder="Tu nombre" 
+            data-en-placeholder="Your name" 
+            placeholder="Tu nombre" 
+          />
+        </div>
+
+        <!-- Asunto -->
+        <div class="flex flex-col gap-1.5 text-left">
+          <label for="contact-subject" class="text-xs font-bold uppercase tracking-wider text-on-surface-variant dark:text-zinc-400" data-es="Asunto" data-en="Subject">
+            Asunto
+          </label>
+          <input 
+            type="text" 
+            id="contact-subject" 
+            name="subject" 
+            class="w-full px-4 py-3 rounded-xl bg-surface-container-low dark:bg-zinc-800/80 border border-outline-variant/20 dark:border-zinc-700/80 text-on-surface dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm"
+            data-es-placeholder="Consulta sobre desarrollo web" 
+            data-en-placeholder="Web development inquiry" 
+            placeholder="Consulta sobre desarrollo web" 
+          />
+        </div>
+
+        <!-- Mensaje -->
+        <div class="flex flex-col gap-1.5 text-left">
+          <label for="contact-message" class="text-xs font-bold uppercase tracking-wider text-on-surface-variant dark:text-zinc-400" data-es="Mensaje" data-en="Message">
+            Mensaje
+          </label>
+          <textarea 
+            id="contact-message" 
+            name="message" 
+            rows="4" 
+            class="w-full px-4 py-3 rounded-xl bg-surface-container-low dark:bg-zinc-800/80 border border-outline-variant/20 dark:border-zinc-700/80 text-on-surface dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm resize-y"
+            data-es-placeholder="Hola Lautaro, vi tu portfolio y quería consultarte sobre..." 
+            data-en-placeholder="Hi Lautaro, I saw your portfolio and wanted to ask you about..." 
+            placeholder="Hola Lautaro, vi tu portfolio y quería consultarte sobre..."
+          ></textarea>
+        </div>
+
+        <!-- Footer Action Buttons -->
+        <div class="pt-4 border-t border-outline-variant/15 dark:border-zinc-800 flex flex-col sm:flex-row justify-end gap-3">
+          <button 
+            type="button" 
+            onclick="closeContactModal()" 
+            class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-outline-variant/30 text-on-surface dark:text-zinc-200 hover:bg-surface-container-low dark:hover:bg-zinc-800 font-semibold text-sm transition-all cursor-pointer text-center"
+            data-es="Cancelar" 
+            data-en="Cancel"
+          >
+            Cancelar
+          </button>
+          <button 
+            type="submit" 
+            class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-sm shadow-md hover:-translate-y-0.5 transition-all cursor-pointer flex items-center justify-center gap-2"
+          >
+            <span aria-hidden="true" class="material-symbols-outlined text-base">send</span>
+            <span data-es="Abrir email" data-en="Open email">Abrir email</span>
+          </button>
+        </div>
+
+      </form>
     </div>
   </div>
 

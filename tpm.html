@@ -86,6 +86,62 @@
     .reveal-delay-3 { transition-delay: 0.24s; }
     .reveal-delay-4 { transition-delay: 0.32s; }
   }
+
+  /* Language transition styles */
+  .lang-trans-out {
+    opacity: 0 !important;
+    transform: translateY(-2px) !important;
+    transition: opacity 100ms cubic-bezier(0.4, 0, 0.2, 1), transform 100ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  .lang-trans-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: opacity 120ms cubic-bezier(0.4, 0, 0.2, 1), transform 120ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  .lang-toggle-btn {
+    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  .lang-btn-pulse {
+    opacity: 0.5;
+    transform: scale(0.92);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lang-trans-out,
+    .lang-trans-in {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    .lang-btn-pulse {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+<!-- Dark Mode Overrides for Custom Colors (mismo criterio que index.html) -->
+<style id="dark-mode-patch">
+  html.dark body,
+  html.dark .bg-surface { background-color: #141313; }
+  html.dark .text-on-surface { color: #e5e2e1; }
+  html.dark .text-editorial { color: #e5e2e1; }
+  html.dark .text-on-surface-variant { color: #c4c7c7; }
+  html.dark .bg-surface-container-low { background-color: #1c1b1b; }
+  html.dark .bg-surface-container-lowest { background-color: #0e0e0e; }
+  html.dark .bg-surface-container-high { background-color: #2b2a2a; }
+  html.dark .bg-surface-container-highest { background-color: #353434; }
+  html.dark .hover\:bg-surface-container-low:hover { background-color: #2b2a2a; }
+  html.dark .bg-primary { background-color: #c9c6c5; }
+  html.dark .text-primary { color: #c9c6c5; }
+  html.dark .text-on-primary { color: #313030; }
+  html.dark .bg-primary\/10 { background-color: rgba(201, 198, 197, 0.12); }
+  html.dark .dark\:bg-primary\/20 { background-color: rgba(201, 198, 197, 0.16); }
+  html.dark .dark\:text-primary-container { color: #e5e2e1; }
+  html.dark .border-primary\/20 { border-color: rgba(201, 198, 197, 0.25); }
+  html.dark .border-outline-variant\/10,
+  html.dark .border-outline-variant\/15,
+  html.dark .border-outline-variant\/20,
+  html.dark .border-outline-variant\/30 { border-color: rgba(255, 255, 255, 0.1); }
+  html.dark ::selection { background-color: #c9c6c5; color: #313030; }
 </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
@@ -100,7 +156,7 @@
 <nav class="hidden md:flex items-center gap-8 font-['Inter'] text-sm tracking-wide">
   <button id="lang-toggle" class="lang-toggle-btn text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors font-semibold" aria-label="Toggle language">EN</button>
   <a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="index.html#hero" data-es="Inicio" data-en="Home">Inicio</a>
-  <a class="text-zinc-900 dark:text-white font-medium border-b border-zinc-900 dark:border-zinc-50 transition-colors" href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+  <a class="text-zinc-900 dark:text-white font-semibold border-b-2 border-blue-600 dark:border-blue-400 transition-colors" href="index.html#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
   <a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="index.html#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
 </nav>
 <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden material-symbols-outlined" id="menu-toggle" type="button">menu</button>
@@ -132,14 +188,14 @@
         <h1 class="text-[2.5rem] sm:text-[3.5rem] md:text-[4.25rem] font-extrabold leading-[1.05] tracking-tighter mb-6 text-editorial">
           TPM Elevadores
         </h1>
-        <p class="text-lg sm:text-xl text-on-surface-variant opacity-80 max-w-2xl mb-8 leading-relaxed" data-es="Sistema web y móvil diseñado para la digitalización de inspecciones operativas (TPM Nivel 1) y mantenimiento preventivo de flotas de autoelevadores industriales en planta mediante códigos QR." data-en="Web and mobile system engineered to digitize Level 1 Autonomous Maintenance (TPM) and daily operational inspections for industrial forklift fleets using QR codes.">
-          Sistema web y móvil diseñado para la digitalización de inspecciones operativas (TPM Nivel 1) y mantenimiento preventivo de flotas de autoelevadores industriales en planta mediante códigos QR.
+        <p class="text-lg sm:text-xl text-on-surface-variant opacity-80 max-w-2xl mb-8 leading-relaxed" data-es="Sistema web y móvil exclusivo de uso interno corporativo para la digitalización de inspecciones operativas (TPM Nivel 1) y mantenimiento preventivo de flotas de autoelevadores industriales en planta mediante códigos QR." data-en="Enterprise web and mobile system for internal plant use, engineered to digitize Level 1 Autonomous Maintenance (TPM) and daily operational inspections for industrial forklift fleets using QR codes.">
+          Sistema web y móvil exclusivo de uso interno corporativo para la digitalización de inspecciones operativas (TPM Nivel 1) y mantenimiento preventivo de flotas de autoelevadores industriales en planta mediante códigos QR.
         </p>
         <div class="flex flex-wrap gap-3 sm:gap-4">
-          <a class="px-6 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm shadow-sm" href="https://tpm-autoelevadores.vercel.app" target="_blank" rel="noopener noreferrer">
-            <span aria-hidden="true" class="material-symbols-outlined text-base">language</span>
-            <span data-es="Ver Demo Web" data-en="View Web Demo">Ver Demo Web</span>
-          </a>
+          <span class="px-5 h-[48px] bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-container rounded-xl font-semibold flex items-center justify-center gap-2 text-sm border border-primary/20 cursor-default shadow-sm">
+            <span aria-hidden="true" class="material-symbols-outlined text-base">lock</span>
+            <span data-es="Acceso Privado Corporativo" data-en="Private Enterprise Access">Acceso Privado Corporativo</span>
+          </span>
           <a class="px-6 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm" href="https://github.com/LautaroCLM/tpm-autoelevadores" target="_blank" rel="noopener noreferrer">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
             <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
@@ -152,7 +208,7 @@
       </div>
       <div class="lg:col-span-5 relative">
         <div class="aspect-[16/10] rounded-2xl overflow-hidden shadow-xl border border-outline-variant/15 bg-surface-container-low">
-          <img alt="TPM Elevadores Main Interface" fetchpriority="high" width="800" height="500" class="w-full h-full object-cover lightbox-trigger cursor-pointer hover:scale-105 transition-transform duration-500" src="img/TPM Elevadores.webp"/>
+          <img alt="TPM Elevadores Main Interface" fetchpriority="high" width="800" height="500" class="w-full h-full object-cover lightbox-trigger cursor-pointer hover:scale-105 transition-transform duration-500" src="img/tpm1.jpeg"/>
         </div>
       </div>
     </div>
@@ -186,43 +242,178 @@
     </div>
   </section>
 
-  <!-- System Workflow Flowchart Section -->
+  <!-- Step-by-step How-To Section -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-    <div class="reveal-on-scroll mb-12 text-center">
-      <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Flujo de Trabajo" data-en="System Workflow">Flujo de Trabajo</h2>
-      <h3 class="text-3xl sm:text-4xl font-extrabold text-editorial" data-es="Pasos de Inspección Operativa" data-en="Operational Inspection Steps">Pasos de Inspección Operativa</h3>
+    <div class="reveal-on-scroll mb-12 text-center max-w-3xl mx-auto">
+      <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Guía de Uso en Planta" data-en="In-Plant Usage Guide">Guía de Uso en Planta</h2>
+      <h3 class="text-3xl sm:text-4xl font-extrabold text-editorial mb-4" data-es="¿Cómo usar TPM Autoelevadores?" data-en="How to use TPM Forklifts?">¿Cómo usar TPM Autoelevadores?</h3>
+      <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed" data-es="Seguí estos pasos para realizar correctamente la inspección diaria y verificación pre-turno de tu equipo." data-en="Follow these steps to correctly complete the daily inspection and pre-shift verification of your equipment.">
+        Seguí estos pasos para realizar correctamente la inspección diaria y verificación pre-turno de tu equipo.
+      </p>
     </div>
 
-    <!-- Step-by-step Flowchart Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 text-center">
-      <div class="reveal-on-scroll reveal-delay-1 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
-        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">1</div>
-        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Escaneo QR" data-en="QR Scan">Escaneo QR</h4>
-        <p class="text-xs text-on-surface-variant" data-es="Lectura del código único en el chasis." data-en="Scanning unique machine QR code.">Lectura del código único en el chasis.</p>
+    <!-- 6 Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Paso 1 -->
+      <div class="reveal-on-scroll reveal-delay-1 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-10 h-10 rounded-xl bg-primary text-on-primary font-extrabold flex items-center justify-center text-sm shadow-sm">01</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-zinc-400" data-icon="qr_code_scanner">qr_code_scanner</span>
+          </div>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Identificá el autoelevador" data-en="Identify the Forklift">Identificá el autoelevador</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-es="Buscá el código QR identificado en el autoelevador que vas a utilizar. El código se encuentra en una chapa o etiqueta adhesiva visible en el chasis del equipo." data-en="Locate the QR code identified on the forklift you will operate. The code is placed on a metal badge or sticker visible on the machine chassis.">
+            Buscá el código QR identificado en el autoelevador que vas a utilizar. El código se encuentra en una chapa o etiqueta adhesiva visible en el chasis del equipo.
+          </p>
+        </div>
       </div>
 
-      <div class="reveal-on-scroll reveal-delay-2 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
-        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">2</div>
-        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Identificación" data-en="Identification">Identificación</h4>
-        <p class="text-xs text-on-surface-variant" data-es="Autenticación del operario por legajo." data-en="Operator login via employee ID.">Autenticación del operario por legajo.</p>
+      <!-- Paso 2 -->
+      <div class="reveal-on-scroll reveal-delay-2 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-10 h-10 rounded-xl bg-primary text-on-primary font-extrabold flex items-center justify-center text-sm shadow-sm">02</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-zinc-400" data-icon="photo_camera">photo_camera</span>
+          </div>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Escaneá el código QR" data-en="Scan QR Code">Escaneá el código QR</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-es="Presioná 'Abrir Cámara Escáner' y apuntá la cámara al código QR del equipo. También podés ingresar manualmente el número de interno o seleccionarlo del listado." data-en="Tap 'Open Scanner Camera' and point at the QR code. You can also manually enter the unit number or select it from the fleet list.">
+            Presioná 'Abrir Cámara Escáner' y apuntá la cámara al código QR del equipo. También podés ingresar manualmente el número de interno o seleccionarlo del listado.
+          </p>
+        </div>
       </div>
 
-      <div class="reveal-on-scroll reveal-delay-3 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
-        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">3</div>
-        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Checklist" data-en="Checklist">Checklist</h4>
-        <p class="text-xs text-on-surface-variant" data-es="Revisión de fluidos, frenos y luces." data-en="Safety fluids, brakes, and lights check.">Revisión de fluidos, frenos y luces.</p>
+      <!-- Paso 3 -->
+      <div class="reveal-on-scroll reveal-delay-3 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-10 h-10 rounded-xl bg-primary text-on-primary font-extrabold flex items-center justify-center text-sm shadow-sm">03</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-zinc-400" data-icon="badge">badge</span>
+          </div>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Iniciá sesión o Acceso Rápido" data-en="Log In or Quick Access">Iniciá sesión o Acceso Rápido</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed mb-3" data-es="Ingresá con tu legajo para identificarte como operador o seleccioná tu nombre en el acceso rápido. (Nota: En caso de ser supervisor, el acceso rápido no está disponible y requiere autenticación completa)." data-en="Log in with your employee ID or pick your name from operator quick access. (Note: For supervisors, quick access is disabled and full credential login is required).">
+            Ingresá con tu legajo para identificarte como operador o seleccioná tu nombre en el acceso rápido. (Nota: En caso de ser supervisor, el acceso rápido no está disponible y requiere autenticación completa).
+          </p>
+        </div>
       </div>
 
-      <div class="reveal-on-scroll reveal-delay-4 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
-        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">4</div>
-        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Reporte + Foto" data-en="Fault + Photo">Reporte + Foto</h4>
-        <p class="text-xs text-on-surface-variant" data-es="Adjunto de evidencia ante averías." data-en="Photo upload for detected faults.">Adjunto de evidencia ante averías.</p>
+      <!-- Paso 4 -->
+      <div class="reveal-on-scroll reveal-delay-4 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-10 h-10 rounded-xl bg-primary text-on-primary font-extrabold flex items-center justify-center text-sm shadow-sm">04</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-zinc-400" data-icon="fact_check">fact_check</span>
+          </div>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Completá la inspección" data-en="Complete Inspection">Completá la inspección</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-es="Una vez iniciada la sesión y seleccionado el autoelevador, revisá cada punto del checklist antes de operar: fluidos, frenos, luces y elementos de seguridad." data-en="Once logged in and vehicle selected, check all pre-shift inspection points before operating: fluids, brakes, lights, and safety gear.">
+            Una vez iniciada la sesión y seleccionado el autoelevador, revisá cada punto del checklist antes de operar: fluidos, frenos, luces y elementos de seguridad.
+          </p>
+        </div>
       </div>
 
-      <div class="reveal-on-scroll reveal-delay-5 p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col items-center">
-        <div class="w-10 h-10 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center text-sm mb-3">5</div>
-        <h4 class="font-bold text-editorial text-sm mb-1" data-es="Dashboard" data-en="Dashboard">Dashboard</h4>
-        <p class="text-xs text-on-surface-variant" data-es="Notificación a mantenimiento." data-en="Alert sent to maintenance leads.">Notificación a mantenimiento.</p>
+      <!-- Paso 5 -->
+      <div class="reveal-on-scroll reveal-delay-5 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-10 h-10 rounded-xl bg-primary text-on-primary font-extrabold flex items-center justify-center text-sm shadow-sm">05</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-amber-500" data-icon="report_problem">report_problem</span>
+          </div>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Informá cualquier falla" data-en="Report Any Faults">Informá cualquier falla</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-es="En caso de que algo falle, marcá el ítem e indicá la gravedad adjuntando una fotografía. La app notificará al supervisor en tiempo real para priorizar la reparación." data-en="If any item fails, mark it and indicate severity with photo evidence. The app will immediately alert the supervisor to prioritize repairs.">
+            En caso de que algo falle, marcá el ítem e indicá la gravedad adjuntando una fotografía. La app notificará al supervisor en tiempo real para priorizar la reparación.
+          </p>
+        </div>
+      </div>
+
+      <!-- Paso 6 -->
+      <div class="reveal-on-scroll reveal-delay-6 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/15 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-10 h-10 rounded-xl bg-primary text-on-primary font-extrabold flex items-center justify-center text-sm shadow-sm">06</span>
+            <span aria-hidden="true" class="material-symbols-outlined text-emerald-500" data-icon="task_alt">task_alt</span>
+          </div>
+          <h4 class="font-bold text-lg text-editorial mb-2" data-es="Finalizá la inspección" data-en="Finish Inspection">Finalizá la inspección</h4>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-es="Cuando hayas completado todos los puntos, enviá la inspección para registrar el estado del autoelevador. El estado y el horómetro del turno quedarán asentados en el sistema." data-en="When finished, submit the inspection. Equipment status and shift hour-meter will be logged into the central system.">
+            Cuando hayas completado todos los puntos, enviá la inspección para registrar el estado del autoelevador. El estado y el horómetro del turno quedarán asentados en el sistema.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery of Screenshots Section -->
+    <div class="mt-16 sm:mt-24">
+      <div class="reveal-on-scroll mb-10 text-center">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2" data-es="Capturas de Pantalla" data-en="App Screenshots">Capturas de Pantalla</h2>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-editorial" data-es="Demostración de la Interfaz del Sistema" data-en="System Interface Demonstration">Demostración de la Interfaz del Sistema</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Capture 1: tpm4 -->
+        <div class="reveal-on-scroll reveal-delay-1 group rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[16/10] bg-zinc-900 overflow-hidden relative">
+            <img src="img/tpm4.jpeg" alt="Terminal de Acceso Seguro - Login" class="w-full h-full object-cover lightbox-trigger cursor-pointer group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span class="text-white text-xs font-bold flex items-center gap-1"><span aria-hidden="true" class="material-symbols-outlined text-sm">zoom_in</span> Ampliar captura</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-primary mb-1 block" data-es="Captura 01 — Acceso" data-en="Screenshot 01 — Access">Captura 01 — Acceso</span>
+            <h4 class="font-bold text-base text-editorial mb-1" data-es="Terminal de Acceso Seguro & Autenticación" data-en="Secure Access Terminal & Authentication">Terminal de Acceso Seguro & Autenticación</h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Pantalla de inicio de sesión para operarios y supervisores. En caso de supervisores, el acceso rápido queda deshabilitado por razones de seguridad." data-en="Login portal for operators and supervisors. Supervisors must authenticate with full credentials without quick access.">
+              Pantalla de inicio de sesión para operarios y supervisores. En caso de supervisores, el acceso rápido queda deshabilitado por razones de seguridad.
+            </p>
+          </div>
+        </div>
+
+        <!-- Capture 2: tpm1 -->
+        <div class="reveal-on-scroll reveal-delay-2 group rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[16/10] bg-zinc-900 overflow-hidden relative">
+            <img src="img/tpm1.jpeg" alt="Acceso Rápido y Selección de Autoelevadores" class="w-full h-full object-cover lightbox-trigger cursor-pointer group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span class="text-white text-xs font-bold flex items-center gap-1"><span aria-hidden="true" class="material-symbols-outlined text-sm">zoom_in</span> Ampliar captura</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-primary mb-1 block" data-es="Captura 02 — Inicio" data-en="Screenshot 02 — Home">Captura 02 — Inicio</span>
+            <h4 class="font-bold text-base text-editorial mb-1" data-es="Acceso Rápido & Listado de Autoelevadores" data-en="Quick Access & Forklift List">Acceso Rápido & Listado de Autoelevadores</h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Selección rápida de operarios activos de turno y visualización del estado operativo en tiempo real de los vehículos en planta." data-en="Quick operator selection for shift workers and real-time operational status of plant machinery.">
+              Selección rápida de operarios activos de turno y visualización del estado operativo en tiempo real de los vehículos en planta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Capture 3: tpm2 -->
+        <div class="reveal-on-scroll reveal-delay-3 group rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[16/10] bg-zinc-900 overflow-hidden relative">
+            <img src="img/tpm2.jpeg" alt="Ficha Técnica y Horómetro del Vehículo" class="w-full h-full object-cover lightbox-trigger cursor-pointer group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span class="text-white text-xs font-bold flex items-center gap-1"><span aria-hidden="true" class="material-symbols-outlined text-sm">zoom_in</span> Ampliar captura</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-primary mb-1 block" data-es="Captura 03 — Ficha" data-en="Screenshot 03 — Details">Captura 03 — Ficha</span>
+            <h4 class="font-bold text-base text-editorial mb-1" data-es="Ficha de Equipo & Registro de Horómetro" data-en="Vehicle Specs & Hour-Meter Tracking">Ficha de Equipo & Registro de Horómetro</h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Detalle del equipo escaneado (horómetro acumulado, tipo de combustible GLP/Diesel/Eléctrico) y asignación del operario responsable." data-en="Detailed vehicle dashboard showing hour-meter status, fuel type, next scheduled maintenance, and assigned operator.">
+              Detalle del equipo escaneado (horómetro acumulado, tipo de combustible GLP/Diesel/Eléctrico) y asignación del operario responsable.
+            </p>
+          </div>
+        </div>
+
+        <!-- Capture 4: tpm3 -->
+        <div class="reveal-on-scroll reveal-delay-4 group rounded-2xl overflow-hidden border border-outline-variant/20 bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="aspect-[16/10] bg-zinc-900 overflow-hidden relative">
+            <img src="img/tpm3.jpeg" alt="Checklist Interactivo y Reporte de Fallas" class="w-full h-full object-cover lightbox-trigger cursor-pointer group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 pointer-events-none">
+              <span class="text-white text-xs font-bold flex items-center gap-1"><span aria-hidden="true" class="material-symbols-outlined text-sm">zoom_in</span> Ampliar captura</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-primary mb-1 block" data-es="Captura 04 — Checklist" data-en="Screenshot 04 — Checklist">Captura 04 — Checklist</span>
+            <h4 class="font-bold text-base text-editorial mb-1" data-es="Checklist Operativo & Reporte de Fallas" data-en="Operational Checklist & Fault Alerts">Checklist Operativo & Reporte de Fallas</h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed" data-es="Formulario interactivo de 19 ítems (fluidos, luces, frenos). Si se detecta un problema se notifica inmediatamente a la supervisión." data-en="Interactive 19-item safety checklist. Reporting any malfunction immediately dispatches an alert to plant supervisors.">
+              Formulario interactivo de 19 ítems (fluidos, luces, frenos). Si se detecta un problema se notifica inmediatamente a la supervisión.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -303,14 +494,10 @@
   <!-- Result & CTA Section -->
   <section class="max-w-4xl mx-auto px-4 py-16 sm:py-24 text-center">
     <h3 class="text-3xl font-extrabold text-editorial mb-4" data-es="Resultado del Proyecto" data-en="Project Deliverable">Resultado del Proyecto</h3>
-    <p class="text-on-surface-variant text-base max-w-xl mx-auto mb-8" data-es="Aplicación web desplegada en producción y lista para su uso operativo en flotas de autoelevadores industriales." data-en="Web application deployed in production, ready for operational use across industrial forklift fleets.">
-      Aplicación web desplegada en producción y lista para su uso operativo en flotas de autoelevadores industriales.
+    <p class="text-on-surface-variant text-base max-w-xl mx-auto mb-8" data-es="Aplicación web de uso interno exclusivo en planta industrial, optimizada para digitalizar y asegurar la trazabilidad de inspecciones diarias." data-en="Internal enterprise web application deployed for plant operations, optimized for digital pre-shift forklift safety audits.">
+      Aplicación web de uso interno exclusivo en planta industrial, optimizada para digitalizar y asegurar la trazabilidad de inspecciones diarias.
     </p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a class="px-8 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm shadow-md" href="https://tpm-autoelevadores.vercel.app" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true" class="material-symbols-outlined text-base">language</span>
-        <span data-es="Ver Demo Web" data-en="View Web Demo">Ver Demo Web</span>
-      </a>
       <a class="px-8 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all text-sm" href="https://github.com/LautaroCLM/tpm-autoelevadores" target="_blank" rel="noopener noreferrer">
         <span data-es="Ver Repositorio GitHub" data-en="View GitHub Repository">Ver Repositorio GitHub</span>
       </a>
@@ -347,9 +534,10 @@
 </button>
 
 <script>
-  // Language translation logic
+  // Language translation logic with smooth transition
   const langToggles = document.querySelectorAll(".lang-toggle-btn");
   let currentLang = "es";
+  let isTranslating = false;
   
   const updateLanguage = () => {
     document.querySelectorAll("[data-es][data-en]").forEach(el => {
@@ -359,10 +547,40 @@
       btn.textContent = currentLang === "es" ? "EN" : "ES";
     });
   };
+
   langToggles.forEach(btn => {
     btn.addEventListener("click", () => {
-      currentLang = currentLang === "es" ? "en" : "es";
-      updateLanguage();
+      if (isTranslating) return;
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        currentLang = currentLang === "es" ? "en" : "es";
+        updateLanguage();
+        return;
+      }
+
+      isTranslating = true;
+      langToggles.forEach(b => b.classList.add("lang-btn-pulse"));
+
+      const transElements = document.querySelectorAll("[data-es][data-en]");
+      transElements.forEach(el => el.classList.add("lang-trans-out"));
+
+      setTimeout(() => {
+        currentLang = currentLang === "es" ? "en" : "es";
+        updateLanguage();
+
+        transElements.forEach(el => {
+          el.classList.remove("lang-trans-out");
+          el.classList.add("lang-trans-in");
+        });
+
+        langToggles.forEach(b => b.classList.remove("lang-btn-pulse"));
+
+        setTimeout(() => {
+          transElements.forEach(el => el.classList.remove("lang-trans-in"));
+          isTranslating = false;
+        }, 120);
+      }, 100);
     });
   });
 
@@ -396,12 +614,45 @@
   const lightboxClose = document.getElementById("lightbox-close");
   const triggers = document.querySelectorAll(".lightbox-trigger");
 
+  let lastFocusedElement = null;
+
+  function trapFocus(containerEl, e) {
+    if (e.key !== "Tab") return;
+    const focusables = Array.from(
+      containerEl.querySelectorAll(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter(el => el.offsetWidth > 0 || el.offsetHeight > 0 || el.getClientRects().length > 0);
+
+    if (focusables.length === 0) {
+      e.preventDefault();
+      return;
+    }
+
+    const firstEl = focusables[0];
+    const lastEl = focusables[focusables.length - 1];
+
+    if (e.shiftKey && document.activeElement === firstEl) {
+      e.preventDefault();
+      lastEl.focus();
+    } else if (!e.shiftKey && document.activeElement === lastEl) {
+      e.preventDefault();
+      firstEl.focus();
+    }
+  }
+
   triggers.forEach(img => {
     img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
+      lastFocusedElement = document.activeElement;
+      const src = img.tagName === "IMG" ? img.src : (img.querySelector("img") || {}).src;
+      if (!src) return;
+      lightboxImg.src = src;
       lightboxModal.classList.remove("opacity-0", "pointer-events-none");
       lightboxImg.classList.remove("scale-95");
       lightboxImg.classList.add("scale-100");
+      setTimeout(() => {
+        if (lightboxClose) lightboxClose.focus();
+      }, 50);
     });
   });
 
@@ -409,11 +660,20 @@
     lightboxModal.classList.add("opacity-0", "pointer-events-none");
     lightboxImg.classList.remove("scale-100");
     lightboxImg.classList.add("scale-95");
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+      lastFocusedElement = null;
+    }
   };
 
   if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
   if (lightboxModal) lightboxModal.addEventListener("click", (e) => { if (e.target === lightboxModal) closeLightbox(); });
-  window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+    if (lightboxModal && !lightboxModal.classList.contains("opacity-0")) {
+      trapFocus(lightboxModal, e);
+    }
+  });
 
   // Scroll animations
   const revealElements = document.querySelectorAll(".reveal-on-scroll");
