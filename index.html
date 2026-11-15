@@ -24,7 +24,7 @@
 <meta name="twitter:title" content="Lautaro Colman — Desarrollador Web &amp; Software">
 <meta name="twitter:image" content="https://lautaroclm.github.io/Portfolio-/img/og-cover.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://lautaroclm.github.io/Portfolio-/#lautaro", "name": "Lautaro Uriel Colman", "url": "https://lautaroclm.github.io/Portfolio-/", "image": "https://lautaroclm.github.io/Portfolio-/img/lautaro.webp", "jobTitle": "Desarrollador Web & Software", "email": "colmanlautaro24@gmail.com", "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Universidad Tecnológica Nacional (UTN)"}, {"@type": "CollegeOrUniversity", "name": "Universidad de Buenos Aires (UBA)"}], "knowsAbout": ["Desarrollo web", "React", "Next.js", "TypeScript", "Python", "Django", "Supabase", "PostgreSQL", "Electron"], "sameAs": ["https://github.com/LautaroCLM", "https://www.linkedin.com/in/lautaro-colman-26a773375/"]}, {"@type": "WebSite", "name": "Lautaro Colman — Portfolio", "url": "https://lautaroclm.github.io/Portfolio-/", "inLanguage": "es", "author": {"@id": "https://lautaroclm.github.io/Portfolio-/#lautaro"}}]}</script>
-<script>try{var t=localStorage.theme;if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{var t=localStorage.theme;if(t!=="light")t="dark";document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>
 :root{
   --bg:#000;--fg:#f5f5f7;--muted:#a1a1a8;--card:#0e0e10;--line:rgba(255,255,255,.1);
@@ -79,7 +79,6 @@ button{font:inherit;color:inherit}
   .nav,.actions .cta{display:none}
   .hdr-in{grid-template-columns:1fr auto}
   .tool{width:36px;height:36px}
-  .cue{display:none}
   body{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
   .tabbar{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;border-radius:999px;background:rgba(22,22,24,.55);-webkit-backdrop-filter:blur(24px) saturate(1.7);backdrop-filter:blur(24px) saturate(1.7);border:1px solid rgba(255,255,255,.16);box-shadow:0 14px 40px -14px rgba(0,0,0,.8)}
   :root[data-theme=light] .tabbar{background:rgba(255,255,255,.68);border-color:rgba(0,0,0,.08);box-shadow:0 14px 40px -18px rgba(0,0,0,.3)}
@@ -111,11 +110,9 @@ button{font:inherit;color:inherit}
 .hero-in{max-width:880px;display:flex;flex-direction:column;align-items:center;gap:1.4rem}
 .eyebrow{display:inline-block;padding:.45rem 1rem;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--muted)}
 h1{font-size:clamp(3rem,13vw,7rem);line-height:.98;letter-spacing:-.05em;font-weight:700;background:linear-gradient(180deg,var(--fg) 30%,var(--muted));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+:root[data-theme=light] h1{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#000}
 .lead{max-width:34rem;font-size:clamp(1.05rem,3.6vw,1.35rem);color:var(--muted);line-height:1.45}
 .hero-cta{margin-top:.6rem}
-.cue{position:absolute;left:50%;bottom:26px;width:24px;height:38px;margin-left:-12px;border:1.5px solid var(--muted);border-radius:14px;opacity:.7}
-.cue::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--muted);animation:cue 1.8s ease-in-out infinite}
-@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
 .hero-in>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .hero-in>:nth-child(2){animation-delay:.08s}.hero-in>:nth-child(3){animation-delay:.16s}.hero-in>:nth-child(4){animation-delay:.24s}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}}
@@ -248,7 +245,6 @@ h2{font-size:clamp(2.1rem,7vw,3.8rem);line-height:1.04;letter-spacing:-.04em;fon
         <a class="btn btn-primary btn-lg" href="#proyectos"><span data-es="Ver proyectos" data-en="View projects">Ver proyectos</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-    <a class="cue" href="#proyectos" aria-label="Ir a proyectos"></a>
   </section>
 
   <section id="proyectos" class="sec">
