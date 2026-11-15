@@ -1,1559 +1,499 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
+<html lang="es" data-theme="dark">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Lautaro Colman — Desarrollador Web & Software | Portfolio</title>
-<meta name="description" content="Lautaro Colman — Desarrollador Web & Software, Técnico Universitario en Programación (UTN). Portfolio de aplicaciones web, sistemas de gestión, aplicaciones de escritorio y soluciones digitales."/>
-<meta name="robots" content="index, follow"/>
-
-<link rel="canonical" href="https://lautaroclm.github.io/Portfolio-/"/>
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://lautaroclm.github.io/Portfolio-/"/>
-<meta property="og:title" content="Lautaro Colman — Desarrollador Web & Software | Portfolio"/>
-<meta property="og:description" content="Portfolio profesional de Lautaro Colman. Proyectos destacados en desarrollo web, software de escritorio (Electron/SQLite), sistemas industriales y aplicaciones en la nube."/>
-<meta property="og:image" content="img/Stock Management App - PC.webp"/>
-<meta property="og:site_name" content="Lautaro Colman Portfolio"/>
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Lautaro Colman — Desarrollador Web & Software"/>
-<meta name="twitter:description" content="Portfolio profesional de Lautaro Colman. Proyectos en Next.js, React, Electron, Supabase y TypeScript."/>
-<meta name="twitter:image" content="img/Stock Management App - PC.webp"/>
-
-<!-- Structured Data (Schema.org) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "name": "Lautaro Colman",
-      "jobTitle": "Desarrollador Web & Software",
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Universidad Tecnológica Nacional (UTN)"
-      },
-      "sameAs": [
-        "https://github.com/LautaroCLM"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "name": "Lautaro Colman — Portfolio",
-      "description": "Portfolio profesional de Lautaro Colman, Desarrollador Web & Software y Técnico Universitario en Programación (UTN)."
-    }
-  ]
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lautaro Colman — Desarrollador Web &amp; Software</title>
+<meta name="description" content="Portfolio de Lautaro Colman, desarrollador web y de software (Técnico Universitario en Programación, UTN). Sistemas de gestión, aplicaciones web y de escritorio, y sitios en producción.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://lautaroclm.github.io/Portfolio-/">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="alternate icon" type="image/png" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://lautaroclm.github.io/Portfolio-/">
+<meta property="og:site_name" content="Lautaro Colman">
+<meta property="og:title" content="Lautaro Colman — Desarrollador Web &amp; Software">
+<meta property="og:description" content="Sistemas de gestión, aplicaciones web y de escritorio, y sitios en producción. Mirá los proyectos.">
+<meta property="og:image" content="https://lautaroclm.github.io/Portfolio-/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lautaro Colman — Desarrollador Web &amp; Software">
+<meta name="twitter:image" content="https://lautaroclm.github.io/Portfolio-/img/og-cover.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://lautaroclm.github.io/Portfolio-/#lautaro", "name": "Lautaro Uriel Colman", "url": "https://lautaroclm.github.io/Portfolio-/", "image": "https://lautaroclm.github.io/Portfolio-/img/lautaro.webp", "jobTitle": "Desarrollador Web & Software", "email": "colmanlautaro24@gmail.com", "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Universidad Tecnológica Nacional (UTN)"}, {"@type": "CollegeOrUniversity", "name": "Universidad de Buenos Aires (UBA)"}], "knowsAbout": ["Desarrollo web", "React", "Next.js", "TypeScript", "Python", "Django", "Supabase", "PostgreSQL", "Electron"], "sameAs": ["https://github.com/LautaroCLM", "https://www.linkedin.com/in/lautaro-colman-26a773375/"]}, {"@type": "WebSite", "name": "Lautaro Colman — Portfolio", "url": "https://lautaroclm.github.io/Portfolio-/", "inLanguage": "es", "author": {"@id": "https://lautaroclm.github.io/Portfolio-/#lautaro"}}]}</script>
+<script>try{var t=localStorage.theme;if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{
+  --bg:#000;--fg:#f5f5f7;--muted:#a1a1a8;--card:#0e0e10;--line:rgba(255,255,255,.1);
+  --chip:rgba(255,255,255,.06);--glass:rgba(22,22,26,.55);--glass-strong:rgba(8,8,11,.78);
+  --c1:rgba(94,92,230,.17);--c2:rgba(10,132,255,.10);--c3:rgba(255,255,255,.035);--accent:#d2d2d7;--mark:linear-gradient(135deg,#f5f5f7,#86868b);
+  --shadow:0 30px 60px -30px rgba(0,0,0,.7);
+  color-scheme:dark;
 }
-</script>
+:root[data-theme=light]{
+  --bg:#fbfbfd;--fg:#1d1d1f;--muted:#6e6e73;--card:#fff;--line:rgba(0,0,0,.09);
+  --chip:rgba(0,0,0,.045);--glass:rgba(255,255,255,.6);--glass-strong:rgba(245,245,247,.85);
+  --c1:rgba(94,92,230,.10);--c2:rgba(10,132,255,.07);--c3:rgba(0,0,0,.02);--accent:#1d1d1f;--mark:linear-gradient(135deg,#1d1d1f,#86868b);
+  --shadow:0 30px 60px -34px rgba(0,0,0,.28);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI Variable Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;padding:.6rem 1rem;border-radius:12px;background:var(--fg);color:var(--bg);font-weight:600}
+.skip:focus{top:12px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+#top{position:absolute;top:0;left:0;width:1px;height:24px}
 
-<link rel="icon" type="image/png" href="img/logo.webp"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-background": "#1a1c1d",
-                    "background": "#f9f9fb",
-                    "surface-container-highest": "#e2e2e4",
-                    "on-secondary-fixed": "#1a1b1f",
-                    "surface-container-low": "#f3f3f5",
-                    "on-primary-container": "#ffffff",
-                    "primary-fixed-dim": "#474649",
-                    "on-surface-variant": "#474747",
-                    "primary-container": "#3b3b3d",
-                    "secondary-container": "#d5d4d9",
-                    "on-tertiary-container": "#ffffff",
-                    "on-tertiary-fixed": "#ffffff",
-                    "on-secondary-container": "#1a1b1f",
-                    "secondary-fixed": "#c7c6cb",
-                    "tertiary-container": "#747474",
-                    "on-error-container": "#410002",
-                    "surface-container-high": "#e8e8ea",
-                    "error": "#ba1a1a",
-                    "inverse-surface": "#2f3132",
-                    "outline-variant": "#c6c6c6",
-                    "inverse-on-surface": "#f0f0f2",
-                    "secondary-fixed-dim": "#ababb0",
-                    "outline": "#777777",
-                    "on-tertiary": "#e2e2e2",
-                    "on-primary-fixed": "#ffffff",
-                    "on-tertiary-fixed-variant": "#e2e2e2",
-                    "on-primary-fixed-variant": "#e4e2e4",
-                    "surface": "#f9f9fb",
-                    "error-container": "#ffdad6",
-                    "inverse-primary": "#c8c6c8",
-                    "surface-tint": "#5f5e60",
-                    "surface-bright": "#f9f9fb",
-                    "secondary": "#5e5e63",
-                    "on-secondary": "#ffffff",
-                    "surface-dim": "#d9dadc",
-                    "surface-container": "#eeeef0",
-                    "on-secondary-fixed-variant": "#3a3b40",
-                    "primary-fixed": "#5f5e60",
-                    "tertiary-fixed-dim": "#474747",
-                    "tertiary-fixed": "#5e5e5e",
-                    "primary": "#000000",
-                    "surface-container-lowest": "#ffffff",
-                    "on-primary": "#e4e2e4",
-                    "on-error": "#ffffff",
-                    "tertiary": "#3b3b3b",
-                    "on-surface": "#1a1c1d",
-                    "surface-variant": "#e2e2e4"
-            },
-            "borderRadius": {
-                    "DEFAULT": "1rem",
-                    "lg": "2rem",
-                    "xl": "3rem",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Inter"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        body { font-family: 'Inter', sans-serif; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        /* Editorial spacing and tonal layering */
-        .glass-nav {
-            background-color: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-        }
-        .text-editorial {
-            color: #1a1c1d;
-            letter-spacing: -0.02em;
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    #hero {
-      scroll-margin-top: 64px;
-    }
-    #mobile-menu {
-      display: none;
-    }
-    #mobile-menu.open {
-      display: block;
-    }
+/* glass: solo sobre fondos con color */
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border:1px solid var(--line)}
 
-    @media (prefers-reduced-motion: no-preference) {
-      header {
-        transition: box-shadow 0.35s ease, background-color 0.35s ease;
-      }
-      header.header-scrolled {
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-      }
-      .hero-in {
-        opacity: 0;
-        transform: translateY(1.15rem);
-        animation: heroFadeUp 0.78s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      }
-      .hero-in-right {
-        opacity: 0;
-        transform: translateY(0.85rem) scale(0.98);
-        animation: heroFadeInSoft 0.88s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      }
-      @keyframes heroFadeUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes heroFadeInSoft {
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-      .hero-delay-1 { animation-delay: 0.06s; }
-      .hero-delay-2 { animation-delay: 0.12s; }
-      .hero-delay-3 { animation-delay: 0.2s; }
-      .hero-delay-4 { animation-delay: 0.28s; }
-      .hero-delay-5 { animation-delay: 0.36s; }
-      .hero-delay-6 { animation-delay: 0.44s; }
+/* header transparente sobre el hero */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;border-bottom:1px solid transparent;transition:background-color .35s,border-color .35s,-webkit-backdrop-filter .35s,backdrop-filter .35s}
+.hdr.scrolled{background:var(--glass);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6);border-color:var(--line)}
+.hdr-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px;width:min(1240px,100% - 40px);margin-inline:auto}
+.logo{white-space:nowrap;display:inline-flex;align-items:center;gap:.55rem;font-weight:650;letter-spacing:-.02em;font-size:1.02rem;justify-self:start}
+.mark{width:22px;height:22px;display:block;flex:none}
+.nav{display:flex;gap:2.2rem;font-size:.9rem;color:var(--muted)}
+.nav a{transition:color .2s}
+.nav a:hover,.nav a.on{color:var(--fg)}
+.actions{justify-self:end;display:flex;align-items:center;gap:.5rem}
+.tool{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:transparent;border:1px solid var(--line);cursor:pointer;font-size:.74rem;font-weight:700;letter-spacing:.04em;transition:background-color .2s}
+.tool:hover{background:var(--chip)}
+.cta{padding:.55rem 1.15rem;border-radius:999px;background:var(--fg);color:var(--bg);font-size:.86rem;font-weight:600;transition:opacity .2s}
+.cta:hover{opacity:.85}
+.i-sun{display:none}
+:root[data-theme=light] .i-sun{display:block}
+:root[data-theme=light] .i-moon{display:none}
 
-      .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(1.5rem);
-        transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-      .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .reveal-delay-1 { transition-delay: 0.08s; }
-      .reveal-delay-2 { transition-delay: 0.16s; }
-      .reveal-delay-3 { transition-delay: 0.24s; }
-      .reveal-delay-4 { transition-delay: 0.32s; }
-      .reveal-delay-5 { transition-delay: 0.4s; }
 
-      /* Project card hover overlay */
-      .project-img-wrapper .project-hover-overlay {
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-      .project-img-wrapper .project-hover-overlay .project-hover-logo {
-        transform: scale(0.9);
-        opacity: 0;
-        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
-      }
-    }
+.tabbar{display:none}
+@media(max-width:820px){
+  .nav,.actions .cta{display:none}
+  .hdr-in{grid-template-columns:1fr auto}
+  .tool{width:36px;height:36px}
+  .cue{display:none}
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+  .tabbar{position:fixed;z-index:60;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;border-radius:999px;background:rgba(22,22,24,.55);-webkit-backdrop-filter:blur(24px) saturate(1.7);backdrop-filter:blur(24px) saturate(1.7);border:1px solid rgba(255,255,255,.16);box-shadow:0 14px 40px -14px rgba(0,0,0,.8)}
+  :root[data-theme=light] .tabbar{background:rgba(255,255,255,.68);border-color:rgba(0,0,0,.08);box-shadow:0 14px 40px -18px rgba(0,0,0,.3)}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:54px;border-radius:999px;font-size:.66rem;font-weight:600;letter-spacing:.01em;color:var(--muted);transition:background-color .25s,color .25s,transform .15s}
+  .tabbar a.on{background:var(--fg);color:var(--bg)}
+  .tabbar a:active{transform:scale(.95)}
+}
 
-    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-      .project-img-wrapper:hover .project-hover-overlay {
-        opacity: 1;
-      }
-      .project-img-wrapper:hover .project-hover-overlay .project-hover-logo {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.7rem 1.3rem;border-radius:999px;font-weight:600;font-size:.92rem;cursor:pointer;border:1px solid transparent;transition:transform .2s,background-color .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+@media(hover:hover){.btn:hover{transform:translateY(-1px)}}
+.btn-primary{background:var(--fg);color:var(--bg)}
+@media(hover:hover){.btn-primary:hover{opacity:.86}}
+.btn-ghost{background:var(--chip);border-color:var(--line)}
+.btn-ghost:hover{background:var(--line)}
+.btn-lg{min-height:52px;padding:.9rem 1.8rem;font-size:1rem}
 
-    @media (prefers-reduced-motion: reduce) {
-      .hero-in,
-      .hero-in-right {
-        opacity: 1;
-        transform: none;
-        animation: none;
-      }
-      .reveal-on-scroll {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;padding:96px 20px 84px;overflow:hidden;isolation:isolate}
+.glow{position:absolute;z-index:-1;border-radius:50%;pointer-events:none;will-change:transform}
+.g1{width:90vmax;height:90vmax;left:-35vmax;top:-45vmax;background:radial-gradient(closest-side,var(--c1),transparent);animation:d1 24s ease-in-out infinite alternate}
+.g2{width:80vmax;height:80vmax;right:-35vmax;bottom:-40vmax;background:radial-gradient(closest-side,var(--c2),transparent);animation:d2 28s ease-in-out infinite alternate}
+.g3{width:55vmax;height:55vmax;left:30%;top:30%;background:radial-gradient(closest-side,var(--c3),transparent);animation:d3 32s ease-in-out infinite alternate}
+@keyframes d1{to{transform:translate3d(14vmax,10vmax,0) scale(1.12)}}
+@keyframes d2{to{transform:translate3d(-12vmax,-8vmax,0) scale(1.1)}}
+@keyframes d3{to{transform:translate3d(-10vmax,6vmax,0) scale(.9)}}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:28%;background:linear-gradient(transparent,var(--bg));z-index:-1;pointer-events:none}
+.hero-in{max-width:880px;display:flex;flex-direction:column;align-items:center;gap:1.4rem}
+.eyebrow{display:inline-block;padding:.45rem 1rem;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--muted)}
+h1{font-size:clamp(3rem,13vw,7rem);line-height:.98;letter-spacing:-.05em;font-weight:700;background:linear-gradient(180deg,var(--fg) 30%,var(--muted));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.lead{max-width:34rem;font-size:clamp(1.05rem,3.6vw,1.35rem);color:var(--muted);line-height:1.45}
+.hero-cta{margin-top:.6rem}
+.cue{position:absolute;left:50%;bottom:26px;width:24px;height:38px;margin-left:-12px;border:1.5px solid var(--muted);border-radius:14px;opacity:.7}
+.cue::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--muted);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.hero-in>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-in>:nth-child(2){animation-delay:.08s}.hero-in>:nth-child(3){animation-delay:.16s}.hero-in>:nth-child(4){animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
 
-    /* Language transition styles */
-    .lang-trans-out {
-      opacity: 0 !important;
-      transform: translateY(-2px) !important;
-      transition: opacity 100ms cubic-bezier(0.4, 0, 0.2, 1), transform 100ms cubic-bezier(0.4, 0, 0.2, 1) !important;
-    }
-    .lang-trans-in {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-      transition: opacity 120ms cubic-bezier(0.4, 0, 0.2, 1), transform 120ms cubic-bezier(0.4, 0, 0.2, 1) !important;
-    }
-    .lang-toggle-btn {
-      transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) !important;
-    }
-    .lang-btn-pulse {
-      opacity: 0.5;
-      transform: scale(0.92);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .lang-trans-out,
-      .lang-trans-in {
-        transition: none !important;
-        transform: none !important;
-        opacity: 1 !important;
-      }
-      .lang-btn-pulse {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-    }
-  </style>
-  </head>
-<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.05)]" id="site-header">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-<div class="flex items-center gap-2">
-<span aria-hidden="true" class="material-symbols-outlined text-zinc-900 dark:text-zinc-100" data-icon="terminal">terminal</span>
-<span class="text-lg font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 font-['Inter']">LAUTARO COLMAN</span>
-</div>
-<nav class="hidden md:flex items-center gap-8 font-['Inter'] text-sm tracking-wide">
-  <button id="lang-toggle" class="lang-toggle-btn text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" aria-label="Toggle language">EN</button>
-  <a id="nav-home" class="text-zinc-900 dark:text-white font-medium border-b border-zinc-900 dark:border-zinc-50" href="#hero" data-es="Inicio" data-en="Home">Inicio</a>
-  <a id="nav-archive" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
-  <a id="nav-contact" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-</nav>
-<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu" class="md:hidden material-symbols-outlined" id="menu-toggle" type="button">menu</button>
-</div>
-<nav class="md:hidden border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 px-4 sm:px-6 py-4" id="mobile-menu">
-<div class="flex flex-col gap-4 font-['Inter'] text-sm tracking-wide">
-<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#hero" data-es="Inicio" data-en="Home">Inicio</a>
-<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
-<a class="text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors" href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-<button class="lang-toggle-btn text-left text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" aria-label="Toggle language">EN</button>
-</div>
-</nav>
-</header>
-<main class="pt-16">
-<!-- Hero Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-32 lg:mb-48" id="hero">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-<div class="lg:col-span-7">
-<span class="hero-in hero-delay-1 inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-surface-container-highest dark:bg-zinc-800/90 text-on-surface dark:text-zinc-200 border border-outline-variant/20 dark:border-zinc-700/60 text-[0.75rem] font-bold tracking-[0.05em] uppercase">
-  <span class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></span>
-  <span data-es="Disponible para proyectos" data-en="Available for projects">Disponible para proyectos</span>
-</span>
-<h1 class="hero-in hero-delay-2 text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold leading-[1.05] tracking-tighter mb-6 sm:mb-8 text-editorial">
-                        Lautaro Colman
-                    </h1>
-<h2 class="hero-in hero-delay-3 text-xl sm:text-2xl md:text-3xl text-on-surface-variant font-medium mb-6 sm:mb-8 leading-relaxed">
-                        <span data-es="Desarrollador Web &amp; Software" data-en="Web &amp; Software Developer">Desarrollador Web &amp; Software</span>
-                    </h2>
-<p class="hero-in hero-delay-4 text-base sm:text-lg md:text-xl text-on-surface-variant opacity-80 max-w-xl mb-8 sm:mb-12 leading-relaxed" data-es="Desarrollo aplicaciones web, sistemas de gestión y soluciones de software enfocadas en optimizar procesos, integrar tecnologías y resolver problemas reales de negocio." data-en="I build web applications, management systems, and software solutions focused on optimizing processes, integrating technologies, and solving real business problems.">
-                        Desarrollo aplicaciones web, sistemas de gestión y soluciones de software enfocadas en optimizar procesos, integrar tecnologías y resolver problemas reales de negocio.
-                    </p>
-<div class="hero-in hero-delay-5 flex flex-wrap gap-3 sm:gap-4">
-<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center transition-transform duration-300 active:scale-95 hover:-translate-y-0.5 bg-gradient-to-br from-primary to-primary-container shadow-md" href="#contacto" data-es="Contáctame" data-en="Contact Me">
-                            Contáctame
-                        </a>
-<a class="w-full sm:w-auto px-6 sm:px-10 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-zinc-700 transition-all duration-300 hover:-translate-y-0.5" href="#proyectos" data-es="Ver Proyectos" data-en="View Projects">
-                            Ver Proyectos
-                        </a>
-</div>
-</div>
-<div class="hero-in-right hero-delay-4 lg:col-span-5 relative">
-<div class="aspect-square rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.06)] bg-surface-container-low border border-outline-variant/15">
-<img alt="Lautaro Colman" fetchpriority="high" width="600" height="600" class="w-full h-full object-cover transition-all duration-700" data-alt="Retrato profesional de Lautaro Colman en estilo editorial minimalista" src="img/WhatsApp Image 2026-01-05 at 7.38.39 PM.webp"/>
-</div>
-<div class="hidden sm:flex absolute -bottom-5 -right-5 w-28 h-28 sm:w-32 sm:h-32 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-outline-variant/20 dark:border-zinc-800 flex-col items-center justify-center gap-1 transition-transform hover:scale-105">
-<span aria-hidden="true" class="material-symbols-outlined text-3xl sm:text-4xl text-zinc-800 dark:text-zinc-200" data-icon="terminal">terminal</span>
-<span class="text-[0.65rem] font-bold tracking-wider uppercase text-on-surface-variant dark:text-zinc-400">UTN Tech</span>
-</div>
-</div>
-</div>
-</section>
-<!-- About Me Section -->
-<section class="bg-surface-container-low py-20 sm:py-24 lg:py-32 mb-24 sm:mb-32 border-y border-outline-variant/15">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-<div class="reveal-on-scroll lg:col-span-4">
-<h2 class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
-<h3 class="text-3xl sm:text-4xl font-bold text-editorial leading-tight" data-es="Desarrollo de software y soluciones orientadas al negocio." data-en="Software development and business-oriented solutions.">Desarrollo de software y soluciones orientadas al negocio.</h3>
-</div>
-<div class="lg:col-span-8">
-<p class="reveal-on-scroll reveal-delay-1 text-base sm:text-lg md:text-xl text-on-surface-variant leading-relaxed mb-8 max-w-2xl" data-es="Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (UTN). Desarrollo aplicaciones web, sistemas de gestión y herramientas de software enfocadas en la mantenibilidad, el rendimiento y la resolución práctica de problemas de negocio." data-en="University Programming Technician graduated from the National Technological University (UTN). I develop web applications, management systems, and software tools focused on maintainability, performance, and practical business problem-solving.">
-                            Técnico Universitario en Programación egresado de la Universidad Tecnológica Nacional (UTN). Desarrollo aplicaciones web, sistemas de gestión y herramientas de software enfocadas en la mantenibilidad, el rendimiento y la resolución práctica de problemas de negocio.
-                        </p>
-<div class="reveal-on-scroll reveal-delay-2 inline-flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/20 mb-10 shadow-sm">
-<div class="w-10 h-10 rounded-lg bg-surface-container-high dark:bg-zinc-800 text-on-surface dark:text-zinc-200 flex items-center justify-center shrink-0">
-<span aria-hidden="true" class="material-symbols-outlined text-xl" data-icon="school">school</span>
-</div>
-<div>
-<span class="block text-xs font-bold tracking-wider uppercase text-on-surface-variant dark:text-zinc-400" data-es="Formación Académica" data-en="Academic Background">Formación Académica</span>
-<span class="font-bold text-sm sm:text-base text-editorial" data-es="Técnico Universitario en Programación — UTN" data-en="University Programming Technician — UTN">Técnico Universitario en Programación — UTN</span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 border-t border-outline-variant/20 pt-10">
-<div class="reveal-on-scroll reveal-delay-1 flex flex-col">
-<div class="flex items-center gap-2 mb-3 text-zinc-700 dark:text-zinc-300">
-<span aria-hidden="true" class="material-symbols-outlined text-lg" data-icon="code">code</span>
-<span class="text-[0.7rem] font-bold tracking-widest uppercase text-on-surface-variant dark:text-zinc-400">01 — Frontend</span>
-</div>
-<h4 class="font-bold text-lg text-editorial mb-2" data-es="Ingeniería Frontend" data-en="Frontend Engineering">Ingeniería Frontend</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed" data-es="Interfaces accesibles y responsivas construidas con HTML semántico, CSS moderno, JavaScript y frameworks como React y Next.js." data-en="Responsive, accessible interfaces built with semantic HTML, modern CSS, JavaScript, and frameworks like React and Next.js.">Interfaces accesibles y responsivas construidas con HTML semántico, CSS moderno, JavaScript y frameworks como React y Next.js.</p>
-</div>
-<div class="reveal-on-scroll reveal-delay-2 flex flex-col">
-<div class="flex items-center gap-2 mb-3 text-zinc-700 dark:text-zinc-300">
-<span aria-hidden="true" class="material-symbols-outlined text-lg" data-icon="dns">dns</span>
-<span class="text-[0.7rem] font-bold tracking-widest uppercase text-on-surface-variant dark:text-zinc-400">02 — Backend</span>
-</div>
-<h4 class="font-bold text-lg text-editorial mb-2" data-es="Backend &amp; Datos" data-en="Backend &amp; Data">Backend &amp; Datos</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed" data-es="APIs robustas y lógica de negocio con Python y Django, autenticación y manejo de bases de datos SQL (PostgreSQL, Supabase)." data-en="Robust APIs and business logic with Python and Django, authentication flows, and SQL databases (PostgreSQL, Supabase).">APIs robustas y lógica de negocio con Python y Django, autenticación y manejo de bases de datos SQL (PostgreSQL, Supabase).</p>
-</div>
-<div class="reveal-on-scroll reveal-delay-3 flex flex-col">
-<div class="flex items-center gap-2 mb-3 text-zinc-700 dark:text-zinc-300">
-<span aria-hidden="true" class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span>
-<span class="text-[0.7rem] font-bold tracking-widest uppercase text-on-surface-variant dark:text-zinc-400">03 — Desktop</span>
-</div>
-<h4 class="font-bold text-lg text-editorial mb-2" data-es="Escritorio &amp; Herramientas" data-en="Desktop &amp; Tools">Escritorio &amp; Herramientas</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed" data-es="Aplicaciones de escritorio multiplataforma con Electron, control de versiones con Git/GitHub e integración de servicios." data-en="Multiplatform desktop applications with Electron, version control with Git/GitHub, and service integration.">Aplicaciones de escritorio multiplataforma con Electron, control de versiones con Git/GitHub e integración de servicios.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Projects Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-36 lg:mb-48" id="proyectos">
-<div class="reveal-on-scroll flex flex-col sm:flex-row justify-between sm:items-end gap-4 sm:gap-6 mb-10 sm:mb-12">
-<div>
-<h2 class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4" data-es="Proyectos Destacados" data-en="Featured Projects">Proyectos Destacados</h2>
-<h3 class="text-3xl sm:text-4xl font-bold text-editorial" data-es="Desarrollos Principales" data-en="Core Software Projects">Desarrollos Principales</h3>
-</div>
-</div>
+/* secciones */
+.sec{padding:clamp(72px,12vw,140px) 0}
+.sec-tight{padding-top:clamp(24px,5vw,56px)}
+.wash{position:relative;isolation:isolate}
+.wash::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 60% at 85% 10%,var(--c1),transparent 70%),radial-gradient(50% 55% at 5% 95%,var(--c2),transparent 70%);opacity:.8;pointer-events:none;-webkit-mask-image:linear-gradient(transparent,#000 28%,#000 72%,transparent);mask-image:linear-gradient(transparent,#000 28%,#000 72%,transparent)}
+.kicker{font-size:.8rem;font-weight:650;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+h2{font-size:clamp(2.1rem,7vw,3.8rem);line-height:1.04;letter-spacing:-.04em;font-weight:700}
+.h2-s{font-size:clamp(1.7rem,5vw,2.6rem)}
+.sub{max-width:40rem;margin-top:1rem;font-size:clamp(1rem,3.2vw,1.18rem);color:var(--muted)}
+.sec-head-s{margin-top:clamp(56px,10vw,110px)}
+.stack{margin-top:2.4rem;display:grid;gap:22px}
 
-<div id="featured-projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch mb-20 sm:mb-24">
-  <!-- Dynamic featured projects (0-3) will render here -->
-</div>
+/* tarjetas destacadas (se apilan al scrollear) */
+.pcard{position:sticky;top:calc(76px + var(--i)*14px);display:grid;border-radius:28px;background:var(--card);border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow)}
+.pmedia{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#0b0b0e}
+.pmedia img{width:100%;height:100%;object-fit:cover}
+.pmedia::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),transparent 55%);pointer-events:none}
+.badge{position:absolute;z-index:1;top:14px;left:14px;padding:.3rem .8rem;border-radius:999px;font-size:.72rem;font-weight:650;letter-spacing:.03em;color:#fff;background:rgba(20,20,24,.45);border-color:rgba(255,255,255,.18)}
+.pbody{display:flex;flex-direction:column;gap:.65rem;padding:20px 20px 22px}
+.pnum{font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--muted)}
+.pbody h3{font-size:clamp(1.45rem,4.4vw,2.1rem);line-height:1.08;letter-spacing:-.035em}
+.pdesc{color:var(--muted);font-size:.97rem}
+.ptitle{display:flex;align-items:center;gap:.75rem}
+.plogo{flex:none;width:42px;height:42px;padding:3px;border-radius:12px;background:#141416;border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;overflow:hidden}
+.plogo img{width:100%;height:100%;object-fit:contain}
+.plogo-s{width:32px;height:32px;padding:2px;border-radius:9px}
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.chips li{font-size:.72rem;padding:.22rem .65rem;border-radius:999px;background:var(--chip);border:1px solid var(--line);color:var(--muted)}
+.pactions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.35rem}
+.pactions .btn{min-height:42px;padding:.55rem 1rem;font-size:.86rem}
+@media(min-width:900px){
+  .pcard{grid-template-columns:1.3fr 1fr;min-height:480px}
+  .pmedia{aspect-ratio:auto;height:100%}
+  .pbody{justify-content:center;padding:44px 44px 44px 40px;gap:.9rem}
+  .pdesc{font-size:1.05rem}
+}
+@media(max-height:680px){.pcard{position:relative;top:auto}}
 
-<div class="reveal-on-scroll pt-12 border-t border-outline-variant/15 mb-10 sm:mb-12">
-<h2 class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4" data-es="Otros Proyectos" data-en="Other Projects">Otros Proyectos</h2>
-<h3 class="text-2xl sm:text-3xl font-bold text-editorial" data-es="Desarrollos Complementarios" data-en="Additional Projects">Desarrollos Complementarios</h3>
-</div>
+/* otros proyectos */
+.mgrid{margin-top:2rem;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr))}
+@media(max-width:640px){
+  .mgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-20px;padding:2px 20px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .mgrid::-webkit-scrollbar{display:none}
+  .mgrid .mcard{flex:0 0 80%;scroll-snap-align:center;animation:none}
+}
+.mcard{display:flex;flex-direction:column;border-radius:22px;background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .35s,border-color .35s}
+@media(hover:hover){.mcard:hover{transform:translateY(-4px);border-color:var(--accent)}}
+.mmedia{display:block;aspect-ratio:16/9;overflow:hidden;background:#0b0b0e}
+.mmedia img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s}
+@media(hover:hover){.mcard:hover .mmedia img{transform:scale(1.04)}}
+.mbody{display:flex;flex-direction:column;gap:.55rem;padding:16px 18px 18px;flex:1}
+.mbody h3{font-size:1.15rem;letter-spacing:-.02em}
+.mbody p{font-size:.9rem;color:var(--muted)}
+.mlinks{display:flex;gap:1rem;margin-top:auto;padding-top:.5rem}
+.link{display:inline-flex;align-items:center;gap:.4rem;font-size:.86rem;font-weight:600;padding:.4rem 0;min-height:40px;color:var(--fg)}
+.link:hover{color:var(--accent)}
 
-<div id="other-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-  <!-- Dynamic secondary projects (4-9) will render here -->
-</div>
-</section>
-<!-- Technologies Section -->
-<section class="bg-surface-container-low py-20 sm:py-24 lg:py-32 mb-24 sm:mb-32 border-y border-outline-variant/15">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-12 sm:mb-16">
-<h2 class="reveal-on-scroll text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-4" data-es="Habilidades" data-en="Skills">Habilidades</h2>
-<h3 class="reveal-on-scroll reveal-delay-1 text-3xl sm:text-4xl font-bold text-editorial" data-es="Tecnologías &amp; Herramientas" data-en="Technologies &amp; Tools">Tecnologías &amp; Herramientas</h3>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 border-t border-outline-variant/20 pt-10">
-<div class="reveal-on-scroll reveal-delay-1 flex flex-col">
-<div class="flex items-center gap-3 mb-6 pb-3 border-b border-outline-variant/15">
-<span aria-hidden="true" class="material-symbols-outlined text-zinc-700 dark:text-zinc-300 text-2xl" data-icon="code">code</span>
-<h4 class="font-bold text-xl text-editorial" data-es="Frontend" data-en="Frontend">Frontend</h4>
-</div>
-<div class="flex flex-wrap gap-2.5">
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">HTML</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">CSS</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">JavaScript</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">TypeScript</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">React</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Next.js</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Tailwind CSS</span>
-</div>
-</div>
-<div class="reveal-on-scroll reveal-delay-2 flex flex-col">
-<div class="flex items-center gap-3 mb-6 pb-3 border-b border-outline-variant/15">
-<span aria-hidden="true" class="material-symbols-outlined text-zinc-700 dark:text-zinc-300 text-2xl" data-icon="dns">dns</span>
-<h4 class="font-bold text-xl text-editorial" data-es="Backend &amp; Datos" data-en="Backend &amp; Data">Backend &amp; Datos</h4>
-</div>
-<div class="flex flex-wrap gap-2.5">
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Python</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Django</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">SQL</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">PostgreSQL</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Supabase</span>
-</div>
-</div>
-<div class="reveal-on-scroll reveal-delay-3 flex flex-col">
-<div class="flex items-center gap-3 mb-6 pb-3 border-b border-outline-variant/15">
-<span aria-hidden="true" class="material-symbols-outlined text-zinc-700 dark:text-zinc-300 text-2xl" data-icon="terminal">terminal</span>
-<h4 class="font-bold text-xl text-editorial" data-es="Escritorio &amp; Herramientas" data-en="Desktop &amp; Tools">Escritorio &amp; Herramientas</h4>
-</div>
-<div class="flex flex-wrap gap-2.5">
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Electron</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">Git</span>
-<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface text-sm font-semibold border border-outline-variant/20 shadow-sm">GitHub</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contacto Section -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-36 lg:mb-48 text-center" id="contacto">
-<h2 class="reveal-on-scroll text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant mb-8" data-es="¿Tienes un proyecto en mente?" data-en="Do you have a project in mind?">¿Tienes un proyecto en mente?</h2>
-<div class="reveal-on-scroll reveal-delay-1 flex flex-col items-center gap-6 mb-10 sm:mb-12">
-  <a class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-editorial hover:opacity-70 transition-all duration-300 decoration-primary underline decoration-2 underline-offset-[8px] sm:underline-offset-[12px] break-all hover:-translate-y-0.5" href="javascript:void(0)" onclick="openContactModal()">
-    colmanlautaro24@gmail.com
-  </a>
-  <div class="flex flex-wrap items-center justify-center gap-3.5">
-    <button id="send-email-btn" onclick="openContactModal()" class="px-6 py-3 rounded-full text-sm font-bold bg-primary text-on-primary hover:-translate-y-0.5 transition-all shadow-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer inline-flex items-center gap-2" aria-label="Enviar correo electrónico">
-      <span aria-hidden="true" class="material-symbols-outlined text-base">mail</span>
-      <span data-es="Enviar email" data-en="Send email">Enviar email</span>
-    </button>
-    <button id="copy-email-btn" onclick="copyEmailToClipboard()" class="px-5 py-3 rounded-full text-sm font-semibold bg-surface-container-high dark:bg-zinc-800 text-on-surface dark:text-zinc-200 hover:bg-surface-container-highest dark:hover:bg-zinc-700 transition-all border border-outline-variant/20 shadow-sm active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer inline-flex items-center gap-2" aria-label="Copiar correo electrónico al portapapeles">
-      <span aria-hidden="true" class="material-symbols-outlined text-base">content_copy</span>
-      <span id="copy-email-text" data-es="Copiar email" data-en="Copy email">Copiar email</span>
-    </button>
-  </div>
-</div>
-<div class="reveal-on-scroll reveal-delay-2 flex flex-wrap justify-center gap-6 sm:gap-12 mt-10 sm:mt-16">
-<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-medium" href="https://github.com/LautaroCLM" rel="noopener noreferrer" target="_blank">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="share">share</span>
-                    GitHub
-                </a>
-<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-medium" href="https://www.linkedin.com/in/lautaro-colman-26a773375/" rel="noopener noreferrer" target="_blank">
-<span aria-hidden="true" class="material-symbols-outlined" data-icon="person">person</span>
-                    LinkedIn
-                </a>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="reveal-on-scroll bg-zinc-50 dark:bg-zinc-900 w-full py-14 sm:py-20 md:py-24 mt-16 sm:mt-20">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start gap-6 sm:gap-8">
-<div class="flex flex-col gap-4">
-<span class="text-zinc-900 dark:text-zinc-100 font-['Inter'] text-sm tracking-wide uppercase font-medium">© 2026 - Lautaro Uriel Colman</span>
-<p class="text-zinc-400 text-xs" data-es="Portafolio profesional de programación y desarrollo web." data-en="Professional web development and programming portfolio.">Portafolio profesional de programación y desarrollo web.</p>
-</div>
-<div class="flex flex-wrap gap-6 sm:gap-8">
-<a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="https://github.com/LautaroCLM" rel="noopener noreferrer" target="_blank">GitHub</a>
-<a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="https://www.linkedin.com/in/lautaro-colman-26a773375/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-<a class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors font-['Inter'] text-sm tracking-wide uppercase font-medium" href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
-</div>
-</div>
-</footer>
-<script>
-  let currentLang = "es";
-  const PROJECTS = [
-    {
-      name: "Stock Management System",
-      badgeEs: "Desktop + Web",
-      badgeEn: "Desktop + Web",
-      caseStudyUrl: "stockapp.html",
-      descEs: `Sistema integral de gestión de stock, ventas e inventario comercial con arquitectura sincronizada entre aplicación de escritorio (Electron) y plataforma web (Next.js), conectadas a una base de datos centralizada en Supabase (PostgreSQL) con soporte de almacenamiento local SQLite.
+/* sobre mí */
+.about{display:grid;gap:32px;align-items:center}
+.portrait{width:min(100%,360px);aspect-ratio:4/5;object-fit:cover;object-position:50% 14%;border-radius:30px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.tl{list-style:none;padding:0;margin-top:1.8rem;display:grid;gap:12px}
+.tl li{display:flex;flex-direction:column;gap:.15rem;padding:16px 18px;border-radius:18px}
+.tl small{color:var(--muted);font-size:.85rem}
+@media(min-width:900px){.about{grid-template-columns:360px 1fr;gap:72px}}
 
-Permite que múltiples usuarios colaboren en tiempo real manteniendo consistencia de datos, gestión de productos, caja, facturación, proveedores, cuentas corrientes, empleados y backups automatizados.`,
-      descEn: `Comprehensive stock, sales, and commercial inventory management system with a synchronized architecture between a desktop app (Electron) and a web platform (Next.js), connected to a centralized Supabase (PostgreSQL) database with SQLite local storage.
+.skills{margin-top:2rem;display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.skill h3{font-size:.95rem;margin-bottom:.8rem;letter-spacing:-.01em}
 
-Enables real-time collaboration across multiple users with strict data consistency, product management, POS sales, billing, supplier tracking, employee accounts, and automated backups.`,
-      technologies: ["Electron", "Next.js", "Supabase", "PostgreSQL", "SQLite", "TypeScript", "JavaScript", "Python"],
-      images: ["img/Stockapp1.webp", "img/Stockapp2.webp", "img/Stockapp3.webp", "img/Stockapp4.webp"],
-      logo: "img/Stock Management App - PC.webp",
-      projectUrl: "https://web-three-iota-59.vercel.app",
-      repoUrl: "https://github.com/LautaroCLM/stock-app-electron",
-      delayClass: "reveal-delay-1"
-    },
-    {
-      name: "TPM Elevadores",
-      badgeEs: "Sistema Industrial",
-      badgeEn: "Industrial System",
-      caseStudyUrl: "tpm.html",
-      descEs: `Sistema web y móvil exclusivo de uso interno corporativo para la digitalización de inspecciones operativas (TPM Nivel 1) y mantenimiento preventivo en plantas industriales.
+/* contacto */
+.contact{text-align:center}
+.contact .sub{margin-inline:auto}
+.mail{display:inline-block;margin-top:1.8rem;font-size:clamp(1.15rem,5.4vw,2.8rem);font-weight:700;letter-spacing:-.035em;word-break:break-all;color:var(--fg);padding-bottom:.1em;border-bottom:1px solid var(--line);transition:border-color .2s}
+.mail:hover{border-color:var(--fg)}
+.contact-cta{margin-top:2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.foot{border-top:1px solid var(--line);padding:26px 0 calc(26px + env(safe-area-inset-bottom));color:var(--muted);font-size:.82rem}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
 
-Permite iniciar sesión por legajo o acceso rápido (restringido para supervisores), escanear el QR del autoelevador, completar el checklist de seguridad y reportar fallas con fotografía para notificar a mantenimiento en tiempo real.`,
-      descEn: `Enterprise web and mobile system for internal plant use, designed for digitizing level 1 autonomous maintenance inspections and preventive maintenance for forklift fleets.
-
-Operators log in via employee ID or quick access (restricted for supervisors), scan the machine's QR code, complete the safety checklist, and report issues with photo evidence to alert supervisors instantly.`,
-      technologies: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
-      images: ["img/tpm1.jpeg", "img/tpm2.jpeg", "img/tpm3.jpeg", "img/tpm4.jpeg"],
-      logo: "img/TPM Elevadores.webp",
-      repoUrl: "https://github.com/LautaroCLM/tpm-autoelevadores",
-      delayClass: "reveal-delay-2"
-    },
-    {
-      name: "Servicios Integrados Web",
-      badgeEs: "Cliente real",
-      badgeEn: "In Production",
-      caseStudyUrl: "servicios-integrados.html",
-      descEs: `Plataforma web corporativa desarrollada para Servicios Integrados, empresa con más de 30 años de trayectoria en ingeniería y mantenimiento industrial.
-
-Publicado bajo su propio dominio en producción (serviciosintegradosweb.com), el sitio combina una interfaz moderna de estándar B2B con un gestor dinámico de novedades (CMS) respaldado por Supabase para la carga de contenido y formularios comerciales.`,
-      descEn: `Corporate web platform developed for Servicios Integrados, an industrial engineering and maintenance provider with over 30 years of industry experience.
-
-Deployed on a custom production domain (serviciosintegradosweb.com), the site combines a modern B2B interface with a dynamic news CMS backed by Supabase for publishing content and handling business inquiries.`,
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Node.js", "Vite"],
-      images: ["img/servicios-web-1.webp", "img/servicios-web-2.webp", "img/servicios-web-3.webp"],
-      logo: "img/Servicios Integrados.webp",
-      projectUrl: "https://serviciosintegradosweb.com",
-      repoUrl: "https://github.com/LautaroCLM/servicios_integrados",
-      delayClass: "reveal-delay-3"
-    },
-    {
-      name: "PlayerAI Platform",
-      badgeEs: "Plataforma Web",
-      badgeEn: "Web Platform",
-      descEs: `Plataforma desarrollada para digitalizar la gestión de futbolistas y agencias deportivas. Permite administrar perfiles deportivos completos, estadísticas de rendimiento, documentación contractual y bibliotecas de video desde un único lugar.
-
-Diseñada con foco en la organización eficiente de la información, rendimiento y experiencia de usuario para la toma de decisiones.`,
-      descEn: `Platform developed to digitize player and sports agency management. Allows managing complete athletic profiles, performance stats, contractual documentation, and video libraries from a single location.
-
-Designed with a focus on efficient information organization, performance, and user experience for strategic decision-making.`,
-      technologies: ["React", "TypeScript", "Vite", "Firebase", "Supabase", "Vercel"],
-      images: ["img/playeraiplataform.webp", "img/playeraiplataform2.webp", "img/playeraiplataform3.webp"],
-      logo: "img/iaplataform.webp",
-      projectUrl: "https://player-ai-platform.vercel.app",
-      repoUrl: "https://github.com/LautaroCLM/player-ai-platform",
-      delayClass: "reveal-delay-1"
-    },
-    {
-      name: "Ecommerce - Ramonapets",
-      descEs: "Tienda en línea para productos de mascotas con catálogo interactivo y diseño responsivo adaptado a dispositivos móviles.",
-      descEn: "Online pet supply store featuring an interactive product catalog and responsive mobile design.",
-      technologies: ["HTML", "CSS", "JavaScript", "Netlify"],
-      images: ["img/Ramonapets.jpeg.webp", "img/Ramonapets2.webp", "img/Ramonapets.jpeg3.webp"],
-      logo: "img/Ramonapets.webp",
-      projectUrl: "https://ramonapets.netlify.app",
-      repoUrl: "https://github.com/LautaroCLM/RAMONAPETS-WEB",
-      delayClass: "reveal-delay-2"
-    },
-    {
-      name: "Pastran Agency",
-      descEs: "Sitio web corporativo desarrollado para una agencia de representación deportiva, destacando trayectoria, servicios ofrecidos y perfiles de jugadores.",
-      descEn: "Corporate website built for a sports representation agency, showcasing background, services, and player profiles.",
-      technologies: ["HTML5", "CSS3", "JavaScript"],
-      images: ["img/Pastran Agency.webp", "img/Pastran Agency2.webp", "img/Pastran Agency3.webp"],
-      logo: "img/Pastranagency.webp",
-      projectUrl: "https://pastranagency.netlify.app",
-      repoUrl: null,
-      delayClass: "reveal-delay-3"
-    },
-    {
-      name: "Car Ecommerce - Fire Car",
-      descEs: "Plataforma web para compra y venta de vehículos con autenticación de usuarios, catálogo dinámico y gestión de publicaciones.",
-      descEn: "Vehicle buy-and-sell web platform featuring user authentication, dynamic catalog, and listing management.",
-      technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
-      images: ["img/imagen6.webp", "img/Car Ecommerce - Fire Car2.webp", "img/Car Ecommerce - Fire Car3.webp"],
-      logo: "img/Car Ecommerce - Fire Car.webp",
-      projectUrl: "https://fire-car-ecommerce.onrender.com/accounts/",
-      repoUrl: "https://github.com/LautaroCLM/Fire_Car_Ecommerce",
-      delayClass: "reveal-delay-1"
-    },
-    {
-      name: "Clothing Ecommerce - Shop Fast",
-      descEs: "Plataforma ecommerce desarrollada en colaboración para venta de indumentaria, integrando catálogo y flujo de compra.",
-      descEn: "Collaboratively developed clothing ecommerce platform featuring product catalog and purchasing workflow.",
-      technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
-      images: ["img/imagen7.webp", "img/Clothing Ecommerce - Shop Fast2.webp", "img/Clothing Ecommerce - Shop Fast3.webp"],
-      logo: "img/Clothing Ecommerce - Shop Fast.webp",
-      projectUrl: null, // demo en Render dada de baja (404); queda el repositorio
-      repoUrl: "https://github.com/Chavo-st4r/Mi-Marketplace",
-      delayClass: "reveal-delay-2"
-    },
-    {
-      name: "Neumaticos El 32",
-      descEs: "Sitio web corporativo y comercial desarrollado para empresa del rubro automotor y neumáticos.",
-      descEn: "Corporate and commercial website developed for an automotive and tire company.",
-      technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
-      images: ["img/neumaticos32-1.webp", "img/neumaticos32-2.webp"],
-      logo: "img/Neumaticos32.webp",
-      projectUrl: "https://neumaticosel32nuv.netlify.app",
-      repoUrl: null,
-      delayClass: "reveal-delay-3"
-    },
-    {
-      name: "Repuestos El 32",
-      descEs: "Plataforma web comercial para catálogo y consulta de repuestos automotrices.",
-      descEn: "Commercial web showcase for automotive spare parts catalog and customer inquiries.",
-      technologies: ["Django", "Python", "HTML", "CSS", "JavaScript"],
-      images: ["img/repuestos32-1.webp", "img/imagen8.webp", "img/repuestos32-2.webp"],
-      logo: "img/Neumaticos32.webp",
-      projectUrl: "https://repuestos32.netlify.app",
-      repoUrl: null,
-      delayClass: "reveal-delay-1"
-    }
-  ];
-
-  const renderProjects = () => {
-    const featuredGrid = document.getElementById("featured-projects-grid");
-    const otherGrid = document.getElementById("other-projects-grid");
-    if (!featuredGrid || !otherGrid) return;
-
-    const featuredProjects = PROJECTS.slice(0, 4);
-    const otherProjects = PROJECTS.slice(4);
-
-    featuredGrid.innerHTML = featuredProjects.map((project, index) => {
-      const techSpans = project.technologies.map((tech, techIdx) => {
-        if (techIdx === 0) {
-          return `<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-zinc-900 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 rounded-md">${tech}</span>`;
-        }
-        return `<span class="text-[0.65rem] font-semibold tracking-widest uppercase py-1 px-3 bg-secondary-container/40 dark:bg-zinc-800/90 text-on-surface-variant dark:text-zinc-300 rounded-md">${tech}</span>`;
-      }).join('\n            ');
-
-      const badgeHtml = (project.badgeEs && project.badgeEn) ? `
-        <div class="absolute top-4 left-4 z-10">
-          <span class="inline-flex items-center gap-1 text-[0.65rem] font-bold tracking-widest uppercase py-1.5 px-3 bg-primary text-on-primary rounded-full shadow-md" data-es="${project.badgeEs}" data-en="${project.badgeEn}">
-            ${currentLang === 'es' ? project.badgeEs : project.badgeEn}
-          </span>
-        </div>
-      ` : '';
-
-      const caseStudyButton = project.caseStudyUrl ? `
-        <a href="${project.caseStudyUrl}" onclick="event.stopPropagation();" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-on-primary text-xs font-bold uppercase tracking-wider hover:-translate-y-0.5 transition-all shadow-sm">
-          <span aria-hidden="true" class="material-symbols-outlined text-sm">analytics</span>
-          <span data-es="Ver Caso de Estudio" data-en="Case Study">${currentLang === 'es' ? 'Ver Caso de Estudio' : 'Case Study'}</span>
-        </a>
-      ` : '';
-
-      return `
-      <div tabindex="0" role="button" class="relative reveal-on-scroll ${project.delayClass || ''} group cursor-pointer rounded-xl border border-outline-variant/25 bg-surface-container-lowest p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-primary" onclick="openProjectModal(${index})" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProjectModal(${index}); }">
-        <div class="project-img-wrapper aspect-[16/10] rounded-lg bg-surface-container-low overflow-hidden mb-6 sm:mb-8 transition-all duration-500 group-hover:bg-surface-bright relative">
-          ${badgeHtml}
-          <img alt="${project.name}" loading="lazy" width="600" height="375" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" data-alt="${project.name}" src="${project.images[0]}"/>
-          <div class="project-hover-overlay absolute inset-0 bg-black/25 flex items-center justify-center rounded-lg pointer-events-none">
-            <img src="${project.logo}" alt="${project.name} logo" loading="lazy" width="150" height="75" class="project-hover-logo w-[32%] max-w-[150px] h-auto object-contain drop-shadow-lg" />
-          </div>
-        </div>
-        <div class="flex flex-col gap-3 h-full">
-          <div class="flex flex-wrap gap-2">
-            ${techSpans}
-          </div>
-          <h4 class="text-2xl sm:text-3xl font-extrabold text-editorial mt-2">${project.name}</h4>
-          <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed line-clamp-3" data-es="${project.descEs}" data-en="${project.descEn}">${currentLang === 'es' ? project.descEs : project.descEn}</p>
-          <div class="mt-auto pt-4 flex flex-wrap items-center gap-3">
-            ${caseStudyButton}
-            <div class="flex items-center gap-1.5 text-primary font-bold text-xs sm:text-sm group/btn ml-auto">
-              <span data-es="Vista previa" data-en="Quick view">${currentLang === 'es' ? 'Vista previa' : 'Quick view'}</span> 
-              <span aria-hidden="true" class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      `;
-    }).join('\n');
-
-    otherGrid.innerHTML = otherProjects.map((project, idx) => {
-      const index = idx + 4;
-      const techSpans = project.technologies.slice(0, 4).map(tech => 
-        `<span class="text-[0.6rem] font-bold tracking-wider uppercase py-0.5 px-2 bg-secondary-container/30 dark:bg-zinc-800/80 text-on-surface-variant dark:text-zinc-300 rounded-sm">${tech}</span>`
-      ).join('\n            ');
-
-      return `
-      <div tabindex="0" role="button" class="relative reveal-on-scroll group cursor-pointer rounded-lg border border-outline-variant/20 bg-surface-container-lowest p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-primary" onclick="openProjectModal(${index})" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProjectModal(${index}); }">
-        <div class="project-img-wrapper aspect-[16/9] rounded-md bg-surface-container-low overflow-hidden mb-4 transition-all duration-500 relative">
-          <img alt="${project.name}" loading="lazy" width="400" height="225" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="${project.name}" src="${project.images[0]}"/>
-          <div class="project-hover-overlay absolute inset-0 bg-black/20 flex items-center justify-center rounded-md pointer-events-none">
-            <img src="${project.logo}" alt="${project.name} logo" loading="lazy" width="100" height="50" class="project-hover-logo w-[28%] max-w-[100px] h-auto object-contain drop-shadow-md" />
-          </div>
-        </div>
-        <div class="flex flex-col gap-2 h-full">
-          <div class="flex flex-wrap gap-1.5">
-            ${techSpans}
-          </div>
-          <h4 class="text-lg font-bold text-editorial mt-1">${project.name}</h4>
-          <p class="text-on-surface-variant text-xs leading-relaxed line-clamp-2" data-es="${project.descEs}" data-en="${project.descEn}">${currentLang === 'es' ? project.descEs : project.descEn}</p>
-          <div class="mt-auto pt-2 flex items-center gap-1.5 text-primary text-xs font-semibold group/btn w-fit">
-            <span data-es="Ver proyecto" data-en="View project">${currentLang === 'es' ? 'Ver proyecto' : 'View project'}</span> 
-            <span aria-hidden="true" class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
-          </div>
-        </div>
-      </div>
-      `;
-    }).join('\n');
-  };
-
-  renderProjects();
-
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
-
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "close" : "menu";
-    });
-
-    mobileLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.textContent = "menu";
-      });
-    });
+/* animación al entrar en pantalla (solo CSS, mejora progresiva) */
+@media(prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+    @keyframes rv{from{opacity:0;transform:translateY(26px)}}
+    .hero-in{animation:heroOut linear both;animation-timeline:scroll(root);animation-range:0 85vh}
+    @keyframes heroOut{to{opacity:0;transform:translateY(-48px) scale(.96)}}
   }
-
-  const header = document.getElementById("site-header");
-  if (header && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
-    const onScroll = () => {
-      header.classList.toggle("header-scrolled", window.scrollY > 24);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
-
-  const revealElements = document.querySelectorAll(".reveal-on-scroll");
-  if (revealElements.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
-    );
-    revealElements.forEach((el) => io.observe(el));
-  } else {
-    revealElements.forEach((el) => el.classList.add("is-visible"));
-  }
-
-  // Language toggle with smooth transition
-  const langToggles = document.querySelectorAll(".lang-toggle-btn");
-  currentLang = "es";
-  let isTranslating = false;
-
-  const updateLanguage = () => {
-    document.querySelectorAll("[data-es][data-en]").forEach(el => {
-      el.textContent = currentLang === "es" ? el.dataset.es : el.dataset.en;
-    });
-    document.querySelectorAll("[data-es-placeholder][data-en-placeholder]").forEach(el => {
-      el.placeholder = currentLang === "es" ? el.dataset.esPlaceholder : el.dataset.enPlaceholder;
-    });
-    langToggles.forEach(btn => {
-      btn.textContent = currentLang === "es" ? "EN" : "ES";
-    });
-  };
-
-  langToggles.forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (isTranslating) return;
-
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReducedMotion) {
-        currentLang = currentLang === "es" ? "en" : "es";
-        updateLanguage();
-        return;
-      }
-
-      isTranslating = true;
-      langToggles.forEach(b => b.classList.add("lang-btn-pulse"));
-
-      const transElements = document.querySelectorAll("[data-es][data-en], [data-es-placeholder][data-en-placeholder]");
-      transElements.forEach(el => el.classList.add("lang-trans-out"));
-
-      setTimeout(() => {
-        currentLang = currentLang === "es" ? "en" : "es";
-        updateLanguage();
-
-        transElements.forEach(el => {
-          el.classList.remove("lang-trans-out");
-          el.classList.add("lang-trans-in");
-        });
-
-        langToggles.forEach(b => b.classList.remove("lang-btn-pulse"));
-
-        setTimeout(() => {
-          transElements.forEach(el => el.classList.remove("lang-trans-in"));
-          isTranslating = false;
-        }, 120);
-      }, 100);
-    });
-  });
-
-  // Initialize language on load
-  updateLanguage();
-</script>
-
-  <!-- Dark Mode Overrides for Custom Colors -->
-  <style id="dark-mode-patch">
-    html.dark body,
-    html.dark .bg-surface { background-color: #141313; }
-    html.dark .text-on-surface { color: #e5e2e1; }
-    html.dark .bg-surface-container-high { background-color: #2b2a2a; }
-    html.dark .hover\:bg-surface-container-high:hover { background-color: #2b2a2a; }
-    html.dark .text-on-surface-variant { color: #c4c7c7; }
-    html.dark .bg-primary { background-color: #c9c6c5; }
-    html.dark .text-primary { color: #c9c6c5; }
-    html.dark .text-on-primary { color: #313030; }
-    html.dark a[href="#contacto"].text-on-primary { color: #ffffff; }
-    html.dark .decoration-primary { text-decoration-color: #c9c6c5; }
-    html.dark .bg-surface-container-highest { background-color: #353434; }
-    html.dark .bg-surface-container-low { background-color: #1c1b1b; }
-    html.dark .bg-surface-container-lowest { background-color: #0e0e0e; }
-    html.dark .bg-surface-bright { background-color: #3a3939; }
-    html.dark .group:hover .group-hover\:bg-surface-bright { background-color: #3a3939; }
-    html.dark .text-editorial { color: #e5e2e1; }
-    html.dark .from-primary { 
-      --tw-gradient-from: #c9c6c5 var(--tw-gradient-from-position);
-      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    }
-    html.dark .to-primary-container { 
-      --tw-gradient-to: #0a0a0a var(--tw-gradient-to-position); 
-    }
-    html.dark .bg-secondary-container\/50 { background-color: rgba(71, 71, 70, 0.5); }
-    html.dark .bg-secondary-container\/30 { background-color: rgba(71, 71, 70, 0.3); }
-    html.dark .border-outline-variant\/15 { border-color: rgba(68, 71, 72, 0.15); }
-    html.dark .border-outline-variant\/25 { border-color: rgba(68, 71, 72, 0.25); }
-    html.dark ::selection { background-color: #c9c6c5; color: #313030; }
-  </style>
-
-  <!-- Floating Dark Mode Toggle -->
-  <button id="theme-toggle" class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 shadow-lg flex items-center justify-center transition-transform hover:scale-110 active:scale-95" aria-label="Toggle Dark Mode">
-    <span aria-hidden="true" class="material-symbols-outlined dark:hidden">dark_mode</span>
-    <span aria-hidden="true" class="material-symbols-outlined hidden dark:block">light_mode</span>
-  </button>
-
-  <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const htmlEl = document.documentElement;
-    
-    // Check local storage
-    if (localStorage.theme === 'dark') {
-      htmlEl.classList.add('dark');
-      htmlEl.classList.remove('light');
-    } else {
-      htmlEl.classList.add('light');
-      htmlEl.classList.remove('dark');
-    }
-
-    themeToggle.addEventListener('click', () => {
-      if (htmlEl.classList.contains('dark')) {
-        htmlEl.classList.remove('dark');
-        htmlEl.classList.add('light');
-        localStorage.theme = 'light';
-      } else {
-        htmlEl.classList.add('dark');
-        htmlEl.classList.remove('light');
-        localStorage.theme = 'dark';
-      }
-    });
-
-    // Scroll Spy for Navigation Links
-    const sections = document.querySelectorAll('section[id]');
-    const desktopLinks = document.querySelectorAll('header nav.hidden a[href^="#"]');
-    const mobileNavLinks = document.querySelectorAll('#mobile-menu a[href^="#"]');
-
-    const updateActiveLink = () => {
-      let scrollY = window.scrollY;
-      let activeSection = null;
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        if (scrollY >= sectionTop) {
-          activeSection = section.getAttribute('id');
-        }
-      });
-
-      if (!activeSection && sections.length > 0) {
-        activeSection = sections[0].getAttribute('id');
-      }
-
-      desktopLinks.forEach(link => {
-        if (link.getAttribute('href') === '#' + activeSection) {
-          link.className = "text-zinc-900 dark:text-white font-semibold border-b-2 border-blue-600 dark:border-blue-400 transition-colors";
-        } else {
-          link.className = "text-zinc-500 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors";
-        }
-      });
-
-      mobileNavLinks.forEach(link => {
-        if (link.getAttribute('href') === '#' + activeSection) {
-          link.className = "text-zinc-950 dark:text-zinc-50 font-bold transition-colors";
-        } else {
-          link.className = "text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors";
-        }
-      });
-    };
-
-    window.addEventListener("scroll", updateActiveLink, { passive: true });
-    updateActiveLink(); // Initialize on load
-
-    // Modal & Carousel state
-    let activeProjectIndex = null;
-    let activeSlideIndex = 0;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    let modalEl = null;
-    let modalBoxEl = null;
-    let overlayEl = null;
-    let slidesContainer = null;
-    let dotsContainer = null;
-    let nameEl = null;
-    let techEl = null;
-    let descEl = null;
-    let btnCaseStudy = null;
-    let btnPrimary = null;
-    let btnSecondary = null;
-
-    document.addEventListener("DOMContentLoaded", () => {
-      modalEl = document.getElementById("project-modal");
-      modalBoxEl = document.getElementById("modal-box");
-      overlayEl = document.getElementById("modal-overlay");
-      slidesContainer = document.getElementById("carousel-slides");
-      dotsContainer = document.getElementById("carousel-dots");
-      nameEl = document.getElementById("modal-project-name");
-      techEl = document.getElementById("modal-project-tech");
-      descEl = document.getElementById("modal-project-desc");
-      btnCaseStudy = document.getElementById("modal-project-btn-case-study");
-      btnPrimary = document.getElementById("modal-project-btn-primary");
-      btnSecondary = document.getElementById("modal-project-btn-secondary");
-
-      // Touch Swipe Support
-      if (slidesContainer) {
-        const carouselArea = slidesContainer.parentElement;
-        carouselArea.addEventListener("touchstart", (e) => {
-          touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        carouselArea.addEventListener("touchend", (e) => {
-          touchEndX = e.changedTouches[0].screenX;
-          handleSwipe();
-        }, { passive: true });
-      }
-
-      // Close on click outside modal-box
-      if (overlayEl) {
-        overlayEl.addEventListener("click", () => {
-          closeProjectModal();
-        });
-      }
-      const contactOverlayEl = document.getElementById("contact-modal-overlay");
-      if (contactOverlayEl) {
-        contactOverlayEl.addEventListener("click", () => {
-          closeContactModal();
-        });
-      }
-      const contactModal = document.getElementById("contact-modal");
-      if (contactModal) {
-        contactModal.addEventListener("click", (e) => {
-          if (e.target === contactModal) closeContactModal();
-        });
-      }
-    });
-
-    // Focus trap and focus restoration helper
-    let lastFocusedElement = null;
-
-    function trapFocus(containerEl, e) {
-      if (e.key !== "Tab") return;
-      const focusables = Array.from(
-        containerEl.querySelectorAll(
-          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
-        )
-      ).filter(el => el.offsetWidth > 0 || el.offsetHeight > 0 || el.getClientRects().length > 0);
-
-      if (focusables.length === 0) {
-        e.preventDefault();
-        return;
-      }
-
-      const firstEl = focusables[0];
-      const lastEl = focusables[focusables.length - 1];
-
-      if (e.shiftKey && document.activeElement === firstEl) {
-        e.preventDefault();
-        lastEl.focus();
-      } else if (!e.shiftKey && document.activeElement === lastEl) {
-        e.preventDefault();
-        firstEl.focus();
-      }
-    }
-
-    window.openProjectModal = function(index) {
-      lastFocusedElement = document.activeElement;
-      activeProjectIndex = index;
-      activeSlideIndex = 0;
-      const project = PROJECTS[index];
-
-      // Populate Text Elements
-      if (nameEl) nameEl.textContent = project.name;
-      
-      const badgeEl = document.getElementById("modal-project-badge");
-      if (badgeEl) {
-        if (project.badgeEs && project.badgeEn) {
-          badgeEl.innerHTML = `<span class="inline-flex items-center gap-1 text-[0.65rem] font-bold tracking-widest uppercase py-1 px-2.5 bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-container rounded-full" data-es="${project.badgeEs}" data-en="${project.badgeEn}">${currentLang === 'es' ? project.badgeEs : project.badgeEn}</span>`;
-          badgeEl.style.display = "block";
-        } else {
-          badgeEl.style.display = "none";
-        }
-      }
-      
-      // We set textContent & data attributes for language toggling
-      if (descEl) {
-        descEl.textContent = currentLang === 'es' ? project.descEs : project.descEn;
-        descEl.setAttribute('data-es', project.descEs);
-        descEl.setAttribute('data-en', project.descEn);
-      }
-
-      // Populate Technologies
-      if (techEl) {
-        techEl.innerHTML = project.technologies.map(tech => 
-          `<span class="text-[0.65rem] font-bold tracking-widest uppercase py-1 px-3 bg-secondary-container/30 dark:bg-zinc-800/80 text-on-surface dark:text-zinc-200 rounded-sm">${tech}</span>`
-        ).join('');
-      }
-
-      // Populate Action Links
-      if (btnCaseStudy) {
-        if (project.caseStudyUrl) {
-          btnCaseStudy.href = project.caseStudyUrl;
-          btnCaseStudy.style.display = "flex";
-        } else {
-          btnCaseStudy.style.display = "none";
-        }
-      }
-
-      if (btnPrimary) {
-        if (project.projectUrl) {
-          btnPrimary.href = project.projectUrl;
-          btnPrimary.target = project.projectUrl.startsWith('http') ? '_blank' : '_self';
-          btnPrimary.style.display = "flex";
-          const labelSpan = btnPrimary.querySelector('span[data-es]');
-          const textEs = project.caseStudyUrl ? "Ver Demo" : "Ver Proyecto";
-          const textEn = project.caseStudyUrl ? "View Demo" : "View Project";
-          if (labelSpan) {
-            labelSpan.setAttribute('data-es', textEs);
-            labelSpan.setAttribute('data-en', textEn);
-            labelSpan.textContent = currentLang === 'es' ? textEs : textEn;
-          }
-          if (project.caseStudyUrl) {
-            btnPrimary.className = "w-full sm:w-auto px-6 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-high dark:hover:bg-zinc-700 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md text-sm";
-          } else {
-            btnPrimary.className = "w-full sm:w-auto px-6 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 transition-transform duration-300 active:scale-95 hover:-translate-y-0.5 bg-gradient-to-br from-primary to-primary-container text-sm";
-          }
-        } else {
-          btnPrimary.style.display = "none";
-        }
-      }
-      if (btnSecondary) {
-        if (project.repoUrl) {
-          btnSecondary.href = project.repoUrl;
-          btnSecondary.style.display = "flex";
-        } else {
-          btnSecondary.style.display = "none";
-        }
-      }
-
-      // Populate Carousel Images
-      if (slidesContainer) {
-        slidesContainer.innerHTML = project.images.map(img => 
-          `<img class="w-full h-full object-cover shrink-0 select-none" src="${img}" alt="${project.name}" />`
-        ).join('');
-      }
-
-      // Populate Carousel Dots
-      if (dotsContainer) {
-        dotsContainer.innerHTML = project.images.map((_, i) => 
-          `<button onclick="goToSlide(${i})" class="w-2.5 h-2.5 rounded-full transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-white" aria-label="Slide ${i + 1}"></button>`
-        ).join('');
-      }
-
-      updateCarousel();
-
-      // Show Modal (transition)
-      if (modalEl && modalBoxEl) {
-        modalEl.classList.remove("opacity-0", "pointer-events-none");
-        modalEl.classList.add("opacity-100", "pointer-events-auto");
-        modalBoxEl.classList.remove("scale-95", "opacity-0");
-        modalBoxEl.classList.add("scale-100", "opacity-100");
-      }
-
-      // Prevent background scrolling
-      document.body.style.overflow = "hidden";
-
-      setTimeout(() => {
-        const closeBtn = document.getElementById("modal-close-btn");
-        if (closeBtn) closeBtn.focus();
-      }, 100);
-    };
-
-    window.closeProjectModal = function() {
-      // Hide Modal (transition)
-      if (modalEl && modalBoxEl) {
-        modalEl.classList.remove("opacity-100", "pointer-events-auto");
-        modalEl.classList.add("opacity-0", "pointer-events-none");
-        modalBoxEl.classList.remove("scale-100", "opacity-100");
-        modalBoxEl.classList.add("scale-95", "opacity-0");
-      }
-
-      // Restore background scrolling
-      document.body.style.overflow = "";
-
-      activeProjectIndex = null;
-
-      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-        lastFocusedElement.focus();
-        lastFocusedElement = null;
-      }
-    };
-
-    window.goToSlide = function(slideIndex) {
-      if (activeProjectIndex === null) return;
-      const project = PROJECTS[activeProjectIndex];
-      const maxSlides = project.images.length;
-      if (slideIndex < 0) {
-        activeSlideIndex = maxSlides - 1;
-      } else if (slideIndex >= maxSlides) {
-        activeSlideIndex = 0;
-      } else {
-        activeSlideIndex = slideIndex;
-      }
-      updateCarousel();
-    };
-
-    window.nextSlide = function() {
-      goToSlide(activeSlideIndex + 1);
-    };
-
-    window.prevSlide = function() {
-      goToSlide(activeSlideIndex - 1);
-    };
-
-    function updateCarousel() {
-      // Horizontal slide translate
-      if (slidesContainer) {
-        slidesContainer.style.transform = `translateX(-${activeSlideIndex * 100}%)`;
-      }
-
-      // Update dots active style
-      if (dotsContainer) {
-        const dots = dotsContainer.children;
-        for (let i = 0; i < dots.length; i++) {
-          if (i === activeSlideIndex) {
-            dots[i].className = "w-6 h-2.5 rounded-full bg-white transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-white";
-          } else {
-            dots[i].className = "w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-white";
-          }
-        }
-      }
-    }
-
-    function handleSwipe() {
-      const threshold = 50; // pixels
-      if (touchEndX < touchStartX - threshold) {
-        // Swiped left -> next image
-        nextSlide();
-      } else if (touchEndX > touchStartX + threshold) {
-        // Swiped right -> prev image
-        prevSlide();
-      }
-    }
-
-    // Keyboard controls
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeProjectModal();
-        closeContactModal();
-      }
-
-      const cModal = document.getElementById("contact-modal");
-      if (cModal && !cModal.classList.contains("opacity-0")) {
-        trapFocus(cModal, e);
-      }
-
-      const pModal = document.getElementById("project-modal");
-      if (pModal && !pModal.classList.contains("opacity-0")) {
-        trapFocus(pModal, e);
-      }
-
-      if (activeProjectIndex === null) return;
-
-      if (e.key === "ArrowRight") {
-        nextSlide();
-      } else if (e.key === "ArrowLeft") {
-        prevSlide();
-      }
-    });
-
-    // Contact Modal State & Handlers
-    let contactModalEl = null;
-    let contactModalBoxEl = null;
-    let contactModalOverlayEl = null;
-
-    window.openContactModal = function() {
-      lastFocusedElement = document.activeElement;
-      contactModalEl = document.getElementById("contact-modal");
-      contactModalBoxEl = document.getElementById("contact-modal-box");
-      contactModalOverlayEl = document.getElementById("contact-modal-overlay");
-
-      if (!contactModalEl || !contactModalBoxEl) return;
-
-      const nameInput = document.getElementById("contact-name");
-      const subjectInput = document.getElementById("contact-subject");
-      const messageInput = document.getElementById("contact-message");
-      if (nameInput) nameInput.value = "";
-      if (subjectInput) subjectInput.value = "";
-      if (messageInput) messageInput.value = "";
-
-      contactModalEl.classList.remove("opacity-0", "pointer-events-none");
-      contactModalEl.classList.add("opacity-100", "pointer-events-auto");
-      contactModalBoxEl.classList.remove("scale-95", "opacity-0");
-      contactModalBoxEl.classList.add("scale-100", "opacity-100");
-
-      document.body.style.overflow = "hidden";
-
-      setTimeout(() => {
-        if (nameInput) nameInput.focus();
-      }, 100);
-    };
-
-    window.closeContactModal = function() {
-      if (!contactModalEl || !contactModalBoxEl) return;
-      contactModalEl.classList.remove("opacity-100", "pointer-events-auto");
-      contactModalEl.classList.add("opacity-0", "pointer-events-none");
-      contactModalBoxEl.classList.remove("scale-100", "opacity-100");
-      contactModalBoxEl.classList.add("scale-95", "opacity-0");
-
-      if (typeof activeProjectIndex !== 'undefined' && activeProjectIndex === null) {
-        document.body.style.overflow = "";
-      }
-
-      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-        lastFocusedElement.focus();
-        lastFocusedElement = null;
-      }
-    };
-
-    window.handleSendEmailSubmit = function(e) {
-      if (e) e.preventDefault();
-
-      const nameInput = document.getElementById("contact-name");
-      const subjectInput = document.getElementById("contact-subject");
-      const messageInput = document.getElementById("contact-message");
-
-      const rawName = nameInput ? nameInput.value.trim() : "";
-      const rawSubject = subjectInput ? subjectInput.value.trim() : "";
-      const rawMessage = messageInput ? messageInput.value.trim() : "";
-
-      const isEs = currentLang === 'es';
-
-      const subjectText = rawSubject || (isEs ? "Consulta desde tu portfolio" : "Inquiry from your portfolio");
-
-      let bodyText = "";
-      if (rawName) {
-        bodyText += (isEs ? `Nombre: ${rawName}\n\n` : `Name: ${rawName}\n\n`);
-      }
-
-      if (rawMessage) {
-        bodyText += rawMessage;
-      } else {
-        bodyText += (isEs 
-          ? "Hola Lautaro, vi tu portfolio y quería ponerme en contacto con vos." 
-          : "Hi Lautaro, I saw your portfolio and wanted to get in touch with you.");
-      }
-
-      const emailRecipient = "colmanlautaro24@gmail.com";
-      const mailtoUrl = `mailto:${emailRecipient}?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
-
-      closeContactModal();
-      window.location.href = mailtoUrl;
-    };
-
-    // Copy Email to Clipboard with fallback & auto-reset feedback
-    window.copyEmailToClipboard = function() {
-      const email = "colmanlautaro24@gmail.com";
-      const btnText = document.getElementById("copy-email-text");
-      const btnIcon = document.querySelector("#copy-email-btn .material-symbols-outlined");
-
-      function showSuccess() {
-        if (!btnText) return;
-        const isEs = currentLang === 'es';
-        const successText = isEs ? '¡Copiado!' : 'Copied!';
-        btnText.textContent = successText;
-        if (btnIcon) btnIcon.textContent = 'check';
-        
-        setTimeout(() => {
-          const resetText = currentLang === 'es' ? 'Copiar email' : 'Copy email';
-          btnText.textContent = resetText;
-          btnText.setAttribute('data-es', 'Copiar email');
-          btnText.setAttribute('data-en', 'Copy email');
-          if (btnIcon) btnIcon.textContent = 'content_copy';
-        }, 2000);
-      }
-
-      function showError() {
-        if (!btnText) return;
-        const isEs = currentLang === 'es';
-        btnText.textContent = isEs ? 'Error al copiar' : 'Failed to copy';
-        setTimeout(() => {
-          const resetText = currentLang === 'es' ? 'Copiar email' : 'Copy email';
-          btnText.textContent = resetText;
-          btnText.setAttribute('data-es', 'Copiar email');
-          btnText.setAttribute('data-en', 'Copy email');
-          if (btnIcon) btnIcon.textContent = 'content_copy';
-        }, 2000);
-      }
-
-      function execFallback() {
-        try {
-          const textArea = document.createElement("textarea");
-          textArea.value = email;
-          textArea.style.position = "fixed";
-          textArea.style.left = "-999999px";
-          textArea.style.top = "-999999px";
-          document.body.appendChild(textArea);
-          textArea.focus();
-          textArea.select();
-          const ok = document.execCommand('copy');
-          document.body.removeChild(textArea);
-          if (ok) showSuccess(); else showError();
-        } catch (e) {
-          showError();
-        }
-      }
-
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(email).then(showSuccess).catch(execFallback);
-      } else {
-        execFallback();
-      }
-    };
-  </script>
-  <!-- Project Modal -->
-  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-500 ease-out" role="dialog" aria-modal="true">
-    <!-- Backdrop blur overlay -->
-    <div id="modal-overlay" class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-md transition-opacity duration-500"></div>
-
-    <!-- Modal Box Container -->
-    <div id="modal-box" class="relative bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl w-[95%] sm:w-full max-w-[850px] max-h-[90vh] sm:max-h-[85vh] overflow-hidden flex flex-col transition-all duration-500 ease-out transform scale-95 opacity-0 z-10 border border-outline-variant/15 dark:border-zinc-800">
-      
-      <!-- Close Button (Floating Top-Right) -->
-      <button onclick="closeProjectModal()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 dark:bg-white/10 dark:hover:bg-white/20 text-white flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary" aria-label="Cerrar modal">
-        <span aria-hidden="true" class="material-symbols-outlined text-xl">close</span>
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#proyectos" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
+<div id="top" aria-hidden="true"></div>
+
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a class="logo" href="#inicio" aria-label="Lautaro Colman"><svg class="mark" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M7 4h18a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V9a5 5 0 0 1 5-5zm-1.5 6.5v12.5A1.5 1.5 0 0 0 7 24.5h18a1.5 1.5 0 0 0 1.5-1.5V10.5z"/><path d="M9 14l4 3-4 3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 21h7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Lautaro Colman</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+      <a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
+      <a href="#habilidades" data-es="Habilidades" data-en="Skills">Habilidades</a>
+    </nav>
+    <div class="actions">
+      <button class="tool js-lang" type="button" aria-label="Cambiar idioma">EN</button>
+      <button class="tool js-theme" type="button" aria-label="Cambiar tema">
+        <svg class="i-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
-
-      <!-- Carousel Area -->
-      <div class="relative w-full shrink-0 aspect-video sm:aspect-[21/9] bg-surface-container-low dark:bg-zinc-950 overflow-hidden group/carousel">
-        <!-- Slides wrapper -->
-        <div id="carousel-slides" class="flex w-full h-full transition-transform duration-500 ease-out">
-          <!-- Dynamically populated images -->
-        </div>
-
-        <!-- Left Chevron -->
-        <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/35 hover:bg-black/60 dark:bg-zinc-900/40 dark:hover:bg-zinc-900/70 text-white flex items-center justify-center opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-primary z-20" aria-label="Imagen anterior">
-          <span aria-hidden="true" class="material-symbols-outlined text-2xl">chevron_left</span>
-        </button>
-
-        <!-- Right Chevron -->
-        <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/35 hover:bg-black/60 dark:bg-zinc-900/40 dark:hover:bg-zinc-900/70 text-white flex items-center justify-center opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-primary z-20" aria-label="Siguiente imagen">
-          <span aria-hidden="true" class="material-symbols-outlined text-2xl">chevron_right</span>
-        </button>
-
-        <!-- Dots Indicators -->
-        <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          <!-- Dynamically populated dots -->
-        </div>
-      </div>
-
-      <!-- Info Area -->
-      <div class="p-5 sm:p-6 flex flex-col gap-4 sm:gap-5 overflow-y-auto flex-1">
-        <div class="flex flex-col gap-2">
-          <!-- Project badge -->
-          <div id="modal-project-badge" class="w-fit mb-1" style="display: none;"></div>
-          <!-- Project name -->
-          <h3 id="modal-project-name" class="text-2xl sm:text-3xl font-extrabold text-editorial dark:text-white leading-tight">Project Name</h3>
-          <!-- Technologies badges -->
-          <div id="modal-project-tech" class="flex flex-wrap gap-2 mt-2">
-            <!-- Badges dynamically added -->
-          </div>
-        </div>
-
-        <!-- Description -->
-        <p id="modal-project-desc" class="text-on-surface-variant dark:text-zinc-300 text-sm sm:text-base leading-relaxed whitespace-pre-line">
-          Project description details.
-        </p>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-2">
-          <!-- Case Study action -->
-          <a id="modal-project-btn-case-study" href="#" class="w-full sm:w-auto px-6 h-[48px] bg-primary text-on-primary rounded-xl font-semibold flex items-center justify-center gap-2 transition-transform duration-300 active:scale-95 hover:-translate-y-0.5 bg-gradient-to-br from-primary to-primary-container text-sm shadow-md" style="display: none;">
-            <span aria-hidden="true" class="material-symbols-outlined text-lg">article</span>
-            <span data-es="Ver Caso de Estudio" data-en="View Case Study">Ver Caso de Estudio</span>
-          </a>
-          <!-- Primary action (Demo / Site) -->
-          <a id="modal-project-btn-primary" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-high dark:hover:bg-zinc-700 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md text-sm">
-            <span aria-hidden="true" class="material-symbols-outlined text-lg">open_in_new</span>
-            <span data-es="Ver Proyecto" data-en="View Project">Ver Proyecto</span>
-          </a>
-          <!-- Secondary action (source code) -->
-          <a id="modal-project-btn-secondary" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 h-[48px] bg-surface-container-highest dark:bg-zinc-800 text-on-surface dark:text-zinc-200 rounded-xl font-semibold flex items-center justify-center gap-2.5 hover:bg-surface-container-high dark:hover:bg-zinc-700 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md text-sm">
-            <svg class="w-[1.125rem] h-[1.125rem] fill-current" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
-            </svg>
-            <span data-es="Ver GitHub" data-en="View GitHub">Ver GitHub</span>
-          </a>
-        </div>
-      </div>
-
+      <a class="cta" href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
     </div>
   </div>
+</header>
 
-  <!-- Contact Modal -->
-  <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 ease-out" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
-    <!-- Backdrop blur overlay -->
-    <div id="contact-modal-overlay" class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-md transition-opacity duration-300"></div>
-
-    <!-- Modal Box Container -->
-    <div id="contact-modal-box" class="relative bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl w-[95%] sm:w-full max-w-[540px] max-h-[90vh] overflow-hidden flex flex-col transition-all duration-300 ease-out transform scale-95 opacity-0 z-10 border border-outline-variant/15 dark:border-zinc-800">
-      
-      <!-- Header with Title & Close Button -->
-      <div class="px-6 py-5 border-b border-outline-variant/15 dark:border-zinc-800 flex items-center justify-between">
-        <h3 id="contact-modal-title" class="text-xl sm:text-2xl font-extrabold text-editorial dark:text-white" data-es="Contactar a Lautaro" data-en="Contact Lautaro">
-          Contactar a Lautaro
-        </h3>
-        <button onclick="closeContactModal()" class="w-9 h-9 rounded-full bg-surface-container-low dark:bg-zinc-800 text-on-surface dark:text-zinc-300 hover:bg-surface-container-high dark:hover:bg-zinc-700 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" aria-label="Cerrar modal">
-          <span aria-hidden="true" class="material-symbols-outlined text-xl">close</span>
-        </button>
+<main id="main">
+  <section class="hero" id="inicio">
+    <div class="glow g1" aria-hidden="true"></div>
+    <div class="glow g2" aria-hidden="true"></div>
+    <div class="glow g3" aria-hidden="true"></div>
+    <div class="hero-in">
+      <p class="eyebrow glass" data-es="Técnico Universitario en Programación · UTN" data-en="University Programming Technician · UTN">Técnico Universitario en Programación · UTN</p>
+      <h1>Lautaro Colman</h1>
+      <p class="lead" data-es="Desarrollo aplicaciones web, sistemas de gestión y herramientas de software que resuelven problemas reales de negocio." data-en="I build web applications, management systems and software tools that solve real business problems.">Desarrollo aplicaciones web, sistemas de gestión y herramientas de software que resuelven problemas reales de negocio.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="#proyectos"><span data-es="Ver proyectos" data-en="View projects">Ver proyectos</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-
-      <!-- Body / Form Fields -->
-      <form id="contact-form" onsubmit="handleSendEmailSubmit(event)" class="p-6 flex flex-col gap-4 overflow-y-auto flex-1">
-        
-        <!-- Nombre -->
-        <div class="flex flex-col gap-1.5 text-left">
-          <label for="contact-name" class="text-xs font-bold uppercase tracking-wider text-on-surface-variant dark:text-zinc-400" data-es="Nombre" data-en="Name">
-            Nombre
-          </label>
-          <input 
-            type="text" 
-            id="contact-name" 
-            name="name" 
-            class="w-full px-4 py-3 rounded-xl bg-surface-container-low dark:bg-zinc-800/80 border border-outline-variant/20 dark:border-zinc-700/80 text-on-surface dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm"
-            data-es-placeholder="Tu nombre" 
-            data-en-placeholder="Your name" 
-            placeholder="Tu nombre" 
-          />
-        </div>
-
-        <!-- Asunto -->
-        <div class="flex flex-col gap-1.5 text-left">
-          <label for="contact-subject" class="text-xs font-bold uppercase tracking-wider text-on-surface-variant dark:text-zinc-400" data-es="Asunto" data-en="Subject">
-            Asunto
-          </label>
-          <input 
-            type="text" 
-            id="contact-subject" 
-            name="subject" 
-            class="w-full px-4 py-3 rounded-xl bg-surface-container-low dark:bg-zinc-800/80 border border-outline-variant/20 dark:border-zinc-700/80 text-on-surface dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm"
-            data-es-placeholder="Consulta sobre desarrollo web" 
-            data-en-placeholder="Web development inquiry" 
-            placeholder="Consulta sobre desarrollo web" 
-          />
-        </div>
-
-        <!-- Mensaje -->
-        <div class="flex flex-col gap-1.5 text-left">
-          <label for="contact-message" class="text-xs font-bold uppercase tracking-wider text-on-surface-variant dark:text-zinc-400" data-es="Mensaje" data-en="Message">
-            Mensaje
-          </label>
-          <textarea 
-            id="contact-message" 
-            name="message" 
-            rows="4" 
-            class="w-full px-4 py-3 rounded-xl bg-surface-container-low dark:bg-zinc-800/80 border border-outline-variant/20 dark:border-zinc-700/80 text-on-surface dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary transition-all text-sm resize-y"
-            data-es-placeholder="Hola Lautaro, vi tu portfolio y quería consultarte sobre..." 
-            data-en-placeholder="Hi Lautaro, I saw your portfolio and wanted to ask you about..." 
-            placeholder="Hola Lautaro, vi tu portfolio y quería consultarte sobre..."
-          ></textarea>
-        </div>
-
-        <!-- Footer Action Buttons -->
-        <div class="pt-4 border-t border-outline-variant/15 dark:border-zinc-800 flex flex-col sm:flex-row justify-end gap-3">
-          <button 
-            type="button" 
-            onclick="closeContactModal()" 
-            class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-outline-variant/30 text-on-surface dark:text-zinc-200 hover:bg-surface-container-low dark:hover:bg-zinc-800 font-semibold text-sm transition-all cursor-pointer text-center"
-            data-es="Cancelar" 
-            data-en="Cancel"
-          >
-            Cancelar
-          </button>
-          <button 
-            type="submit" 
-            class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-sm shadow-md hover:-translate-y-0.5 transition-all cursor-pointer flex items-center justify-center gap-2"
-          >
-            <span aria-hidden="true" class="material-symbols-outlined text-base">send</span>
-            <span data-es="Abrir email" data-en="Open email">Abrir email</span>
-          </button>
-        </div>
-
-      </form>
     </div>
-  </div>
+    <a class="cue" href="#proyectos" aria-label="Ir a proyectos"></a>
+  </section>
 
+  <section id="proyectos" class="sec">
+    <div class="wrap">
+      <header class="sec-head rv">
+        <p class="kicker" data-es="Proyectos" data-en="Projects">Proyectos</p>
+        <h2 data-es="Lo que construí." data-en="What I&#x27;ve built.">Lo que construí.</h2>
+        <p class="sub" data-es="Sistemas en producción, aplicaciones a medida y sitios para clientes reales." data-en="Production systems, custom applications and sites for real clients.">Sistemas en producción, aplicaciones a medida y sitios para clientes reales.</p>
+      </header>
+      <div class="stack">
+    <article class="pcard" style="--i:0">
+      <a class="pmedia" href="stockapp.html" tabindex="-1" aria-hidden="true">
+        <img src="img/Stockapp1.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" style="object-position:top left">
+        <span class="badge glass" data-es="Desktop + Web" data-en="Desktop + Web">Desktop + Web</span>
+      </a>
+      <div class="pbody">
+        <span class="pnum">01</span>
+        <div class="ptitle"><h3>Stock Management System</h3></div>
+        <p class="pdesc" data-es="Sistema de gestión de stock, ventas e inventario: una app de escritorio (Electron) sincronizada con una plataforma web (Next.js) sobre Supabase." data-en="Stock, sales and inventory management: a desktop app (Electron) synced with a web platform (Next.js) on top of Supabase.">Sistema de gestión de stock, ventas e inventario: una app de escritorio (Electron) sincronizada con una plataforma web (Next.js) sobre Supabase.</p>
+        <ul class="chips"><li>Electron</li><li>Next.js</li><li>Supabase</li><li>SQLite</li><li>TypeScript</li></ul>
+        <div class="pactions"><a class="btn btn-primary" href="stockapp.html"><span data-es="Ver caso de estudio" data-en="Case study">Ver caso de estudio</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost" href="https://web-three-iota-59.vercel.app" target="_blank" rel="noopener"><span data-es="Demo" data-en="Demo">Demo</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn btn-ghost" href="https://github.com/LautaroCLM/stock-app-electron" target="_blank" rel="noopener" aria-label="Stock Management System GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a></div>
+      </div>
+    </article>
+    <article class="pcard" style="--i:1">
+      <a class="pmedia" href="tpm.html" tabindex="-1" aria-hidden="true">
+        <img src="img/tpm1.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" style="object-position:top left">
+        <span class="badge glass" data-es="Sistema industrial" data-en="Industrial system">Sistema industrial</span>
+      </a>
+      <div class="pbody">
+        <span class="pnum">02</span>
+        <div class="ptitle"><span class="plogo" aria-hidden="true"><img src="img/logos/tpm.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><h3>TPM Autoelevadores</h3></div>
+        <p class="pdesc" data-es="Digitaliza las inspecciones diarias de autoelevadores en planta: escaneo de QR, checklist de seguridad y reporte de fallas con foto para mantenimiento." data-en="Digitizes daily forklift inspections on the plant floor: QR scanning, safety checklist and fault reports with photo evidence for maintenance.">Digitaliza las inspecciones diarias de autoelevadores en planta: escaneo de QR, checklist de seguridad y reporte de fallas con foto para mantenimiento.</p>
+        <ul class="chips"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL</li><li>Tailwind</li></ul>
+        <div class="pactions"><a class="btn btn-primary" href="tpm.html"><span data-es="Ver caso de estudio" data-en="Case study">Ver caso de estudio</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost" href="https://github.com/LautaroCLM/tpm-autoelevadores" target="_blank" rel="noopener" aria-label="TPM Autoelevadores GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a></div>
+      </div>
+    </article>
+    <article class="pcard" style="--i:2">
+      <a class="pmedia" href="servicios-integrados.html" tabindex="-1" aria-hidden="true">
+        <img src="img/servicios-web-1.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" style="object-position:top">
+        <span class="badge glass" data-es="Cliente real" data-en="Real client">Cliente real</span>
+      </a>
+      <div class="pbody">
+        <span class="pnum">03</span>
+        <div class="ptitle"><span class="plogo" aria-hidden="true"><img src="img/logos/servicios.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><h3>Servicios Integrados Web</h3></div>
+        <p class="pdesc" data-es="Sitio corporativo en producción bajo dominio propio, con un gestor de novedades (CMS) sobre Supabase para publicar contenido sin tocar código." data-en="Corporate site in production on its own domain, with a Supabase-backed news CMS so the client can publish without touching code.">Sitio corporativo en producción bajo dominio propio, con un gestor de novedades (CMS) sobre Supabase para publicar contenido sin tocar código.</p>
+        <ul class="chips"><li>React</li><li>TypeScript</li><li>Vite</li><li>Supabase</li><li>Tailwind</li></ul>
+        <div class="pactions"><a class="btn btn-primary" href="servicios-integrados.html"><span data-es="Ver caso de estudio" data-en="Case study">Ver caso de estudio</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost" href="https://serviciosintegradosweb.com" target="_blank" rel="noopener"><span data-es="Demo" data-en="Demo">Demo</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn btn-ghost" href="https://github.com/LautaroCLM/servicios_integrados" target="_blank" rel="noopener" aria-label="Servicios Integrados Web GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a></div>
+      </div>
+    </article>
+    <article class="pcard" style="--i:3">
+      <a class="pmedia" href="https://player-ai-platform.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <img src="img/playeraiplataform.webp" alt="" width="1200" height="750" loading="lazy" decoding="async" style="object-position:top left">
+        <span class="badge glass" data-es="Plataforma web" data-en="Web platform">Plataforma web</span>
+      </a>
+      <div class="pbody">
+        <span class="pnum">04</span>
+        <div class="ptitle"><h3>PlayerAI Platform</h3></div>
+        <p class="pdesc" data-es="Plataforma para gestionar futbolistas y agencias deportivas: perfiles, estadísticas de rendimiento, documentación contractual y biblioteca de videos." data-en="Platform to manage players and sports agencies: profiles, performance stats, contract documents and a video library.">Plataforma para gestionar futbolistas y agencias deportivas: perfiles, estadísticas de rendimiento, documentación contractual y biblioteca de videos.</p>
+        <ul class="chips"><li>React</li><li>TypeScript</li><li>Vite</li><li>Firebase</li><li>Supabase</li></ul>
+        <div class="pactions"><a class="btn btn-primary" href="https://player-ai-platform.vercel.app" target="_blank" rel="noopener"><span data-es="Ver demo" data-en="Live demo">Ver demo</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn btn-ghost" href="https://github.com/LautaroCLM/player-ai-platform" target="_blank" rel="noopener" aria-label="PlayerAI Platform GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a></div>
+      </div>
+    </article>
+      </div>
+      <header class="sec-head sec-head-s rv">
+        <p class="kicker" data-es="Más trabajos" data-en="More work">Más trabajos</p>
+        <h2 class="h2-s" data-es="Otros proyectos" data-en="Other projects">Otros proyectos</h2>
+      </header>
+      <div class="mgrid">
+      <article class="mcard rv">
+        <a class="mmedia" href="https://ramonapets.netlify.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/Ramonapets.jpeg.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"></a>
+        <div class="mbody">
+          <div class="ptitle"><span class="plogo plogo-s" aria-hidden="true"><img src="img/logos/ramonapets.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><h3>Ramonapets</h3></div>
+          <p data-es="Tienda online de productos para mascotas con catálogo interactivo y diseño responsivo." data-en="Online pet supply store with an interactive catalog and responsive design.">Tienda online de productos para mascotas con catálogo interactivo y diseño responsivo.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <div class="mlinks"><a class="link" href="https://ramonapets.netlify.app" target="_blank" rel="noopener"><span data-es="Ver sitio" data-en="Visit">Ver sitio</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="link" href="https://github.com/LautaroCLM/RAMONAPETS-WEB" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a></div>
+        </div>
+      </article>
+      <article class="mcard rv">
+        <a class="mmedia" href="https://pastranagency.netlify.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/Pastran Agency.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"></a>
+        <div class="mbody">
+          <div class="ptitle"><span class="plogo plogo-s" aria-hidden="true"><img src="img/logos/pastran.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><h3>Pastran Agency</h3></div>
+          <p data-es="Sitio corporativo para una agencia de representación deportiva: trayectoria, servicios y perfiles de jugadores." data-en="Corporate website for a sports representation agency: background, services and player profiles.">Sitio corporativo para una agencia de representación deportiva: trayectoria, servicios y perfiles de jugadores.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <div class="mlinks"><a class="link" href="https://pastranagency.netlify.app" target="_blank" rel="noopener"><span data-es="Ver sitio" data-en="Visit">Ver sitio</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+        </div>
+      </article>
+      <article class="mcard rv">
+        <a class="mmedia" href="https://fire-car-ecommerce.onrender.com/accounts/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/imagen6.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"></a>
+        <div class="mbody">
+          <div class="ptitle"><span class="plogo plogo-s" aria-hidden="true"><img src="img/logos/firecar.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><h3>Fire Car</h3></div>
+          <p data-es="Plataforma de compra y venta de vehículos con usuarios, catálogo dinámico y gestión de publicaciones." data-en="Vehicle marketplace with user accounts, a dynamic catalog and listing management.">Plataforma de compra y venta de vehículos con usuarios, catálogo dinámico y gestión de publicaciones.</p>
+          <ul class="chips"><li>Django</li><li>Python</li><li>JavaScript</li></ul>
+          <div class="mlinks"><a class="link" href="https://fire-car-ecommerce.onrender.com/accounts/" target="_blank" rel="noopener"><span data-es="Ver sitio" data-en="Visit">Ver sitio</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="link" href="https://github.com/LautaroCLM/Fire_Car_Ecommerce" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a></div>
+        </div>
+      </article>
+      <article class="mcard rv">
+        <a class="mmedia" href="https://github.com/Chavo-st4r/Mi-Marketplace" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/imagen7.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"></a>
+        <div class="mbody">
+          <div class="ptitle"><span class="plogo plogo-s" aria-hidden="true"><img src="img/logos/shopfast.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><h3>Shop Fast</h3></div>
+          <p data-es="Ecommerce de indumentaria desarrollado en equipo: catálogo y flujo de compra." data-en="Clothing ecommerce built as a team: catalog and purchase flow.">Ecommerce de indumentaria desarrollado en equipo: catálogo y flujo de compra.</p>
+          <ul class="chips"><li>Django</li><li>Python</li><li>JavaScript</li></ul>
+          <div class="mlinks"><a class="link" href="https://github.com/Chavo-st4r/Mi-Marketplace" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a></div>
+        </div>
+      </article>
+      <article class="mcard rv">
+        <a class="mmedia" href="https://neumaticosel32nuv.netlify.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/neumaticos32-1.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"></a>
+        <div class="mbody">
+          <div class="ptitle"><span class="plogo plogo-s" aria-hidden="true"><img src="img/logos/neumaticos32.webp" alt="" width="96" height="96" loading="lazy" decoding="async"></span><h3>Neumáticos El 32</h3></div>
+          <p data-es="Sitio web comercial para una empresa de neumáticos y accesorios del rubro automotor." data-en="Commercial website for an automotive tire and accessories business.">Sitio web comercial para una empresa de neumáticos y accesorios del rubro automotor.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <div class="mlinks"><a class="link" href="https://neumaticosel32nuv.netlify.app" target="_blank" rel="noopener"><span data-es="Ver sitio" data-en="Visit">Ver sitio</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+        </div>
+      </article>
+      <article class="mcard rv">
+        <a class="mmedia" href="https://repuestos32.netlify.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/repuestos32-1.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"></a>
+        <div class="mbody">
+          <div class="ptitle"><h3>Repuestos El 32</h3></div>
+          <p data-es="Catálogo web de repuestos automotrices con consulta directa por WhatsApp." data-en="Automotive spare parts web catalog with direct WhatsApp inquiries.">Catálogo web de repuestos automotrices con consulta directa por WhatsApp.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <div class="mlinks"><a class="link" href="https://repuestos32.netlify.app" target="_blank" rel="noopener"><span data-es="Ver sitio" data-en="Visit">Ver sitio</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+        </div>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-mi" class="sec wash">
+    <div class="wrap about">
+      <img class="portrait rv" src="img/lautaro.webp" alt="Retrato de Lautaro Colman" width="600" height="800" loading="lazy" decoding="async">
+      <div class="about-txt">
+        <p class="kicker rv" data-es="Sobre mí" data-en="About me">Sobre mí</p>
+        <h2 class="rv" data-es="Software pensado para el negocio." data-en="Software built around the business.">Software pensado para el negocio.</h2>
+        <p class="sub rv" data-es="Soy Técnico Universitario en Programación y trabajo como desarrollador freelance desde 2024. Me enfoco en sistemas mantenibles, rápidos y que resuelven un problema concreto, desde un checklist industrial hasta un sistema de stock con app de escritorio y web." data-en="I&#x27;m a University Programming Technician and have worked as a freelance developer since 2024. I focus on maintainable, fast systems that solve a concrete problem, from an industrial checklist to a stock system with desktop and web apps.">Soy Técnico Universitario en Programación y trabajo como desarrollador freelance desde 2024. Me enfoco en sistemas mantenibles, rápidos y que resuelven un problema concreto, desde un checklist industrial hasta un sistema de stock con app de escritorio y web.</p>
+        <ul class="tl">
+          <li class="glass rv"><strong data-es="Diplomatura en Programación y Análisis de Datos" data-en="Diploma in Programming and Data Analysis">Diplomatura en Programación y Análisis de Datos</strong><small data-es="UBA · En curso" data-en="UBA · In progress">UBA · En curso</small></li>
+          <li class="glass rv"><strong data-es="Técnico Universitario en Programación" data-en="University Programming Technician">Técnico Universitario en Programación</strong><small data-es="UTN · Egresado en diciembre de 2025" data-en="UTN · Graduated December 2025">UTN · Egresado en diciembre de 2025</small></li>
+          <li class="glass rv"><strong data-es="Desarrollador freelance" data-en="Freelance developer">Desarrollador freelance</strong><small data-es="Desde 2024 · Sistemas industriales, comercios y sitios corporativos" data-en="Since 2024 · Industrial systems, retail and corporate sites">Desde 2024 · Sistemas industriales, comercios y sitios corporativos</small></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades" class="sec sec-tight">
+    <div class="wrap">
+      <header class="sec-head rv">
+        <p class="kicker" data-es="Habilidades" data-en="Skills">Habilidades</p>
+        <h2 class="h2-s" data-es="Tecnologías y herramientas" data-en="Technologies &amp; tools">Tecnologías y herramientas</h2>
+      </header>
+      <div class="skills"><div class="skill rv"><h3 data-es="Frontend" data-en="Frontend">Frontend</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li></ul></div><div class="skill rv"><h3 data-es="Backend y datos" data-en="Backend &amp; data">Backend y datos</h3><ul class="chips"><li>Python</li><li>Django</li><li>SQL</li><li>PostgreSQL</li><li>Supabase</li><li>Firebase</li></ul></div><div class="skill rv"><h3 data-es="Escritorio y herramientas" data-en="Desktop &amp; tools">Escritorio y herramientas</h3><ul class="chips"><li>Electron</li><li>SQLite</li><li>Git</li><li>GitHub</li><li>Vercel</li><li>Netlify</li></ul></div></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="sec contact wash">
+    <div class="wrap">
+      <p class="kicker rv" data-es="Contacto" data-en="Contact">Contacto</p>
+      <h2 class="rv" data-es="¿Hablamos?" data-en="Let&#x27;s talk.">¿Hablamos?</h2>
+      <p class="sub rv" data-es="Abierto a oportunidades laborales y a nuevos proyectos." data-en="Open to job opportunities and new projects.">Abierto a oportunidades laborales y a nuevos proyectos.</p>
+      <a class="mail rv" href="mailto:colmanlautaro24@gmail.com">colmanlautaro24@gmail.com</a>
+      <div class="contact-cta rv">
+        <a class="btn btn-primary" href="mailto:colmanlautaro24@gmail.com"><span data-es="Enviar email" data-en="Send email">Enviar email</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <button class="btn btn-ghost" id="copy" type="button" data-es="Copiar email" data-en="Copy email">Copiar email</button>
+        <a class="btn btn-ghost" href="https://github.com/LautaroCLM" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/lautaro-colman-26a773375/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>© 2026 Lautaro Uriel Colman</span>
+    <span data-es="Hecho a mano, sin frameworks." data-en="Hand-built, no frameworks.">Hecho a mano, sin frameworks.</span>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Navegación rápida">
+  <a href="#inicio" data-sec="inicio"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span data-es="Inicio" data-en="Home">Inicio</span></a>
+  <a href="#proyectos" data-sec="proyectos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></svg><span data-es="Proyectos" data-en="Projects">Proyectos</span></a>
+  <a href="#sobre-mi" data-sec="sobre-mi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span data-es="Sobre mí" data-en="About">Sobre mí</span></a>
+  <a href="#contacto" data-sec="contacto"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><span data-es="Contacto" data-en="Contact">Contacto</span></a>
+</nav>
+
+<script>
+(function(){
+  var root=document.documentElement, body=document.body;
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+  /* idioma ES/EN */
+  var lang=store.get('lang')==='en'?'en':'es';
+  var TITLES={es:'Lautaro Colman — Desarrollador Web & Software',en:'Lautaro Colman — Web & Software Developer'};
+  function applyLang(){
+    $$('[data-es]').forEach(function(el){el.textContent=el.getAttribute('data-'+lang)});
+    $$('.js-lang').forEach(function(b){b.textContent=lang==='es'?'EN':'ES';b.setAttribute('aria-label',lang==='es'?'Switch to English':'Cambiar a español')});
+    $$('.js-theme').forEach(function(b){b.setAttribute('aria-label',lang==='es'?'Cambiar tema':'Toggle theme')});
+    $('#copy').dataset.es='Copiar email';$('#copy').dataset.en='Copy email';
+    root.lang=lang;document.title=TITLES[lang];
+  }
+  $$('.js-lang').forEach(function(b){b.addEventListener('click',function(){lang=lang==='es'?'en':'es';store.set('lang',lang);applyLang()})});
+  if(lang==='en')applyLang();else{applyLang()}
+
+  /* tema claro/oscuro */
+  var meta=$('meta[name=theme-color]');
+  function syncMeta(){meta.setAttribute('content',root.dataset.theme==='light'?'#f5f5f7':'#050507')}
+  syncMeta();
+  $$('.js-theme').forEach(function(b){b.addEventListener('click',function(){
+    var t=root.dataset.theme==='light'?'dark':'light';root.dataset.theme=t;store.set('theme',t);syncMeta();
+  })});
+
+  /* header: transparente sobre el hero, vidrio al bajar */
+  var hdr=$('#hdr');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){hdr.classList.toggle('scrolled',!e[0].isIntersecting)}).observe($('#top'));
+  }else{
+    addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>24)},{passive:true});
+  }
+
+  /* sección activa: menú de desktop y barra inferior del celular */
+  var links=$$('.nav a'),tabs=$$('.tabbar a');
+  function setActive(id){
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)});
+    var tab=id==='habilidades'?'sobre-mi':id;
+    tabs.forEach(function(a){var on=a.dataset.sec===tab;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+  }
+  setActive('inicio');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting)setActive(en.target.id)})},{rootMargin:'-45% 0px -50% 0px'});
+    ['inicio','proyectos','sobre-mi','habilidades','contacto'].forEach(function(id){io.observe(document.getElementById(id))});
+  }
+
+  /* copiar email */
+  var copy=$('#copy'),EMAIL='colmanlautaro24@gmail.com';
+  function flash(msg){
+    var prev=copy.textContent;copy.textContent=msg;
+    setTimeout(function(){copy.textContent=copy.getAttribute('data-'+lang)},1800);
+  }
+  copy.addEventListener('click',function(){
+    var ok=function(){flash(lang==='es'?'¡Copiado!':'Copied!')};
+    var fail=function(){flash(lang==='es'?'No se pudo copiar':'Could not copy')};
+    if(navigator.clipboard&&isSecureContext){navigator.clipboard.writeText(EMAIL).then(ok,fail)}
+    else{try{var t=document.createElement('textarea');t.value=EMAIL;t.style.cssText='position:fixed;opacity:0';body.appendChild(t);t.select();var r=document.execCommand('copy');body.removeChild(t);r?ok():fail()}catch(e){fail()}}
+  });
+})();
+
+</script>
 </body>
 </html>
